@@ -9,9 +9,28 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private Vector3 movement;
 
+    public Transform groundCheck;
+    private bool isGrounded;
+
+    public float jumpForce = 10f;
+
+    public LayerMask groundMask;
+
+    [HideInInspector] public bool ledgeDetected;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+    }
+
+    private void Update()
+    {
+        isGrounded = Physics.CheckSphere(groundCheck.position, 0.1f, groundMask);
+
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
     }
 
     void FixedUpdate()
@@ -22,5 +41,11 @@ public class PlayerMovement : MonoBehaviour
         movement = new Vector3(moveHorizontal, 0f, moveVertical).normalized;
 
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(groundCheck.position, 0.1f);
     }
 }
