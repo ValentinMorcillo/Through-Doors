@@ -20,15 +20,19 @@ public class PlayerMovement : MonoBehaviour
 
     [HideInInspector] public bool ledgeDetected;
 
-    [Header("Ledge info")]
+    [Header("Climbing info")]
     [SerializeField] private Vector3 offset1;
     [SerializeField] private Vector3 offset2;
+    [SerializeField] private float climbingAnimationDuration;
+
+
+    bool lookingRight = true;
 
     private Vector3 climbBegunPosition;
     private Vector3 climbOverPosition;
 
     private bool canGrabLedge = true;
-    private bool canClimb;
+    private bool isClimbing;
 
     void Start()
     {
@@ -40,30 +44,47 @@ public class PlayerMovement : MonoBehaviour
     {
         CheckIsGrounded();
         CheckIfRunning();
+        CheckForLedge();
+        CheckLookRotation();
 
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
         }
-
-        CheckForLedge();
     }
 
     void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxisRaw("Horizontal");
-        float moveVertical = Input.GetAxisRaw("Vertical");
+        if (!isClimbing && canGrabLedge)
+        {
+            float moveHorizontal = Input.GetAxisRaw("Horizontal");
+            float moveVertical = Input.GetAxisRaw("Vertical");
 
-        movement = new Vector3(moveHorizontal, 0f, moveVertical).normalized;
+            movement = new Vector3(moveHorizontal, 0f, moveVertical).normalized;
 
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+            rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+        }
+    }
+
+    void CheckLookRotation()
+    {
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+            lookingRight = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            transform.rotation = new Quaternion(0f, 180f, 0f, 0f);
+            lookingRight = false;
+        }
     }
 
     void CheckIfRunning()
     {
         if (Input.GetAxisRaw("Horizontal") != 0)
         {
-            Debug.Log("Running");
             Run();
         }
         else
@@ -102,28 +123,44 @@ public class PlayerMovement : MonoBehaviour
 
             Vector3 ledgePosition = GetComponentInChildren<LedgeDetection>().transform.position;
 
-            climbBegunPosition = ledgePosition + offset1;
-            climbOverPosition = ledgePosition + offset2;
+            Vector3 auxOffset1 = offset1;
+            Vector3 auxOffset2 = offset2;
 
-            canClimb = true;
+            if (!lookingRight)
+            {
+                auxOffset1.x = -offset1.x;
+                auxOffset2.x = -offset2.x;
+            }
+            else
+            {
+                auxOffset1 = offset1;
+                auxOffset2 = offset2;
+            }
+
+            climbBegunPosition = ledgePosition + auxOffset1;
+            climbOverPosition = ledgePosition + auxOffset2;
+
+            isClimbing = true;
         }
 
-        if (canClimb)
+        if (isClimbing && !canGrabLedge)
         {
             transform.position = climbBegunPosition;
-            animator.CanClimb(canClimb);
+            animator.CanClimb(isClimbing);
+            isClimbing = false;
             rb.isKinematic = true;
-            Invoke(nameof(LedgeClimbOver), 1.5f); //Esta funcion hay que llamarla al final de la animacion con un animation event
+            Invoke(nameof(LedgeClimbOver), climbingAnimationDuration); //Esta funcion hay que llamarla al final de la animacion con un animation event, representa que termina de hacer el climbeo
         }
     }
 
     private void LedgeClimbOver()
     {
-        canClimb = false;
-        transform.position = climbOverPosition;
-        animator.CanClimb(canClimb);
+        Debug.Log(rb.isKinematic);
         rb.isKinematic = false;
-        Invoke(nameof(AllowLedgeClimb), .3f);
+        transform.position = climbOverPosition;
+        animator.CanClimb(isClimbing);
+        animator.Run();
+        Invoke(nameof(AllowLedgeClimb), .25f);
     }
 
     private void AllowLedgeClimb() => canGrabLedge = true;
