@@ -9,6 +9,8 @@ public class LedgeDetection : MonoBehaviour
 
     private PlayerMovement player;
 
+    private bool canDetect;
+
     private void Awake()
     {
         player = GetComponentInParent<PlayerMovement>();
@@ -16,7 +18,26 @@ public class LedgeDetection : MonoBehaviour
 
     private void Update()
     {
-        player.ledgeDetected = Physics.CheckSphere(transform.position, radius, climbableLayer);
+        if (canDetect)
+        {
+            player.ledgeDetected = Physics.CheckSphere(transform.position, radius, climbableLayer);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            canDetect = false;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            canDetect = true;
+        }
     }
 
     private void OnDrawGizmos()

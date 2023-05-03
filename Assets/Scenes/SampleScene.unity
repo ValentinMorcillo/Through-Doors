@@ -213,7 +213,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28977341}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.21206, y: -1.49, z: -4.44}
+  m_LocalPosition: {x: 0.21206, y: -1.49, z: 0}
   m_LocalScale: {x: 35.13538, y: 1.2901224, z: 30.851942}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -325,6 +325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 321251653}
   - component: {fileID: 321251654}
+  - component: {fileID: 321251655}
   m_Layer: 0
   m_Name: LedgeCheck
   m_TagString: Untagged
@@ -340,7 +341,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321251652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.659, y: 0.595, z: 0}
+  m_LocalPosition: {x: 0.659, y: 1.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -363,6 +364,19 @@ MonoBehaviour:
   climbableLayer:
     serializedVersion: 2
     m_Bits: 192
+--- !u!65 &321251655
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321251652}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.441038, y: 0.20175612, z: 0.47098207}
+  m_Center: {x: 0.0012984872, y: 0.10082471, z: 0.007594824}
 --- !u!1 &434099153
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,8 +467,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434099153}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.28, y: 0.63, z: -5.3}
-  m_LocalScale: {x: 0.68536043, y: 2.9577, z: 4.164347}
+  m_LocalPosition: {x: 9.36, y: 1.64, z: 0}
+  m_LocalScale: {x: 5.534354, y: 5.14137, z: 4.164347}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -553,7 +567,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 639885752}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4, y: 0.29, z: -5.06}
+  m_LocalPosition: {x: 1.4, y: 0.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -597,6 +611,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   ledgeDetected: 0
+  offset1: {x: -0.5, y: -1.23, z: 0}
+  offset2: {x: 0.57, y: 1.33, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,7 +785,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.1560235, y: -0.000000029437347, z: 0.000000004649863, w: 0.9877534}
-  m_LocalPosition: {x: 1.4, y: 3.53, z: -15.059999}
+  m_LocalPosition: {x: 1.4, y: 3.53, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -873,7 +889,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486729963}
   m_LocalRotation: {x: 0.1560235, y: -0.000000029437347, z: 0.000000004649863, w: 0.9877534}
-  m_LocalPosition: {x: 1.4, y: 3.53, z: -15.059999}
+  m_LocalPosition: {x: 1.4, y: 3.53, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
