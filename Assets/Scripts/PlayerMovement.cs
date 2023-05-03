@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
 
     public LayerMask groundMask;
 
+    AnimatorController animator;
+
     [HideInInspector] public bool ledgeDetected;
 
     [Header("Ledge info")]
@@ -31,18 +33,65 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<AnimatorController>();
     }
 
     private void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, 0.1f, groundMask);
+        CheckIsGrounded();
+        CheckIfRunning();
 
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            Jump();
         }
 
         CheckForLedge();
+    }
+
+    void FixedUpdate()
+    {
+        float moveHorizontal = Input.GetAxisRaw("Horizontal");
+        float moveVertical = Input.GetAxisRaw("Vertical");
+
+        movement = new Vector3(moveHorizontal, 0f, moveVertical).normalized;
+
+        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+    }
+
+    void CheckIfRunning()
+    {
+        if (Input.GetAxisRaw("Horizontal") != 0)
+        {
+            Debug.Log("Running");
+            Run();
+        }
+        else
+        {
+            Idle();
+        }
+    }
+
+    void Idle()
+    {
+        animator.Idle();
+    }
+
+    void Run()
+    {
+        animator.Run();
+    }
+
+    void Jump()
+    {
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        animator.Jump();
+    }
+
+    private void CheckIsGrounded()
+    {
+        isGrounded = Physics.CheckSphere(groundCheck.position, 0.1f, groundMask);
+        animator.OnGround(isGrounded);
     }
 
     private void CheckForLedge()
@@ -62,7 +111,9 @@ public class PlayerMovement : MonoBehaviour
         if (canClimb)
         {
             transform.position = climbBegunPosition;
-            Invoke(nameof(LedgeClimbOver), .3f); //Esta funcion hay que llamarla al final de la animacion con un animation event
+            animator.CanClimb(canClimb);
+            rb.isKinematic = true;
+            Invoke(nameof(LedgeClimbOver), 1.5f); //Esta funcion hay que llamarla al final de la animacion con un animation event
         }
     }
 
@@ -70,20 +121,13 @@ public class PlayerMovement : MonoBehaviour
     {
         canClimb = false;
         transform.position = climbOverPosition;
-        Invoke(nameof(AllowLedgeClimb), .1f);
+        animator.CanClimb(canClimb);
+        rb.isKinematic = false;
+        Invoke(nameof(AllowLedgeClimb), .3f);
     }
 
     private void AllowLedgeClimb() => canGrabLedge = true;
 
-    void FixedUpdate()
-    {
-        float moveHorizontal = Input.GetAxisRaw("Horizontal");
-        float moveVertical = Input.GetAxisRaw("Vertical");
-
-        movement = new Vector3(moveHorizontal, 0f, moveVertical).normalized;
-
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
-    }
 
     void OnDrawGizmos()
     {
