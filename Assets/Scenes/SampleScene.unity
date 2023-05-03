@@ -567,8 +567,8 @@ MonoBehaviour:
     m_Bits: 128
   ledgeDetected: 0
   offset1: {x: -0.5, y: -1.23, z: 0}
-  offset2: {x: 0.57, y: 1, z: 0}
-  climbingAnimationDuration: 1.8
+  offset2: {x: 0.57, y: 0.3, z: 0}
+  climbingAnimationDuration: 1.925
 --- !u!114 &639885760
 MonoBehaviour:
   m_ObjectHideFlags: 0
