@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isClimbing && canGrabLedge)
+        if (CanDetectMovementInput())
         {
             float moveHorizontal = Input.GetAxisRaw("Horizontal");
             float moveVertical = Input.GetAxisRaw("Vertical");
@@ -66,18 +66,26 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    bool CanDetectMovementInput()
+    {
+        return !isClimbing && canGrabLedge;
+    }
+
     void CheckLookRotation()
     {
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        if (CanDetectMovementInput())
         {
-            transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
-            lookingRight = true;
-        }
+            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+                lookingRight = true;
+            }
 
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            transform.rotation = new Quaternion(0f, 180f, 0f, 0f);
-            lookingRight = false;
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                transform.rotation = new Quaternion(0f, 180f, 0f, 0f);
+                lookingRight = false;
+            }
         }
     }
 
@@ -164,7 +172,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void AllowLedgeClimb() => canGrabLedge = true;
-
 
     void OnDrawGizmos()
     {
