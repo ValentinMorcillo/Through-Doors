@@ -2,14 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IInteractable
-{
-    public void Interact();
-}
-
 public class InteractiveObjects : MonoBehaviour
 {
-   [SerializeField] private Transform InteractorSource;
+    [SerializeField] private Transform InteractorSource;
     [SerializeField] private float InteractRange;
 
 
@@ -23,6 +18,8 @@ public class InteractiveObjects : MonoBehaviour
 
             if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
             {
+
+
                 if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
                 {
                     interactObj.Interact();
@@ -33,4 +30,6 @@ public class InteractiveObjects : MonoBehaviour
 
     }
 
+        //        hitInfo.collider.gameObject.TryGetComponent(out Outline outline);
+        //        outline.enabled = true;
 }
