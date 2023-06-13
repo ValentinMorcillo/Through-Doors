@@ -433,7 +433,7 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 0
   m_Spacing: 2
-  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
@@ -966,7 +966,7 @@ GameObject:
   - component: {fileID: 599676020}
   - component: {fileID: 599676019}
   m_Layer: 0
-  m_Name: Model
+  m_Name: Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2267,7 +2267,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: {fileID: 515670162}
   inventorySprites: {fileID: 261488059}
-  pickableItem: {fileID: 0}
 --- !u!1 &1995423100
 GameObject:
   m_ObjectHideFlags: 0

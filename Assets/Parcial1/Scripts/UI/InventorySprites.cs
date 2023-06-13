@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class InventorySprites : MonoBehaviour
 {
-    [SerializeField] Dictionary<string, GameObject> sprites;
+    //[SerializeField] Dictionary<string, GameObject> sprites;
+    [SerializeField] List<GameObject> sprites;
     [SerializeField] GameObject SpritePrefab;
     [SerializeField] Sprite Sprite;
 
@@ -14,6 +15,7 @@ public class InventorySprites : MonoBehaviour
     {
         SpritePrefab.GetComponent<Image>().sprite = sprite;
 
-        sprites.Add(name, GameObject.Instantiate(SpritePrefab, transform));
+        GameObject gameObjectSprite = GameObject.Instantiate(SpritePrefab, transform);
+        sprites.Add(gameObjectSprite);
     }
 }
