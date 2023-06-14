@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class InteractCubeBehaviour : MonoBehaviour, IInteractable
 {
-    Outline outline;
 
     Vector3 originalPosition;
     Vector3 direction;
@@ -12,7 +11,6 @@ public class InteractCubeBehaviour : MonoBehaviour, IInteractable
 
     private void Awake()
     {
-        outline = GetComponent<Outline>();
     }
 
     private void Start()
@@ -47,19 +45,5 @@ public class InteractCubeBehaviour : MonoBehaviour, IInteractable
         //        Debug.Log(Random.Range(0, 100));
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            outline.enabled = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            outline.enabled = false;
-        }
-    }
+   
 }
