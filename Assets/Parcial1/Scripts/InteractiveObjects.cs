@@ -7,8 +7,6 @@ public class InteractiveObjects : MonoBehaviour
     [SerializeField] private Transform InteractorSource;
     [SerializeField] private float InteractRange;
 
-
-
     private void Update()
     {
 
@@ -18,18 +16,11 @@ public class InteractiveObjects : MonoBehaviour
 
             if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
             {
-
-
                 if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
                 {
                     interactObj.Interact();
                 }
             }
         }
-
-
     }
-
-        //        hitInfo.collider.gameObject.TryGetComponent(out Outline outline);
-        //        outline.enabled = true;
 }

@@ -20,7 +20,6 @@ public class NewObjectBehaviour : MonoBehaviour
 
     public void GotNewItem(PickableItem pickableItem)
     {
-
         itemQueue.Enqueue(pickableItem);
     }
 
@@ -34,7 +33,7 @@ public class NewObjectBehaviour : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         descriptionContainer.SetActive(false);
-        inventorySprites.AddNewInventorySprites(currentItem.GetIcon(), currentItem.GetName());
+        inventorySprites.AddNewInventorySprites(currentItem);
 
         isCoroutineRunning = false;
     }

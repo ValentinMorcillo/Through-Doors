@@ -5,17 +5,36 @@ using UnityEngine.UI;
 
 public class InventorySprites : MonoBehaviour
 {
-    //[SerializeField] Dictionary<string, GameObject> sprites;
-    [SerializeField] List<GameObject> sprites;
+    public List<PickableItem> PickableItemsList;
     [SerializeField] GameObject SpritePrefab;
-    [SerializeField] Sprite Sprite;
+    List<GameObject> InventoryObjects;
 
-
-    public void AddNewInventorySprites(Sprite sprite, string name)
+    private void Start()
     {
-        SpritePrefab.GetComponent<Image>().sprite = sprite;
+        PickableItemsList = new List<PickableItem>();
+        InventoryObjects = new List<GameObject>();
+    }
 
-        GameObject gameObjectSprite = GameObject.Instantiate(SpritePrefab, transform);
-        sprites.Add(gameObjectSprite);
+    public void AddNewInventorySprites(PickableItem pickableItem)
+    {
+        SpritePrefab.GetComponent<Image>().sprite = pickableItem.GetIcon();
+        GameObject inventorySprite = GameObject.Instantiate(SpritePrefab, transform);
+        inventorySprite.name = pickableItem.GetName();
+
+        InventoryObjects.Add(inventorySprite);
+        PickableItemsList.Add(pickableItem);
+    }
+
+    public void RemoveInventoryObjectWithName(string objectName)
+    {
+        for (int i = 0; i < PickableItemsList.Count; i++)
+        {
+            if (PickableItemsList[i].GetName() == objectName)
+            {
+                PickableItemsList.RemoveAt(i);
+                Destroy(InventoryObjects[i]);
+                InventoryObjects.RemoveAt(i);
+            }
+        }
     }
 }

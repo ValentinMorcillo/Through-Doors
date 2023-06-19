@@ -12,7 +12,7 @@ public class DisplayTrigger : MonoBehaviour
     [SerializeField] FPSCameraController fpsCameraController;
 
 
-    [SerializeField] Canvas uiCanvas;
+    [SerializeField] GameObject uiCanvas;
     bool isActive;
 
 
