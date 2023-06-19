@@ -11,10 +11,15 @@ public class DisplayTrigger : MonoBehaviour
     [SerializeField] GameObject sceneObject;
     [SerializeField] FPSCameraController fpsCameraController;
 
-
-    [SerializeField] GameObject uiCanvas;
+    [SerializeField] GameObject uiObjectOff;
+    
+    AudioSource audioSource;
     bool isActive;
 
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -25,9 +30,10 @@ public class DisplayTrigger : MonoBehaviour
             visualizingCamera.SetActive(true);
 
             sceneObject.SetActive(false);
-            uiCanvas.gameObject.SetActive(false);
+            uiObjectOff.gameObject.SetActive(false);
             fpsCameraController.enabled = false;
 
+            audioSource.Play();
             Cursor.lockState = CursorLockMode.None;
         }
 
@@ -38,7 +44,7 @@ public class DisplayTrigger : MonoBehaviour
             
             sceneObject.SetActive(true);
             fpsCameraController.enabled = true;
-            uiCanvas.gameObject.SetActive(true);
+            uiObjectOff.gameObject.SetActive(true);
             
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -64,7 +70,7 @@ public class DisplayTrigger : MonoBehaviour
 
             sceneObject.SetActive(true);
             fpsCameraController.enabled = true;
-            uiCanvas.gameObject.SetActive(true);
+            uiObjectOff.gameObject.SetActive(true);
 
             Cursor.lockState = CursorLockMode.Locked;
         }
