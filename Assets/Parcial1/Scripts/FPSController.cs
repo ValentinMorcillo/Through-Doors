@@ -12,24 +12,22 @@ public class FPSController : MonoBehaviour
 
     [SerializeField] float verticalSpeed = 0.0f;
 
-
-    private Vector3 moveDirection = Vector3.zero;
-    private bool isJumping = false;
+    AudioSource audioSource;
 
     private CharacterController characterController;
     private Transform cameraTransform;
-
+    private bool isMoving;
 
     void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        audioSource = GetComponent<AudioSource>();
+
         cameraTransform = Camera.main.transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Movimiento del jugador
         float horizontalMovement = Input.GetAxis("Horizontal");
         float verticalMovement = Input.GetAxis("Vertical");
 
@@ -50,12 +48,37 @@ public class FPSController : MonoBehaviour
             {
                 verticalSpeed += jumpForce;
             }
+            if (moveDirection.magnitude > 0.1f) // Verificar si hay movimiento
+            {
+                if (!isMoving) // Iniciar reproducción de pasos si no se está reproduciendo actualmente
+                {
+                    audioSource.Play();
+                    isMoving = true;
+                }
+            }
+            else // No hay movimiento, detener reproducción de pasos si se estaba reproduciendo
+            {
+                if (isMoving)
+                {
+                    audioSource.Stop();
+                    isMoving = false;
+                }
+            }
         }
-
+        else // Esta en el aire
+        {
+            if (isMoving)
+            {
+                audioSource.Stop();
+                isMoving = false;
+            }
+        }
         // Aplicar gravedad
         verticalSpeed -= gravity * Time.deltaTime;
 
         moveDirection.y = verticalSpeed;
+
+       
 
         // Mover al jugador
         characterController.Move(moveDirection * Time.deltaTime);

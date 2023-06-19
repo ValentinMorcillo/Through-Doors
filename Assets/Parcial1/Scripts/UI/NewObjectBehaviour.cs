@@ -30,7 +30,7 @@ public class NewObjectBehaviour : MonoBehaviour
         descriptionContainer.SetActive(true);
         description.text = currentItem.GetDescription();
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
 
         descriptionContainer.SetActive(false);
         inventorySprites.AddNewInventorySprites(currentItem);

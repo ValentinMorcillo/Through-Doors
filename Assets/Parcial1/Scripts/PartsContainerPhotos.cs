@@ -8,8 +8,20 @@ public class PartsContainerPhotos : MonoBehaviour
     [SerializeField] private Transform[] correctPositonPhotoParts;
 
     [SerializeField] InventorySprites inventory;
+    AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
 
     private void OnEnable()
+    {
+        CheckActivePhotos();
+    }
+
+    void CheckActivePhotos()
     {
         for (int i = 0; i < inventory.PickableItemsList.Count; i++)
         {
@@ -26,28 +38,23 @@ public class PartsContainerPhotos : MonoBehaviour
         }
     }
 
-    public bool CheckWincondition()
+    public void CheckWinCondition()
     {
-        int count = 0;
+        bool allPartsCorrect = true;
 
-        for (int i = 0; i < photosParts.Length - 1; i++)
+        for (int i = 0; i < photosParts.Length; i++)
         {
-            if (photosParts[i].transform.position == correctPositonPhotoParts[i].position)
+            if (photosParts[i].transform.position != correctPositonPhotoParts[i].position)
             {
-                count++;
-
-                if (count >= photosParts.Length - 1)
-                {
-                    return true;
-                }
-            }
-            else
-            {
+                allPartsCorrect = false;
                 break;
             }
         }
 
-        return false;
+        if (allPartsCorrect)
+        {
+            audioSource.Play();
+        }
     }
 
     public bool CheckPhotoInCorrectPivot(PhotoPart correctPhotoPart)
@@ -57,6 +64,7 @@ public class PartsContainerPhotos : MonoBehaviour
         if (Vector3.Distance(correctPhotoPart.transform.position, correctPositonPhotoParts[indexPhoto].position) < 0.02f)
         {
             correctPhotoPart.transform.position = correctPositonPhotoParts[indexPhoto].position;
+            CheckWinCondition();
             return true;
         }
 

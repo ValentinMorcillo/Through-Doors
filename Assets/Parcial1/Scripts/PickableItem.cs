@@ -15,6 +15,12 @@ public class PickableItem : MonoBehaviour, IInteractable
     [SerializeField] string description;
     [SerializeField] Sprite icon;
     [SerializeField] PickeableItemType itemType;
+    AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public string GetName()
     {
@@ -39,6 +45,9 @@ public class PickableItem : MonoBehaviour, IInteractable
     public void Interact()
     {
         InteractPickableItem.Invoke(this);
-        Destroy(gameObject);
+        audioSource.Play();
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        transform.position = Vector3.down * 1000;
+        Destroy(gameObject, 2.0f);
     }
 }
