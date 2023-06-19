@@ -9,31 +9,38 @@ public class RotateVisualObjects : MonoBehaviour
 
     private Quaternion initialRotation;
 
-
     float moveH;
     float moveV;
+    private bool isDragging;
 
     void Start()
     {
         initialRotation = transform.rotation;
+        isDragging = false;
+    }
+
+    private void OnMouseDown()
+    {
+        isDragging = true;
     }
 
     private void OnMouseDrag()
     {
-        moveH -= speedH * Input.GetAxis("Mouse X");
-        moveV += speedV * Input.GetAxis("Mouse Y");
-
-
-        if (Input.GetMouseButton(0))
+        if (isDragging)
         {
-            transform.eulerAngles = new Vector3(moveV, moveH, 0.0f);
+            moveH -= speedH * Input.GetAxis("Mouse X");
+            moveV -= speedV * Input.GetAxis("Mouse Y");
+
+            Quaternion newRotation = Quaternion.Euler(0.0f,moveH, moveV);
+            transform.rotation = initialRotation * newRotation;
         }
     }
 
-
     private void OnMouseUp()
     {
-        //Depende de lo que queramos lo podemos volver a poner en su posicion inicial
+        isDragging = false;
+        moveH = 0;
+        moveV = 0;
         transform.rotation = initialRotation;
     }
 }

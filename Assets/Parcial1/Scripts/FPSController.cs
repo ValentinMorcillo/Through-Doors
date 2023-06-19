@@ -5,89 +5,49 @@ using UnityEngine;
 public class FPSController : MonoBehaviour
 {
     [SerializeField] Transform characterBase;
+    private Rigidbody rb;
     
-    [SerializeField] float movementSpeed = 5.0f;
-    [SerializeField] float jumpForce = 500.0f;
-    [SerializeField] float gravity = 0.8f;
+    [SerializeField] float speed = 5f;
+    [SerializeField] float jumpForce = 28f;
 
-    [SerializeField] float verticalSpeed = 0.0f;
+    private bool isGrounded;
 
-    AudioSource audioSource;
-
-    private CharacterController characterController;
-    private Transform cameraTransform;
-    private bool isMoving;
-
-    void Awake()
+    void Start()
     {
-        characterController = GetComponent<CharacterController>();
-        audioSource = GetComponent<AudioSource>();
-
-        cameraTransform = Camera.main.transform;
+        rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    private void Update()
     {
-        float horizontalMovement = Input.GetAxis("Horizontal");
-        float verticalMovement = Input.GetAxis("Vertical");
+        CheckIsGrounded();
 
-        Vector3 forwardMovement = cameraTransform.forward * verticalMovement;
-        Vector3 rightMovement = cameraTransform.right * horizontalMovement;
-
-        forwardMovement.y = 0f;
-        rightMovement.y = 0f;
-
-        Vector3 moveDirection = (forwardMovement + rightMovement).normalized;
-        moveDirection *= movementSpeed;
-
-       
-        if (checkIsGrouded())
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
-            verticalSpeed = 0;
-            if (Input.GetButtonDown("Jump"))
-            {
-                verticalSpeed += jumpForce;
-            }
-            if (moveDirection.magnitude > 0.1f) // Verificar si hay movimiento
-            {
-                if (!isMoving) // Iniciar reproducción de pasos si no se está reproduciendo actualmente
-                {
-                    audioSource.Play();
-                    isMoving = true;
-                }
-            }
-            else // No hay movimiento, detener reproducción de pasos si se estaba reproduciendo
-            {
-                if (isMoving)
-                {
-                    audioSource.Stop();
-                    isMoving = false;
-                }
-            }
+            Jump();
         }
-        else // Esta en el aire
-        {
-            if (isMoving)
-            {
-                audioSource.Stop();
-                isMoving = false;
-            }
-        }
-        // Aplicar gravedad
-        verticalSpeed -= gravity * Time.deltaTime;
-
-        moveDirection.y = verticalSpeed;
-
-       
-
-        // Mover al jugador
-        characterController.Move(moveDirection * Time.deltaTime);
     }
 
-    bool checkIsGrouded()
+    void FixedUpdate()
     {
-        RaycastHit hit;
+            float moveHorizontal = Input.GetAxisRaw("Horizontal");
+            float moveVertical = Input.GetAxisRaw("Vertical");
 
-        return Physics.Raycast(characterBase.position + Vector3.up * 0.1f, Vector3.down, out hit, 0.2f);
+        Vector3 movement = Camera.main.transform.forward * moveVertical + Camera.main.transform.right * moveHorizontal;
+        movement.y = 0f;
+        
+        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
     }
+
+   
+    void Jump()
+    {
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    }
+
+    private void CheckIsGrounded()
+    {
+
+        isGrounded = Physics.Raycast(characterBase.position + Vector3.up * 0.1f, Vector3.down, out RaycastHit hit, 0.2f) ;
+    }
+
 }
