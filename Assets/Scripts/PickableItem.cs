@@ -50,6 +50,6 @@ public class PickableItem : MonoBehaviour, IInteractable
         audioSource.Play();
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
         transform.position = Vector3.down * 1000;
-        Destroy(gameObject, 2.0f);
+        Destroy(gameObject, 2.0f); //Se hace esta negrada para qe no se destruya el objeto qe hace el sonido
     }
 }

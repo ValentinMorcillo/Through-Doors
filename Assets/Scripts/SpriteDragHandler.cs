@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class SpriteDragHandler : MonoBehaviour
 {
     [SerializeField] Camera secondCamera;
+    [SerializeField] Transform PictureObject;
+
     public UnityEvent<string> SnappedPhoto;
 
     private Vector3 initialPosition;
@@ -61,6 +63,7 @@ public class SpriteDragHandler : MonoBehaviour
         if (partsContainer.CheckPhotoInCorrectPivot(photoPart))
         {
             SnappedPhoto.Invoke(photoPart.PhotoName);
+            gameObject.transform.SetParent(PictureObject);
             Destroy(this);
         }
         else

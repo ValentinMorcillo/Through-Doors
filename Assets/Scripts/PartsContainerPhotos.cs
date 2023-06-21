@@ -16,12 +16,7 @@ public class PartsContainerPhotos : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-
-    private void OnEnable()
-    {
-        CheckActivePhotos();
-    }
-
+    //Se llama por unity event desde un pickable Item para informar que fue recolectado
     public void CheckActivePhotos(PickableItem pickableItem)
     {
         if (pickableItem.GetItemType() == PickeableItemType.photo)
@@ -31,23 +26,6 @@ public class PartsContainerPhotos : MonoBehaviour
                 if (photosParts[i].PhotoName == pickableItem.GetName())
                 {
                     photosParts[i].IsVisualized = true;
-                }
-            }
-        }
-    }
-    
-    public void CheckActivePhotos()
-    {
-        for (int i = 0; i < inventory.PickableItemsList.Count; i++)
-        {
-            if (inventory.PickableItemsList[i].GetItemType() == PickeableItemType.photo)
-            {
-                for (int j = 0; j < photosParts.Length; j++)
-                {
-                    if (photosParts[j].PhotoName == inventory.PickableItemsList[i].GetName())
-                    {
-                        photosParts[j].IsVisualized = true;
-                    }
                 }
             }
         }
