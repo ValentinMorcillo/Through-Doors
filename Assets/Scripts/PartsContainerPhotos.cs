@@ -22,7 +22,21 @@ public class PartsContainerPhotos : MonoBehaviour
         CheckActivePhotos();
     }
 
-    void CheckActivePhotos()
+    public void CheckActivePhotos(PickableItem pickableItem)
+    {
+        if (pickableItem.GetItemType() == PickeableItemType.photo)
+        {
+            for (int i = 0; i < photosParts.Length; i++)
+            {
+                if (photosParts[i].PhotoName == pickableItem.GetName())
+                {
+                    photosParts[i].IsVisualized = true;
+                }
+            }
+        }
+    }
+    
+    public void CheckActivePhotos()
     {
         for (int i = 0; i < inventory.PickableItemsList.Count; i++)
         {
