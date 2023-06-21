@@ -8,6 +8,7 @@ public class PartsContainerPhotos : MonoBehaviour
     [SerializeField] private Transform[] correctPositonPhotoParts;
 
     [SerializeField] InventorySprites inventory;
+    [SerializeField] GameObject completePhoto;
     AudioSource audioSource;
 
     private void Start()
@@ -53,6 +54,12 @@ public class PartsContainerPhotos : MonoBehaviour
 
         if (allPartsCorrect)
         {
+            for (int i = 0; i < photosParts.Length; i++)
+            {
+                photosParts[i].gameObject.SetActive(false);
+            }
+
+            completePhoto.SetActive(true);
             audioSource.Play();
         }
     }
