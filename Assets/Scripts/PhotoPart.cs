@@ -6,10 +6,10 @@ public class PhotoPart : MonoBehaviour
 {
     [SerializeField] PickableItem pickableItemReference;
 
+   [HideInInspector] public string PhotoName;
+    
     public int IDPart;
     public bool IsVisualized;
-   [HideInInspector] public string PhotoName;
-
     SpriteRenderer spriteRenderer;
 
     void Awake()
@@ -17,7 +17,6 @@ public class PhotoPart : MonoBehaviour
         spriteRenderer = transform.GetComponent<SpriteRenderer>();
         PhotoName = pickableItemReference.GetName();
     }
-
 
     private void Update()
     {
@@ -28,6 +27,14 @@ public class PhotoPart : MonoBehaviour
         else
         {
             spriteRenderer.enabled = false;
+        }
+    }
+
+    public void SendImageToBackground(string NameToPhoto)
+    {
+        if (NameToPhoto == PhotoName)
+        {
+            spriteRenderer.sortingOrder = 0;
         }
     }
 }

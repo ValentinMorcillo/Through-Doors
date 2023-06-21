@@ -11,10 +11,12 @@ public enum PickeableItemType
 public class PickableItem : MonoBehaviour, IInteractable
 {
     public UnityEvent<PickableItem> InteractPickableItem;
+
     [SerializeField] string itemName;
     [SerializeField] string description;
     [SerializeField] Sprite icon;
     [SerializeField] PickeableItemType itemType;
+
     AudioSource audioSource;
 
     private void Awake()
