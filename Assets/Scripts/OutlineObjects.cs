@@ -8,6 +8,7 @@ using UnityEngine;
 public class OutlineObjects : MonoBehaviour
 {
     Outline outline;
+    [SerializeField] Canvas UiCanvas;
 
     void Awake()
     {
@@ -20,6 +21,11 @@ public class OutlineObjects : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             outline.enabled = true;
+
+            if (UiCanvas != null)
+            {
+                UiCanvas.gameObject.SetActive(true);
+            }
         }
     }
 
@@ -28,6 +34,10 @@ public class OutlineObjects : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             outline.enabled = false;
+            if (UiCanvas != null)
+            {
+                UiCanvas.gameObject.SetActive(false);
+            }
         }
     }
 }

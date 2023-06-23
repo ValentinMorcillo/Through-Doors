@@ -12,6 +12,7 @@ public class DisplayTrigger : MonoBehaviour
     [SerializeField] FPSCameraController fpsCameraController;
 
     [SerializeField] GameObject uiObjectOff;
+    [SerializeField] GameObject uiItemOff;
     
     AudioSource audioSource;
     bool isActive;
@@ -31,6 +32,7 @@ public class DisplayTrigger : MonoBehaviour
 
             sceneObject.SetActive(false);
             uiObjectOff.gameObject.SetActive(false);
+            uiItemOff.gameObject.SetActive(false);
             fpsCameraController.enabled = false;
 
             audioSource.Play();
@@ -45,6 +47,7 @@ public class DisplayTrigger : MonoBehaviour
             sceneObject.SetActive(true);
             fpsCameraController.enabled = true;
             uiObjectOff.gameObject.SetActive(true);
+            uiItemOff.gameObject.SetActive(true);
             
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -71,6 +74,7 @@ public class DisplayTrigger : MonoBehaviour
             sceneObject.SetActive(true);
             fpsCameraController.enabled = true;
             uiObjectOff.gameObject.SetActive(true);
+            uiItemOff.gameObject.SetActive(true);
 
             Cursor.lockState = CursorLockMode.Locked;
         }
