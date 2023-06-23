@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18242103, g: 0.2251217, b: 0.28979826, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -807,6 +807,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 13242061}
     m_Modifications:
     - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 21300000, guid: d91782d807d8e444797f0f43ae9addc4, type: 3}
+    - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
+      propertyPath: description
+      value: Fragmento de foto
+      objectReference: {fileID: 0}
+    - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
       propertyPath: InteractPickableItem.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1490,7 +1498,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Description
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 047142b323810634c814828ce65d00a8, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1554,7 +1562,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &515670163
@@ -1897,14 +1905,14 @@ PrefabInstance:
     - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
       propertyPath: icon
       value: 
-      objectReference: {fileID: 21300000, guid: 8cac4727f56ad8e4c9cf0423d04b8167, type: 3}
+      objectReference: {fileID: 21300000, guid: 73286624705943747bfee28b642bff38, type: 3}
     - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
       propertyPath: itemName
       value: Photo 2
       objectReference: {fileID: 0}
     - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
       propertyPath: description
-      value: Parte 2/4
+      value: Fragmento de foto
       objectReference: {fileID: 0}
     - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
       propertyPath: InteractPickableItem.m_PersistentCalls.m_Calls.Array.size
@@ -2515,7 +2523,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &705932505
 Light:
   m_ObjectHideFlags: 0
@@ -3115,7 +3123,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978261822}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -3491,7 +3499,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1077088899
 MonoBehaviour:
@@ -4750,14 +4758,14 @@ PrefabInstance:
     - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
       propertyPath: icon
       value: 
-      objectReference: {fileID: 21300000, guid: 57f0fa1244e3d974e93c46726efe7abc, type: 3}
+      objectReference: {fileID: 21300000, guid: d0039a779b62669419cd169c424291f3, type: 3}
     - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
       propertyPath: itemName
       value: Photo 3
       objectReference: {fileID: 0}
     - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
       propertyPath: description
-      value: Parte 3/4
+      value: Fragmento de foto
       objectReference: {fileID: 0}
     - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
       propertyPath: InteractPickableItem.m_PersistentCalls.m_Calls.Array.size
@@ -5189,14 +5197,14 @@ PrefabInstance:
     - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
       propertyPath: icon
       value: 
-      objectReference: {fileID: 21300000, guid: 532ef6fee007b2d4fbb8b775ad4fa5d1, type: 3}
+      objectReference: {fileID: 21300000, guid: 7bbf9cc18acf54343ab174676d09f8f6, type: 3}
     - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
       propertyPath: itemName
       value: Photo 4
       objectReference: {fileID: 0}
     - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
       propertyPath: description
-      value: Parte 4/4
+      value: Fragmento de foto
       objectReference: {fileID: 0}
     - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
       propertyPath: InteractPickableItem.m_PersistentCalls.m_Calls.Array.size
