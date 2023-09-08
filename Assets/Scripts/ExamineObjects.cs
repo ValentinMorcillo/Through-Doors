@@ -26,7 +26,7 @@ public class ExamineObjects : MonoBehaviour
     public GameObject aboutText;
     public AudioSource keySound;
 
-    void Start()
+    void Start()  //Nose que pingo hace este script
     {
         Examinelight.enabled = false;
         invOB.SetActive(false);
