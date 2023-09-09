@@ -33,6 +33,7 @@ public class OutlineObjects : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             outline.enabled = false;
+
             if (instructionPanel != null)
             {
                 instructionPanel.gameObject.SetActive(false);

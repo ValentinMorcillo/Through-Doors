@@ -7,6 +7,6 @@ public class WhiteDoorController : MonoBehaviour, IInteractable
 {
     public void Interact()
     {
-        SceneManager.LoadScene("Parcial");
+        SceneManager.LoadScene("Gameplay");
     }
 }
