@@ -8,5 +8,6 @@ public class ChloeRoomPart : HiddenPuzzlePart
 
     public override void Interact()
     {
+
     }
 }

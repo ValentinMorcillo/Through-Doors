@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class WhiteDoorController : MonoBehaviour, IInteractable
+public class WhiteDoorController : MonoBehaviour
 {
-    public void Interact()
+    [SerializeField] string nameTonextScene;
+
+
+    private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("Gameplay");
+        SceneManager.LoadScene(nameTonextScene);
     }
+
 }
