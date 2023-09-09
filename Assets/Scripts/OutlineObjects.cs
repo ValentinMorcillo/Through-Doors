@@ -8,12 +8,11 @@ using UnityEngine;
 public class OutlineObjects : MonoBehaviour
 {
     Outline outline;
-    [SerializeField] Canvas UiCanvas;
+    [SerializeField] Canvas instructionPanel;
 
     void Awake()
     {
         outline = GetComponent<Outline>();
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -22,9 +21,9 @@ public class OutlineObjects : MonoBehaviour
         {
             outline.enabled = true;
 
-            if (UiCanvas != null)
+            if (instructionPanel != null)
             {
-                UiCanvas.gameObject.SetActive(true);
+                instructionPanel.gameObject.SetActive(true);
             }
         }
     }
@@ -34,9 +33,9 @@ public class OutlineObjects : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             outline.enabled = false;
-            if (UiCanvas != null)
+            if (instructionPanel != null)
             {
-                UiCanvas.gameObject.SetActive(false);
+                instructionPanel.gameObject.SetActive(false);
             }
         }
     }
