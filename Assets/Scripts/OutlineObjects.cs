@@ -22,7 +22,7 @@ public class OutlineObjects : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && this.enabled)
         {
             outline.enabled = true;
 
@@ -35,7 +35,7 @@ public class OutlineObjects : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && this.enabled)
         {
             outline.enabled = false;
 
