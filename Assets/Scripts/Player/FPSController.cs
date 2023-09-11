@@ -65,11 +65,10 @@ public class FPSController : MonoBehaviour
 
     void PlayFootstepSound()
     {
-        if (am != null)
+        if (am == null)
         {
             return;
         }
-
 
         // Reproducir el sonido
         am.PlayFootstepsWhiteRoomSound();

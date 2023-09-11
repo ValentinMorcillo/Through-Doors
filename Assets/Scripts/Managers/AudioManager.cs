@@ -9,10 +9,12 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
     [SerializeField] AudioSource footstepsAS;
     [SerializeField] AudioSource footstepsWhiteRoomAS;
 
-    
     public void PlayFootstepsWhiteRoomSound()
     {
-        footstepsWhiteRoomAS.Play();
+        if (!footstepsWhiteRoomAS.isPlaying)
+        {
+            footstepsWhiteRoomAS.Play();
+        }
     }
     public void PlayFootstepsSound()
     {

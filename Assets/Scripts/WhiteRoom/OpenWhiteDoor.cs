@@ -7,7 +7,7 @@ public class OpenWhiteDoor : MonoBehaviour, IInteractable
     Animator animator;
     AudioManager am;
     
-    private void Awake()
+    private void Start()
     {
         animator = GetComponentInParent<Animator>();
         am = AudioManager.Get();
