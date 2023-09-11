@@ -45,4 +45,14 @@ public class OutlineObjects : MonoBehaviour
             }
         }
     }
+
+    private void OnDisable()
+    {
+        outline.enabled = false;
+
+        if (instructionPanel != null)
+        {
+            instructionPanel.gameObject.SetActive(false);
+        }
+    }
 }

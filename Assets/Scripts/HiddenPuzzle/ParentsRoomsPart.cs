@@ -7,5 +7,11 @@ public class ParentsRoomsPart : HiddenPuzzlePart
 
     public override void Interact()
     {
+        Debug.Log("habitacion PAdres");
+        interactCorrectPart?.Invoke();
+    }
+
+    public override void Start()
+    {
     }
 }
