@@ -7,7 +7,6 @@ public class WhiteDoorController : MonoBehaviour
 {
     [SerializeField] string nameTonextScene;
 
-
     private void OnTriggerEnter(Collider other)
     {
         SceneManager.LoadScene(nameTonextScene);

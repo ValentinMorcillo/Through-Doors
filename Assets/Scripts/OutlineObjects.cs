@@ -15,6 +15,11 @@ public class OutlineObjects : MonoBehaviour
         outline = GetComponent<Outline>();
     }
 
+    private void Start()
+    {
+        
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
