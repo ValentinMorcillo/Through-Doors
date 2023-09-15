@@ -11,10 +11,12 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
 
     public void PlayFootstepsWhiteRoomSound()
     {
-        if (!footstepsWhiteRoomAS.isPlaying)
-        {
-            footstepsWhiteRoomAS.Play();
-        }
+        footstepsWhiteRoomAS.PlayOneShot(footstepsWhiteRoomAS.clip);
+
+        //if (!footstepsWhiteRoomAS.isPlaying)
+        //{
+        //    footstepsWhiteRoomAS.Play();
+        //}
     }
     public void PlayFootstepsSound()
     {

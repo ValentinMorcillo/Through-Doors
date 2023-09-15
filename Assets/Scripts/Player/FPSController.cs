@@ -13,7 +13,7 @@ public class FPSController : MonoBehaviour
 
 
     private float nextFootstepTime;
-    [SerializeField] float footstepInterval = 0.5f;
+    [SerializeField] float footstepInterval = 0.6f;
 
     private bool isGrounded;
 
@@ -21,6 +21,7 @@ public class FPSController : MonoBehaviour
     {
         am = AudioManager.Get();
         rb = GetComponent<Rigidbody>();
+        nextFootstepTime = 0f;
     }
 
     private void Update()
@@ -43,11 +44,14 @@ public class FPSController : MonoBehaviour
 
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
 
-        // Reproducir sonidos de pasos
-        if (isGrounded && Time.time >= nextFootstepTime && (moveHorizontal != 0f || moveVertical != 0f))
+        Debug.Log(nextFootstepTime);
+        if (isGrounded)
         {
-            PlayFootstepSound();
-            nextFootstepTime = Time.time + footstepInterval;
+            if (Time.time >= nextFootstepTime && (moveHorizontal != 0f || moveVertical != 0f))
+            {
+                PlayFootstepSound();
+                nextFootstepTime = Time.time + footstepInterval;
+            }
         }
     }
 

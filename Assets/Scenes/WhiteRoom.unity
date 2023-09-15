@@ -216,7 +216,8 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7612609244309062240, guid: 7fa5edde6d2daa6459e4aa41d60502ba, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7fa5edde6d2daa6459e4aa41d60502ba, type: 3}
 --- !u!1 &315693479 stripped
 GameObject:
@@ -442,6 +443,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 5454f57ed4a2ee54b83235ba9dc2ac01, type: 2}
     - target: {fileID: -2962671718324838793, guid: 3a6a1f382f2d44a44af560c3c183e448, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2962671718324838793, guid: 3a6a1f382f2d44a44af560c3c183e448, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5454f57ed4a2ee54b83235ba9dc2ac01, type: 2}
@@ -462,9 +467,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 5454f57ed4a2ee54b83235ba9dc2ac01, type: 2}
     - target: {fileID: -61417219208327847, guid: 3a6a1f382f2d44a44af560c3c183e448, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -61417219208327847, guid: 3a6a1f382f2d44a44af560c3c183e448, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5454f57ed4a2ee54b83235ba9dc2ac01, type: 2}
+    - target: {fileID: 691607791920653656, guid: 3a6a1f382f2d44a44af560c3c183e448, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 691607791920653656, guid: 3a6a1f382f2d44a44af560c3c183e448, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -472,6 +485,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3a6a1f382f2d44a44af560c3c183e448, type: 3}
       propertyPath: m_Name
       value: Salon blanco
+      objectReference: {fileID: 0}
+    - target: {fileID: 4700815420243640439, guid: 3a6a1f382f2d44a44af560c3c183e448, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4700815420243640439, guid: 3a6a1f382f2d44a44af560c3c183e448, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -485,6 +502,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5454f57ed4a2ee54b83235ba9dc2ac01, type: 2}
+    - target: {fileID: 4867641458215453606, guid: 3a6a1f382f2d44a44af560c3c183e448, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4867641458215453606, guid: 3a6a1f382f2d44a44af560c3c183e448, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1139,7 +1160,7 @@ GameObject:
   - component: {fileID: 2031559813}
   - component: {fileID: 2031559814}
   m_Layer: 0
-  m_Name: Paso con eco 2
+  m_Name: FootStepsWhiteRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1170,9 +1191,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8a523e3169afa3745ac102c3010bb501, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 983f6844d144f354f9c0a05e7cc0abc7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
