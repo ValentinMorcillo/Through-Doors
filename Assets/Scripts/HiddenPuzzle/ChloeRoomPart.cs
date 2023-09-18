@@ -10,9 +10,7 @@ public class ChloeRoomPart : HiddenPuzzlePart
     {
         interactCorrectPart?.Invoke();
 
-        cinematicManager.LookUnderBed();
-
-        Invoke(nameof(OpenDialoguePanel), 7f);
+        OpenDialoguePanel();
     }
 
     void OpenDialoguePanel()
