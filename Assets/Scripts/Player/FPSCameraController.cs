@@ -1,31 +1,36 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FPSCameraController : MonoBehaviour
 {
+    public float mouseSensitivity = 3.0f;
+    public float minRotation = -65.0f;
+    public float maxRotation = 60.0f;
 
-    Camera cam;
-    float mouseHorizontal = 3.0f;
-    float mouseVertical = 2.0f;
-    float minRotation = -65.0f;
-    float maxRotation = 60.0f;
+    private float h_mouse;
+    private float v_mouse;
 
-    float h_mouse, v_mouse; 
-    
-    void Start()
+    private void Start()
     {
-        cam = Camera.main;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void Update()
+    private void Update()
     {
-        h_mouse += mouseHorizontal * Input.GetAxis("Mouse X");
-        v_mouse += mouseVertical * Input.GetAxis("Mouse Y");
+        // Obtén la entrada del ratón
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
 
+        // Aplica la sensibilidad del ratón
+        h_mouse += mouseX * mouseSensitivity;
+        v_mouse -= mouseY * mouseSensitivity; // El signo negativo invierte la dirección del movimiento vertical
+
+        // Limita la rotación vertical dentro de los valores mínimos y máximos
         v_mouse = Mathf.Clamp(v_mouse, minRotation, maxRotation);
-        cam.transform.localEulerAngles = new Vector3(-v_mouse, h_mouse, 0);
 
+        // Aplica la rotación a la cámara (si está configurada en la cinemachine)
+        transform.localRotation = Quaternion.Euler(v_mouse, h_mouse, 0f);
     }
 }

@@ -5,8 +5,16 @@ using UnityEngine;
 
 public abstract class HiddenPuzzlePart : MonoBehaviour, IInteractable
 {
+    [SerializeField] protected DialoguePanelController dialoguePanel;
+    [SerializeField, TextArea(4, 6)] protected string dialogueText;
+    protected CinematicManager cinematicManager;
+
+
     public Action interactCorrectPart;
     public abstract void Interact();
 
-    public abstract void Start();
+    public virtual void Start()
+    {
+        cinematicManager = CinematicManager.Get();
+    }
 }

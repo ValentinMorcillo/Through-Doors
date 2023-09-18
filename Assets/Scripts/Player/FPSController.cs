@@ -44,7 +44,6 @@ public class FPSController : MonoBehaviour
 
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
 
-        Debug.Log(nextFootstepTime);
         if (isGrounded)
         {
             if (Time.time >= nextFootstepTime && (moveHorizontal != 0f || moveVertical != 0f))

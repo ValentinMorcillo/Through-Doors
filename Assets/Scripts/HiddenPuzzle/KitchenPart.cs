@@ -8,12 +8,13 @@ public class KitchenPart : HiddenPuzzlePart
 
     public override void Interact()
     {
-        Debug.Log("habitacion Cocina");
         interactCorrectPart?.Invoke();
 
+        if (dialoguePanel != null)
+        {
+            dialoguePanel.StartTyping(dialogueText);
+        }
+
     }
 
-    public override void Start()
-    {
-    }
 }

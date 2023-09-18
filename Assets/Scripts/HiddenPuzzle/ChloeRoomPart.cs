@@ -8,12 +8,19 @@ public class ChloeRoomPart : HiddenPuzzlePart
 
     public override void Interact()
     {
-        Debug.Log("habitacion Cloe");
         interactCorrectPart?.Invoke();
 
+        cinematicManager.LookUnderBed();
+
+        Invoke(nameof(OpenDialoguePanel), 7f);
     }
 
-    public override void Start()
+    void OpenDialoguePanel()
     {
+        if (dialoguePanel != null)
+        {
+            dialoguePanel.StartTyping(dialogueText);
+        }
     }
+
 }
