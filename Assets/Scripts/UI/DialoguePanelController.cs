@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+
 public class DialoguePanelController : MonoBehaviour
 {
+    [SerializeField] GameObject PostProcessingVolume;
     [SerializeField] GameObject dialoguePanel;
     [SerializeField] TextMeshProUGUI dialogueText;
 
@@ -30,6 +32,7 @@ public class DialoguePanelController : MonoBehaviour
     public void StartTyping(string newText)
     {
         cinematicManager.FreezePlayer();
+        PostProcessingVolume.SetActive(true);
 
         fullText = newText;
         currentText = "";
@@ -60,6 +63,7 @@ public class DialoguePanelController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) && dialoguePanel != null)
             {
                 dialoguePanel.SetActive(false);
+                PostProcessingVolume.SetActive(false);
                 cinematicManager.ReanudePlayer();
             }
         }
