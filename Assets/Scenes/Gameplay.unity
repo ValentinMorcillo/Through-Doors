@@ -1322,8 +1322,7 @@ MonoBehaviour:
   fpsCamera: {fileID: 1190980466}
   fpsController: {fileID: 525000922}
   bedCam: {fileID: 538421795}
-  initialPositionBedCinematic: {fileID: 0}
-  rotationAngle: 20
+  rotationAngle: 45
   rotationDuration: 4
 --- !u!4 &389160600
 Transform:
