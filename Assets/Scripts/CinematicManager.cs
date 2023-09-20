@@ -54,8 +54,6 @@ public class CinematicManager : MonoBehaviourSingleton<CinematicManager>
     {
         Vector3 initialRotation = bedCam.transform.rotation.eulerAngles;
 
-        Debug.Log(rotationAngle);
-
         bedCam.transform.DORotate(new Vector3(0f, initialRotation.y + rotationAngle, 0f), rotationDuration / 4).SetEase(Ease.InOutQuad).OnComplete(() =>
         {
             bedCam.transform.DORotate(initialRotation, rotationDuration / 4).SetEase(Ease.InOutQuad).OnComplete(() =>
