@@ -14,13 +14,4 @@ public class ChloeRoomPart : HiddenPuzzlePart
 
         Invoke(nameof(OpenDialoguePanel), 7f);
     }
-
-    void OpenDialoguePanel()
-    {
-        if (dialoguePanel != null)
-        {
-            dialoguePanel.StartTyping(dialogueText);
-        }
-    }
-
 }

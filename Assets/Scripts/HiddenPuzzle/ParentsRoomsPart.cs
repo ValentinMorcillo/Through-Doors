@@ -9,11 +9,7 @@ public class ParentsRoomsPart : HiddenPuzzlePart
     {
         interactCorrectPart?.Invoke();
 
-        if (dialoguePanel != null)
-        {
-            dialoguePanel.StartTyping(dialogueText);
-        }
-
+        Invoke(nameof(OpenDialoguePanel), 2f);
     }
 
 }

@@ -17,4 +17,12 @@ public abstract class HiddenPuzzlePart : MonoBehaviour, IInteractable
     {
         cinematicManager = CinematicManager.Get();
     }
+
+   protected void OpenDialoguePanel()
+    {
+        if (dialoguePanel != null)
+        {
+            dialoguePanel.StartTyping(dialogueText);
+        }
+    }
 }
