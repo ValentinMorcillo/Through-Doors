@@ -14,7 +14,7 @@ public class KitchenPart : HiddenPuzzlePart
         
         OpenAllDoors();
 
-        Invoke(nameof(OpenDialoguePanel), 2f);
+        Invoke(nameof(OpenDialoguePanel), .8f);
     }
 
     void OpenAllDoors()
