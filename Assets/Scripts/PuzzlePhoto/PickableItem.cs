@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public enum PickeableItemType
 {
-    photo = 0
+    photo = 0, none
 }
 
 public class PickableItem : MonoBehaviour, IInteractable
@@ -17,11 +17,11 @@ public class PickableItem : MonoBehaviour, IInteractable
     [SerializeField] Sprite icon;
     [SerializeField] PickeableItemType itemType;
 
-    AudioSource audioSource;
-
-    private void Awake()
+    AudioManager am;
+    
+    private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        am = AudioManager.Get();
     }
 
     public string GetName()
@@ -47,9 +47,7 @@ public class PickableItem : MonoBehaviour, IInteractable
     public void Interact()
     {
         InteractPickableItem.Invoke(this);
-        audioSource.Play();
-        gameObject.transform.GetChild(0).gameObject.SetActive(false);
-        transform.position = Vector3.down * 1000;
-        Destroy(gameObject, 2.0f); //Se hace esta negrada para qe no se destruya el objeto qe hace el sonido
+        am.PlayPickUpItemSound();
+        Destroy(gameObject); 
     }
 }
