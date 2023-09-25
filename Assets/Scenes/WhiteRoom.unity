@@ -914,7 +914,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
   openDoorAS: {fileID: 1646789394}
-  footstepsAS: {fileID: 2031559814}
   footstepsWhiteRoomAS: {fileID: 2031559814}
 --- !u!4 &1214920352
 Transform:

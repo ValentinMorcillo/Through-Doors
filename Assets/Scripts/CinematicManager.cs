@@ -9,6 +9,7 @@ using Cinemachine;
 public class CinematicManager : MonoBehaviourSingleton<CinematicManager>
 {
     Camera cam;
+    AudioManager am;
 
     [SerializeField] GameObject player;
 
@@ -25,6 +26,7 @@ public class CinematicManager : MonoBehaviourSingleton<CinematicManager>
     private void Start()
     {
         cam = Camera.main;
+        am = AudioManager.Get();
     }
 
     public void FreezePlayer()
@@ -43,6 +45,7 @@ public class CinematicManager : MonoBehaviourSingleton<CinematicManager>
     {
         player.SetActive(false);
         bedCam.gameObject.SetActive(true);
+        am.PlayBendSound();
 
         Invoke(nameof(RotateCamera), 2.5f);
     }
@@ -69,6 +72,7 @@ public class CinematicManager : MonoBehaviourSingleton<CinematicManager>
     private void TurnOffBedCam()
     {
         bedCam.gameObject.SetActive(false);
+        am.PlayGetUpSound();
         player.SetActive(true);
 
     }

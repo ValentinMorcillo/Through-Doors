@@ -5,25 +5,30 @@ using Utils;
 
 public class AudioManager : MonoBehaviourSingleton<AudioManager>
 {
-    [SerializeField] AudioSource openDoorAS;
     [SerializeField] AudioSource footstepsAS;
-    [SerializeField] AudioSource footstepsWhiteRoomAS;
+    [SerializeField] AudioSource pickUpItemAS;
+    [SerializeField] AudioSource bendAS;
+    [SerializeField] AudioSource getUpAS;
 
-    public void PlayFootstepsWhiteRoomSound()
+    public void PlayBendSound()
     {
-        footstepsWhiteRoomAS.PlayOneShot(footstepsWhiteRoomAS.clip);
-
-        //if (!footstepsWhiteRoomAS.isPlaying)
-        //{
-        //    footstepsWhiteRoomAS.Play();
-        //}
+        bendAS.Play();    
     }
+
+    public void PlayPickUpItemSound()
+    {
+        pickUpItemAS.Play();
+    }
+    public void PlayGetUpSound()
+    {
+        getUpAS.Play();    
+    }
+    
     public void PlayFootstepsSound()
     {
-        footstepsAS.Play();
-    }
-    public void PlayOpenDoorSound()
-    {
-        openDoorAS.Play();
+        if (!footstepsAS.isPlaying)
+        {
+            footstepsAS.Play();
+        }
     }
 }

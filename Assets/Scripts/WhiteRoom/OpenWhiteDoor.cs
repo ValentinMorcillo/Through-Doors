@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class OpenWhiteDoor : MonoBehaviour, IInteractable
 {
-    AudioManager am;
+    AudioManagerWhiteRoom amWhiteRoom;
 
     public float angle = 90.0f;
     public float openDuration = 1.0f;
@@ -13,13 +13,13 @@ public class OpenWhiteDoor : MonoBehaviour, IInteractable
 
     private void Start()
     {
-        am = AudioManager.Get();
+        amWhiteRoom = AudioManagerWhiteRoom.Get();
     }
 
     public void Interact()
     {
         OpenDoor();
-        am.PlayOpenDoorSound();
+        amWhiteRoom.PlayOpenDoorSound();
     }
 
     private void OpenDoor()

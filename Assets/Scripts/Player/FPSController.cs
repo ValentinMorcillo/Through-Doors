@@ -6,10 +6,12 @@ public class FPSController : MonoBehaviour
 {
     [SerializeField] Transform characterBase;
     private Rigidbody rb;
+    AudioManagerWhiteRoom amWhiteRoom;
     AudioManager am;
 
     [SerializeField] float speed = 5f;
     [SerializeField] float jumpForce = 28f;
+    [SerializeField] bool isWhiteRoom = true;
 
 
     private float nextFootstepTime;
@@ -20,6 +22,8 @@ public class FPSController : MonoBehaviour
     void Start()
     {
         am = AudioManager.Get();
+        amWhiteRoom = AudioManagerWhiteRoom.Get();
+
         rb = GetComponent<Rigidbody>();
         nextFootstepTime = 0f;
     }
@@ -68,12 +72,19 @@ public class FPSController : MonoBehaviour
 
     void PlayFootstepSound()
     {
-        if (am == null)
+        if (isWhiteRoom)
         {
-            return;
+            if (amWhiteRoom != null)
+            {
+                amWhiteRoom.PlayFootstepsWhiteRoomSound();
+            }
         }
-
-        // Reproducir el sonido
-        am.PlayFootstepsWhiteRoomSound();
+        else
+        {
+            if (am != null)
+            {
+                am.PlayFootstepsSound();
+            }
+        }
     }
 }
