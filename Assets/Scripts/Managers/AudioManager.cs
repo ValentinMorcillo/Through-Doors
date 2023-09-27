@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
 {
     [SerializeField] AudioSource footstepsAS;
     [SerializeField] AudioSource pickUpItemAS;
+    [SerializeField] AudioSource openDoorAS;
     [SerializeField] AudioSource bendAS;
     [SerializeField] AudioSource getUpAS;
 
@@ -30,5 +31,10 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
         {
             footstepsAS.Play();
         }
+    }
+
+    public void PlayOpenDoorSound()
+    {
+        openDoorAS.Play();
     }
 }
