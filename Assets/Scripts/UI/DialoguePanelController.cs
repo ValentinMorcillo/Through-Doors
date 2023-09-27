@@ -2,13 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
+public enum DialogueOf
+{
+    kath, chloe
+}
 
 public class DialoguePanelController : MonoBehaviour
 {
     [SerializeField] GameObject PostProcessingVolume;
     [SerializeField] GameObject dialoguePanel;
+
+    [SerializeField] Image dialogueSprite;
+    [SerializeField] TextMeshProUGUI nameText;
     [SerializeField] TextMeshProUGUI dialogueText;
+
+    [SerializeField] Sprite kathImage;
+    [SerializeField] Sprite chloeImage;
 
     CinematicManager cinematicManager;
 
@@ -29,10 +40,10 @@ public class DialoguePanelController : MonoBehaviour
         }
     }
 
-    public void StartTyping(string newText)
+    public void StartTyping(string newText, DialogueOf dialogueOf)
     {
-        cinematicManager.FreezePlayer();
-        PostProcessingVolume.SetActive(true);
+       
+        SetupDialoguePanel(dialogueOf);
 
         fullText = newText;
         currentText = "";
@@ -46,6 +57,30 @@ public class DialoguePanelController : MonoBehaviour
         isTyping = true;
         shouldComplete = false; // Inicializa shouldComplete en false.
         StartCoroutine(TypeText());
+    }
+
+    void SetupDialoguePanel(DialogueOf dialogueOf)
+    {
+        cinematicManager.FreezePlayer();
+        PostProcessingVolume.SetActive(true);
+
+        switch (dialogueOf)
+        {
+            case DialogueOf.kath:
+
+                dialogueSprite.sprite = kathImage;
+                nameText.text = "Kath";
+
+                break;
+            case DialogueOf.chloe:
+                
+                dialogueSprite.sprite = chloeImage;
+                nameText.text = "Chloe";
+                
+                break;
+            default:
+                break;
+        }
     }
 
     private void Update()

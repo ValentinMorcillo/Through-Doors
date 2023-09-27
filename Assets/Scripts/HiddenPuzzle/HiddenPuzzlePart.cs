@@ -22,7 +22,7 @@ public abstract class HiddenPuzzlePart : MonoBehaviour, IInteractable
     {
         if (dialoguePanel != null)
         {
-            dialoguePanel.StartTyping(dialogueText);
+            dialoguePanel.StartTyping(dialogueText, DialogueOf.chloe);
         }
     }
 }

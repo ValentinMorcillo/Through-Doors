@@ -39,6 +39,8 @@ public class InteractDoor : MonoBehaviour, IInteractable
             {
                 am.PlayOpenDoorSound();
             }
+
+            transform.GetComponentInParent<DoorIsActive>().enabled = false; //Temporal para desactivar las puertas que se abren
         }
     }
 
