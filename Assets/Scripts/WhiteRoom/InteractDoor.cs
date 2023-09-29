@@ -8,7 +8,7 @@ public class InteractDoor : MonoBehaviour, IInteractable
     AudioManagerWhiteRoom amWhiteRoom;
     AudioManager am;
 
-    bool isWhiteRoom = false;
+    [SerializeField] bool isWhiteRoom = false;
 
     public float angle = 90.0f;
     public float openDuration = 1.0f;
@@ -40,7 +40,7 @@ public class InteractDoor : MonoBehaviour, IInteractable
                 am.PlayOpenDoorSound();
             }
 
-            transform.GetComponentInParent<DoorIsActive>().enabled = false; //Temporal para desactivar las puertas que se abren
+            transform.GetComponentInParent<DoorIsActive>().OnDisableDoor(); //Temporal para desactivar las puertas que se abren
         }
     }
 

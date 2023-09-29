@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/WhiteRoom.unity
     guid: 8e4c7076904bfd848b56c35dc6703df6
   - enabled: 1
+    path: Assets/Scenes/LoadingScreen.unity
+    guid: 5f9a5d08415786247a864b331cef46aa
+  - enabled: 1
     path: Assets/Scenes/Gameplay.unity
     guid: 64a436bfd0f122a46ad65e5b0b564ba5
   m_configObjects: {}

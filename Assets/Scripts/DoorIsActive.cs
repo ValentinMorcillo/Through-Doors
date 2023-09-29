@@ -21,15 +21,18 @@ public class DoorIsActive : MonoBehaviour
         ToggleComponents(isDoorEnable);
     }
 
-    private void OnEnable()
+    public void OnEnableDoor()
     {
         ToggleComponents(true);
     }
 
-    private void OnDisable()
+    public void OnDisableDoor()
     {
         ToggleComponents(false);
     }
+
+ 
+
 
     public void ToggleComponents(bool isActive)
     {
