@@ -5,7 +5,7 @@ using UnityEngine;
 public class DoorIsActive : MonoBehaviour
 {
     MonoBehaviour[] components;
-    [SerializeField] bool isDoorEnable = true;
+    public bool isDoorEnable = true;
 
     private void Awake()
     {
@@ -18,7 +18,7 @@ public class DoorIsActive : MonoBehaviour
 
     private void Start()
     {
-        ToggleComponents(isDoorEnable);
+      //  ToggleComponents(isDoorEnable);
     }
 
     public void OnEnableDoor()

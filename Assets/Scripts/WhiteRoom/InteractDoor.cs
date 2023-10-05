@@ -9,15 +9,20 @@ public class InteractDoor : MonoBehaviour, IInteractable
     AudioManager am;
 
     [SerializeField] bool isWhiteRoom = false;
+    DoorIsActive doorIsActive;
+
 
     public float angle = 90.0f;
     public float openDuration = 1.0f;
     private bool isOpen = false;
+    private bool isShaking = false;
 
     private void Start()
     {
         amWhiteRoom = AudioManagerWhiteRoom.Get();
         am = AudioManager.Get();
+
+        doorIsActive = GetComponentInParent<DoorIsActive>();
     }
 
     public void Interact()
@@ -29,19 +34,58 @@ public class InteractDoor : MonoBehaviour, IInteractable
     {
         if (!isOpen)
         {
-            transform.DOLocalRotate(new Vector3(0, angle, 0), openDuration);
-            isOpen = true;
-
-            if (isWhiteRoom)
+            if (doorIsActive.isDoorEnable)
             {
-                amWhiteRoom.PlayOpenDoorSound();
+                transform.DOLocalRotate(new Vector3(0, angle, 0), openDuration);
+                isOpen = true;
+
+                if (isWhiteRoom)
+                {
+                    amWhiteRoom.PlayOpenDoorSound();
+                }
+                else
+                {
+                    am.PlayOpenDoorSound();
+                }
+
+                if (doorIsActive)
+                {
+                    doorIsActive.OnDisableDoor(); //Temporal para desactivar las puertas que se abren
+                }
             }
             else
             {
-                am.PlayOpenDoorSound();
-            }
+                Shake();
 
-           // transform.GetComponentInParent<DoorIsActive>().OnDisableDoor(); //Temporal para desactivar las puertas que se abren
+                if (isWhiteRoom)
+                {
+                   // amWhiteRoom.PlayOpenDoorSound();
+                }
+                else
+                {
+                    am.PlayLockedDoorSound();
+                }
+            }
+        }
+    }
+
+    private void Shake()
+    {
+        float shakeDuration = 0.5f;
+        float shakeStrength = 1.5f;
+
+        if (!isShaking)
+        {
+            isShaking = true;
+
+            Vector3 initialPosition = transform.position;
+
+            transform.DOShakeRotation(shakeDuration, new Vector3(0f, shakeStrength, 0f))
+                .OnComplete(() =>
+                {
+                    transform.position = initialPosition;
+                    isShaking = false;
+                });
         }
     }
 
