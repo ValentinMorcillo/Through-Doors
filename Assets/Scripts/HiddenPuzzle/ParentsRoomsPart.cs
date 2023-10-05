@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ParentsRoomsPart : HiddenPuzzlePart
 {
-    [SerializeField] DoorControllers[] doorsToOpen;
+    [SerializeField] InteractDoor[] doorsToOpen;
 
     BoxCollider doorCollider;
 
@@ -37,7 +37,7 @@ public class ParentsRoomsPart : HiddenPuzzlePart
 
     void OpenAllDoors()
     {
-        foreach (DoorControllers dc in doorsToOpen)
+        foreach (InteractDoor dc in doorsToOpen)
         {
             dc.OpenDoor();
         }

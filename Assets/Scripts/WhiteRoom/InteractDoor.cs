@@ -25,7 +25,7 @@ public class InteractDoor : MonoBehaviour, IInteractable
         OpenDoor();
     }
 
-    private void OpenDoor()
+    public void OpenDoor()
     {
         if (!isOpen)
         {
@@ -36,15 +36,16 @@ public class InteractDoor : MonoBehaviour, IInteractable
             {
                 amWhiteRoom.PlayOpenDoorSound();
             }
+            else
             {
                 am.PlayOpenDoorSound();
             }
 
-            transform.GetComponentInParent<DoorIsActive>().OnDisableDoor(); //Temporal para desactivar las puertas que se abren
+           // transform.GetComponentInParent<DoorIsActive>().OnDisableDoor(); //Temporal para desactivar las puertas que se abren
         }
     }
 
-    private void CloseDoor()
+    public void CloseDoor()
     {
         if (isOpen)
         {

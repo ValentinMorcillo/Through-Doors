@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KitchenPart : HiddenPuzzlePart
 {
-    [SerializeField] DoorControllers[] doorsToOpen;
+    [SerializeField] InteractDoor[] doorsToOpen;
 
     public override void Interact()
     {
@@ -19,7 +19,7 @@ public class KitchenPart : HiddenPuzzlePart
 
     void OpenAllDoors()
     {
-        foreach (DoorControllers dc in doorsToOpen)
+        foreach (InteractDoor dc in doorsToOpen)
         {
             dc.OpenDoor();
         }
