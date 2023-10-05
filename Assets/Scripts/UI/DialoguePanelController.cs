@@ -22,6 +22,7 @@ public class DialoguePanelController : MonoBehaviour
     [SerializeField] Sprite chloeImage;
 
     CinematicManager cinematicManager;
+    AudioManager audioManager;
 
     private string fullText = "";
     private string currentText = "";
@@ -33,6 +34,7 @@ public class DialoguePanelController : MonoBehaviour
     private void Start()
     {
         cinematicManager = CinematicManager.Get();
+        audioManager = AudioManager.Get();
 
         if (dialoguePanel != null)
         {
@@ -42,8 +44,9 @@ public class DialoguePanelController : MonoBehaviour
 
     public void StartTyping(string newText, DialogueOf dialogueOf, bool isFlshback)
     {
-       
         SetupDialoguePanel(dialogueOf, isFlshback);
+
+        audioManager.PlayVoiceSound();
 
         fullText = newText;
         currentText = "";
@@ -63,6 +66,7 @@ public class DialoguePanelController : MonoBehaviour
     {
         cinematicManager.FreezePlayer();
         PostProcessingVolume.SetActive(isFlashback);
+        audioManager.PlayInitFlashbackSound();
 
         switch (dialogueOf)
         {
@@ -91,14 +95,16 @@ public class DialoguePanelController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 shouldComplete = true;
+                audioManager.StopVoiceSound();
             }
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.E) && dialoguePanel != null)
+            if (Input.GetKeyDown(KeyCode.E) && dialoguePanel.activeSelf)
             {
                 dialoguePanel.SetActive(false);
                 PostProcessingVolume.SetActive(false);
+                audioManager.PlayFinishFlashbackSound();
                 cinematicManager.ReanudePlayer();
             }
         }

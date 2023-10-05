@@ -9,6 +9,8 @@ public class InteractDoor : MonoBehaviour, IInteractable
     AudioManager am;
 
     [SerializeField] bool isWhiteRoom = false;
+    [SerializeField] bool isDoorEnable = true;
+
     DoorIsActive doorIsActive;
 
 
@@ -34,7 +36,7 @@ public class InteractDoor : MonoBehaviour, IInteractable
     {
         if (!isOpen)
         {
-            if (doorIsActive.isDoorEnable)
+            if (isDoorEnable)
             {
                 transform.DOLocalRotate(new Vector3(0, angle, 0), openDuration);
                 isOpen = true;

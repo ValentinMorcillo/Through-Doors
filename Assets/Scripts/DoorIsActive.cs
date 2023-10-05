@@ -5,7 +5,6 @@ using UnityEngine;
 public class DoorIsActive : MonoBehaviour
 {
     MonoBehaviour[] components;
-    public bool isDoorEnable = true;
 
     private void Awake()
     {

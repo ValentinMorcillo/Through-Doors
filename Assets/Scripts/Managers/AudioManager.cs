@@ -5,6 +5,13 @@ using Utils;
 
 public class AudioManager : MonoBehaviourSingleton<AudioManager>
 {
+    [SerializeField] AudioSource voiceAS;
+    [SerializeField] AudioClip[] dialogueVoice;
+    int dialogueIndex = 0;
+
+    [SerializeField] AudioSource initFlashbackAS;
+    [SerializeField] AudioSource finishFlashbackAS;
+
     [SerializeField] AudioSource footstepsAS;
     [SerializeField] AudioSource pickUpItemAS;
     [SerializeField] AudioSource openDoorAS;
@@ -13,7 +20,7 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
     [SerializeField] AudioSource lockedDoorAS;
     public void PlayBendSound()
     {
-        bendAS.Play();    
+        bendAS.Play();
     }
 
     public void PlayPickUpItemSound()
@@ -22,9 +29,9 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
     }
     public void PlayGetUpSound()
     {
-        getUpAS.Play();    
+        getUpAS.Play();
     }
-    
+
     public void PlayFootstepsSound()
     {
         if (!footstepsAS.isPlaying)
@@ -41,5 +48,26 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
     public void PlayLockedDoorSound()
     {
         lockedDoorAS.Play();
+    }
+
+    public void PlayVoiceSound()
+    {
+        voiceAS.clip = dialogueVoice[dialogueIndex];
+        voiceAS.Play();
+        dialogueIndex++;
+    }
+
+    public void StopVoiceSound()
+    {
+        voiceAS.Stop();
+    }
+
+    public void PlayFinishFlashbackSound()
+    {
+        finishFlashbackAS.Play();
+    }
+    public void PlayInitFlashbackSound()
+    {
+        initFlashbackAS.Play();
     }
 }
