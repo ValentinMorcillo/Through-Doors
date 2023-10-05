@@ -40,10 +40,10 @@ public class DialoguePanelController : MonoBehaviour
         }
     }
 
-    public void StartTyping(string newText, DialogueOf dialogueOf)
+    public void StartTyping(string newText, DialogueOf dialogueOf, bool isFlshback)
     {
        
-        SetupDialoguePanel(dialogueOf);
+        SetupDialoguePanel(dialogueOf, isFlshback);
 
         fullText = newText;
         currentText = "";
@@ -59,10 +59,10 @@ public class DialoguePanelController : MonoBehaviour
         StartCoroutine(TypeText());
     }
 
-    void SetupDialoguePanel(DialogueOf dialogueOf)
+    void SetupDialoguePanel(DialogueOf dialogueOf, bool isFlashback)
     {
         cinematicManager.FreezePlayer();
-        PostProcessingVolume.SetActive(true);
+        PostProcessingVolume.SetActive(isFlashback);
 
         switch (dialogueOf)
         {

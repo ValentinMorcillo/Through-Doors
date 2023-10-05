@@ -31,10 +31,7 @@ public class DoorIsActive : MonoBehaviour
         ToggleComponents(false);
     }
 
- 
-
-
-    public void ToggleComponents(bool isActive)
+    public void ToggleComponents(bool isActive)   //Usar para cuando la puerta esta abierta
     {
         foreach (MonoBehaviour component in components)
         {
