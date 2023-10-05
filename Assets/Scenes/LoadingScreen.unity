@@ -287,6 +287,74 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 937438116387529506, guid: e6779fbe172280544a34ea7d1434e3c4, type: 3}
+      propertyPath: frameRate
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 937438116387529506, guid: e6779fbe172280544a34ea7d1434e3c4, type: 3}
+      propertyPath: sprites.Array.size
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 937438116387529506, guid: e6779fbe172280544a34ea7d1434e3c4, type: 3}
+      propertyPath: sprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6df356501cbbed940b04a7fd642adfe8, type: 3}
+    - target: {fileID: 937438116387529506, guid: e6779fbe172280544a34ea7d1434e3c4, type: 3}
+      propertyPath: sprites.Array.data[28]
+      value: 
+      objectReference: {fileID: 21300000, guid: 3693dfd1d6514eb48a4af13581ac9c1d, type: 3}
+    - target: {fileID: 937438116387529506, guid: e6779fbe172280544a34ea7d1434e3c4, type: 3}
+      propertyPath: sprites.Array.data[29]
+      value: 
+      objectReference: {fileID: 21300000, guid: 3f23ff00f50849f409dbbb05a19343c0, type: 3}
+    - target: {fileID: 937438116387529506, guid: e6779fbe172280544a34ea7d1434e3c4, type: 3}
+      propertyPath: sprites.Array.data[30]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4571242599c7ee34bada20fc1c263bc2, type: 3}
+    - target: {fileID: 937438116387529506, guid: e6779fbe172280544a34ea7d1434e3c4, type: 3}
+      propertyPath: sprites.Array.data[31]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6d97bdbdda66b2f4290cfef77926579b, type: 3}
+    - target: {fileID: 937438116387529506, guid: e6779fbe172280544a34ea7d1434e3c4, type: 3}
+      propertyPath: sprites.Array.data[32]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0a0fd886d726d8041bcaad871490c001, type: 3}
+    - target: {fileID: 937438116387529506, guid: e6779fbe172280544a34ea7d1434e3c4, type: 3}
+      propertyPath: sprites.Array.data[33]
+      value: 
+      objectReference: {fileID: 21300000, guid: 185f94d5b05c4ba478660347e77851c3, type: 3}
+    - target: {fileID: 937438116387529506, guid: e6779fbe172280544a34ea7d1434e3c4, type: 3}
+      propertyPath: sprites.Array.data[34]
+      value: 
+      objectReference: {fileID: 21300000, guid: e6336b34d56f5eb48a016f7fae25f2f5, type: 3}
+    - target: {fileID: 937438116387529506, guid: e6779fbe172280544a34ea7d1434e3c4, type: 3}
+      propertyPath: sprites.Array.data[35]
+      value: 
+      objectReference: {fileID: 21300000, guid: 8e7f13646a6493d4cab13ec15ac48023, type: 3}
+    - target: {fileID: 937438116387529506, guid: e6779fbe172280544a34ea7d1434e3c4, type: 3}
+      propertyPath: sprites.Array.data[36]
+      value: 
+      objectReference: {fileID: 21300000, guid: ee78992c12d0d9b48906b7f129e92ffb, type: 3}
+    - target: {fileID: 937438116387529506, guid: e6779fbe172280544a34ea7d1434e3c4, type: 3}
+      propertyPath: sprites.Array.data[37]
+      value: 
+      objectReference: {fileID: 21300000, guid: dfd4a1c92cf64d842885ef7dc99c35d6, type: 3}
+    - target: {fileID: 937438116387529506, guid: e6779fbe172280544a34ea7d1434e3c4, type: 3}
+      propertyPath: sprites.Array.data[38]
+      value: 
+      objectReference: {fileID: 21300000, guid: 426ef6cd3fbb1c34589b4384a43ddeaa, type: 3}
+    - target: {fileID: 937438116387529506, guid: e6779fbe172280544a34ea7d1434e3c4, type: 3}
+      propertyPath: sprites.Array.data[39]
+      value: 
+      objectReference: {fileID: 21300000, guid: bd224d505a3cf0641a9f8aa8c7fecca6, type: 3}
+    - target: {fileID: 937438116387529506, guid: e6779fbe172280544a34ea7d1434e3c4, type: 3}
+      propertyPath: sprites.Array.data[40]
+      value: 
+      objectReference: {fileID: 21300000, guid: 65940e7cd8a685141a313bfc8cc8c00d, type: 3}
+    - target: {fileID: 937438116387529506, guid: e6779fbe172280544a34ea7d1434e3c4, type: 3}
+      propertyPath: sprites.Array.data[41]
+      value: 
+      objectReference: {fileID: 21300000, guid: 106b06feef73a3d428fe40d981dcc200, type: 3}
     - target: {fileID: 4862785288303595751, guid: e6779fbe172280544a34ea7d1434e3c4, type: 3}
       propertyPath: m_Name
       value: UICamera
