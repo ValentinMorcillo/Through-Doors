@@ -7,6 +7,8 @@ public class LocationsController : MonoBehaviour
 
     private void Start()
     {
+        unlockedLocations = 2;
+
         for (int i = 0; i < possibleLocations.Length; i++)
         {
             TurnOffLocation(i);

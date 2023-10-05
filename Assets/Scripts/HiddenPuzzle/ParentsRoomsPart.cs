@@ -6,6 +6,23 @@ public class ParentsRoomsPart : HiddenPuzzlePart
 {
     [SerializeField] DoorControllers[] doorsToOpen;
 
+    BoxCollider doorCollider;
+
+    public override void Start()
+    {
+        base.Start();
+
+        BoxCollider[] colliders = GetComponents<BoxCollider>();
+
+        foreach (BoxCollider coll in colliders)
+        {
+            if (!coll.isTrigger)
+            {
+                doorCollider = coll;
+            }
+        }
+    }
+
     public override void Interact()
     {
         interactCorrectPart?.Invoke();
@@ -15,6 +32,7 @@ public class ParentsRoomsPart : HiddenPuzzlePart
         OpenAllDoors();
         
         Invoke(nameof(OpenDialoguePanel), 0.8f);
+        doorCollider.enabled = false; //Esto se hace para que el collider no interfiera para agarrar el cuadro de adentro
     }
 
     void OpenAllDoors()
