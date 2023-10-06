@@ -18,8 +18,9 @@ public class InteractiveObjects : MonoBehaviour
             {
                 if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
                 {
+
                     MonoBehaviour scriptComponent = interactObj as MonoBehaviour; //Falopa de chatgpt para chequear si el script esta prendido
-                    if (scriptComponent != null && scriptComponent.enabled) 
+                    if (scriptComponent != null && scriptComponent.enabled)
                     {
                         interactObj.Interact();
                     }
