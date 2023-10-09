@@ -61,7 +61,7 @@ public class InteractDoor : MonoBehaviour, IInteractable
 
                 if (isWhiteRoom)
                 {
-                   // amWhiteRoom.PlayOpenDoorSound();
+                    amWhiteRoom.PlayLockedDoorSound();
                 }
                 else
                 {

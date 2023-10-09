@@ -15,11 +15,6 @@ public class DoorIsActive : MonoBehaviour
         components[2] = GetComponentInChildren<InteractDoor>();
     }
 
-    private void Start()
-    {
-      //  ToggleComponents(isDoorEnable);
-    }
-
     public void OnEnableDoor()
     {
         ToggleComponents(true);

@@ -6,6 +6,7 @@ using Utils;
 public class AudioManagerWhiteRoom : MonoBehaviourSingleton<AudioManagerWhiteRoom>
 {
     [SerializeField] AudioSource openDoorAS;
+    [SerializeField] AudioSource lockedDoorAS;
     [SerializeField] AudioSource footstepsWhiteRoomAS;
 
     public void PlayFootstepsWhiteRoomSound()
@@ -22,5 +23,9 @@ public class AudioManagerWhiteRoom : MonoBehaviourSingleton<AudioManagerWhiteRoo
     public void PlayOpenDoorSound()
     {
         openDoorAS.Play();
+    }
+    public void PlayLockedDoorSound()
+    {
+        lockedDoorAS.Play();
     }
 }
