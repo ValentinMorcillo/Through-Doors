@@ -67,8 +67,7 @@ public class FPSController : MonoBehaviour
 
     void Jump()
     {
-        rb.velocity = Vector3.up * jumpForce;
-       // rb.AddForce(0f, jumpForce, 0f, ForceMode.VelocityChange);
+        rb.AddForce(0f, jumpForce, 0f, ForceMode.VelocityChange);
     }
 
     private void CheckIsGrounded()
