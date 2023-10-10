@@ -9,9 +9,6 @@ public class FPSController : MonoBehaviour
     AudioManagerWhiteRoom amWhiteRoom;
     AudioManager am;
 
-    [SerializeField] Camera cam;
-
-
     [SerializeField] float speed = 5f;
     [SerializeField] float jumpForce = 28f;
     [SerializeField] bool isWhiteRoom = true;
@@ -19,7 +16,6 @@ public class FPSController : MonoBehaviour
 
     private float nextFootstepTime;
     [SerializeField] float footstepInterval = 0.6f;
-    public float maxVelocityChange = 10f;
 
     private bool isGrounded;
 
@@ -30,8 +26,6 @@ public class FPSController : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
         nextFootstepTime = 0f;
-
-       // Physics.gravity = new Vector3(0, -90f, 0);
     }
 
     private void Update()
@@ -46,18 +40,17 @@ public class FPSController : MonoBehaviour
 
     void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        float moveHorizontal = Input.GetAxisRaw("Horizontal");
+        float moveVertical = Input.GetAxisRaw("Vertical");
 
-        Vector3 movement = cam.transform.forward * moveVertical + cam.transform.right * moveHorizontal;
-        movement.y = 0;
-        movement.Normalize();
+        Vector3 movement = Camera.main.transform.forward * moveVertical + Camera.main.transform.right * moveHorizontal;
+        movement.y = 0f;
 
-        rb.velocity = movement * speed;
+        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
 
         if (isGrounded)
         {
-            if (Time.time >= nextFootstepTime && (movement.x != 0f || movement.z != 0f))
+            if (Time.time >= nextFootstepTime && (moveHorizontal != 0f || moveVertical != 0f))
             {
                 PlayFootstepSound();
                 nextFootstepTime = Time.time + footstepInterval;
@@ -65,13 +58,15 @@ public class FPSController : MonoBehaviour
         }
     }
 
+
     void Jump()
     {
-        rb.AddForce(0f, jumpForce, 0f, ForceMode.VelocityChange);
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
     private void CheckIsGrounded()
     {
+
         isGrounded = Physics.Raycast(characterBase.position + Vector3.up * 0.1f, Vector3.down, out RaycastHit hit, 0.2f);
     }
 
