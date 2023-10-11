@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6688134438779965640}
   - component: {fileID: 7745871691095891821}
   - component: {fileID: 5519770518243683239}
+  - component: {fileID: 3715532788769771604}
   m_Layer: 0
   m_Name: "ba\xF1era"
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3715532788769771604
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6312593649925950066}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 94.055786, y: 140.54346, z: 209.08495}
+  m_Center: {x: 0, y: 0, z: 0}
