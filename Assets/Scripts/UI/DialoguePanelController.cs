@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public enum DialogueOf
 {
-    kath, chloe
+    kath, chloe, answerMachine
 }
 
 public class DialoguePanelController : MonoBehaviour
@@ -20,6 +20,7 @@ public class DialoguePanelController : MonoBehaviour
 
     [SerializeField] Sprite kathImage;
     [SerializeField] Sprite chloeImage;
+    [SerializeField] Sprite answerMachineImage;
 
     CinematicManager cinematicManager;
     AudioManager audioManager;
@@ -28,8 +29,9 @@ public class DialoguePanelController : MonoBehaviour
     private string currentText = "";
     private int currentIndex = 0;
     public float typingSpeed = 0.05f;
+
     private bool isTyping = false;
-    private bool shouldComplete = false; // Nueva variable para controlar la finalización.
+    private bool shouldComplete = false;
 
     private void Start()
     {
@@ -81,6 +83,12 @@ public class DialoguePanelController : MonoBehaviour
                 dialogueSprite.sprite = chloeImage;
                 nameText.text = "Chloe";
                 
+                break;
+            case DialogueOf.answerMachine:
+
+                dialogueSprite.sprite = answerMachineImage;
+                nameText.text = "Answer Machine";
+
                 break;
             default:
                 break;
