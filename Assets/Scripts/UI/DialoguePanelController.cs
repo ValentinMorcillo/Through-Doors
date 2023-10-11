@@ -23,6 +23,7 @@ public class DialoguePanelController : MonoBehaviour
     [SerializeField] Sprite answerMachineImage;
 
     CinematicManager cinematicManager;
+    GameManager gameManager;
     AudioManager audioManager;
 
     private string fullText = "";
@@ -32,10 +33,13 @@ public class DialoguePanelController : MonoBehaviour
 
     private bool isTyping = false;
     private bool shouldComplete = false;
+    private bool hasInteract = false;
+
 
     private void Start()
     {
         cinematicManager = CinematicManager.Get();
+        gameManager = GameManager.Get();
         audioManager = AudioManager.Get();
 
         if (dialoguePanel != null)
@@ -60,8 +64,17 @@ public class DialoguePanelController : MonoBehaviour
         }
 
         isTyping = true;
-        shouldComplete = false; // Inicializa shouldComplete en false.
+        hasInteract = false;    
+        shouldComplete = false; 
+        StartCoroutine(DelayInDetectingInput());
         StartCoroutine(TypeText());
+    }
+
+    private IEnumerator DelayInDetectingInput()
+    {
+        yield return new WaitForEndOfFrame(); // Espera al final del frame
+
+        hasInteract = true;
     }
 
     void SetupDialoguePanel(DialogueOf dialogueOf, bool isFlashback)
@@ -97,9 +110,8 @@ public class DialoguePanelController : MonoBehaviour
 
     private void Update()
     {
-        if (isTyping)
+        if (isTyping && hasInteract)
         {
-            // Si se presiona la tecla "E", establece shouldComplete en true.
             if (Input.GetKeyDown(KeyCode.E))
             {
                 shouldComplete = true;
@@ -108,12 +120,15 @@ public class DialoguePanelController : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.E) && dialoguePanel.activeSelf)
+            if (Input.GetKeyDown(KeyCode.E) && dialoguePanel.activeSelf && hasInteract)
             {
+
                 dialoguePanel.SetActive(false);
                 PostProcessingVolume.SetActive(false);
                 audioManager.PlayFinishFlashbackSound();
                 cinematicManager.ReanudePlayer();
+
+                CompleteTask();
             }
         }
     }
@@ -143,6 +158,11 @@ public class DialoguePanelController : MonoBehaviour
     public bool IsTyping()
     {
         return isTyping;
+    }
+
+    void CompleteTask()
+    {
+        gameManager.isCompleteTask?.Invoke();
     }
 }
 

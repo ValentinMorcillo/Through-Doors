@@ -25,7 +25,7 @@ public abstract class HiddenPuzzlePart : MonoBehaviour, IInteractable
         if (dialoguePanel != null)
         {
             dialoguePanel.StartTyping(dialogueText, DialogueOf.chloe, true);
-            gameManager.isCompleteTask?.Invoke();
+           // gameManager.isCompleteTask?.Invoke();
         }
     }
 }

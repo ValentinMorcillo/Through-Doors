@@ -30,7 +30,8 @@ public class AnsweringMachineBehavior : MonoBehaviour, IInteractable
         if (dialoguePanel != null)
         {
             dialoguePanel.StartTyping(dialogueText, DialogueOf.answerMachine, false);
-            gameManager.isCompleteTask?.Invoke();
         }
     }
+
+  
 }

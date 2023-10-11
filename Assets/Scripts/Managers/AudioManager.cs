@@ -18,6 +18,7 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
     [SerializeField] AudioSource bendAS;
     [SerializeField] AudioSource getUpAS;
     [SerializeField] AudioSource lockedDoorAS;
+    [SerializeField] AudioSource annotateAS;
     public void PlayBendSound()
     {
         bendAS.Play();
@@ -50,11 +51,19 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
         lockedDoorAS.Play();
     }
 
+    public void PlayAnnotateSound()
+    {
+        annotateAS.Play();
+    }
+
     public void PlayVoiceSound()
     {
-        voiceAS.clip = dialogueVoice[dialogueIndex];
-        voiceAS.Play();
-        dialogueIndex++;
+        if (dialogueVoice[dialogueIndex] != null)
+        {
+            voiceAS.clip = dialogueVoice[dialogueIndex];
+            voiceAS.Play();
+            dialogueIndex++;
+        }
     }
 
     public void StopVoiceSound()
