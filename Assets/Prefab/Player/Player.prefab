@@ -213,8 +213,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterBase: {fileID: 4575526432492621051}
-  speed: 3.5
-  jumpForce: 10
+  speed: 5
+  jumpForce: 3
   isWhiteRoom: 1
   footstepInterval: 0.5
 --- !u!114 &4575526432826355667
