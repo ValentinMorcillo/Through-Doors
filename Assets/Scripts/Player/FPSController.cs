@@ -13,9 +13,8 @@ public class FPSController : MonoBehaviour
     [SerializeField] float jumpForce = 28f;
     [SerializeField] bool isWhiteRoom = true;
 
-
-    private float nextFootstepTime;
     [SerializeField] float footstepInterval = 0.6f;
+    private float nextFootstepTime;
 
     private bool isGrounded;
 
@@ -57,7 +56,6 @@ public class FPSController : MonoBehaviour
             }
         }
     }
-
 
     void Jump()
     {

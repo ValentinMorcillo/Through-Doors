@@ -10,12 +10,16 @@ public class InteractDoor : MonoBehaviour, IInteractable
 
     [SerializeField] bool isWhiteRoom = false;
     [SerializeField] bool isDoorEnable = true;
+    [SerializeField] bool isSlidingDoor = false;
+
+    [Space]
+
+    [SerializeField] float angle = 90.0f;
+    [SerializeField] float openDuration = 1.0f;
+    [SerializeField] float slidingDoorOffSetZ;
 
     DoorIsActive doorIsActive;
 
-
-    public float angle = 90.0f;
-    public float openDuration = 1.0f;
     private bool isOpen = false;
     private bool isShaking = false;
 
@@ -38,17 +42,17 @@ public class InteractDoor : MonoBehaviour, IInteractable
         {
             if (isDoorEnable)
             {
-                transform.DOLocalRotate(new Vector3(0, angle, 0), openDuration);
-                isOpen = true;
-
-                if (isWhiteRoom)
+                if (!isSlidingDoor)
                 {
-                    amWhiteRoom.PlayOpenDoorSound();
+                    transform.DOLocalRotate(new Vector3(0, angle, 0), openDuration);
                 }
                 else
                 {
-                    am.PlayOpenDoorSound();
+                    transform.DOLocalMoveZ(slidingDoorOffSetZ, openDuration);
                 }
+
+                isOpen = true;
+                PlayDoorSound();
 
                 if (doorIsActive)
                 {
@@ -58,15 +62,7 @@ public class InteractDoor : MonoBehaviour, IInteractable
             else
             {
                 Shake();
-
-                if (isWhiteRoom)
-                {
-                    amWhiteRoom.PlayLockedDoorSound();
-                }
-                else
-                {
-                    am.PlayLockedDoorSound();
-                }
+                PlayLockedDoorSound();
             }
         }
     }
@@ -100,4 +96,27 @@ public class InteractDoor : MonoBehaviour, IInteractable
         }
     }
 
+    private void PlayDoorSound()
+    {
+        if (isWhiteRoom)
+        {
+            amWhiteRoom.PlayOpenDoorSound();
+        }
+        else
+        {
+            am.PlayOpenDoorSound();
+        }
+    }
+
+    private void PlayLockedDoorSound()
+    {
+        if (isWhiteRoom)
+        {
+            amWhiteRoom.PlayLockedDoorSound();
+        }
+        else
+        {
+            am.PlayLockedDoorSound();
+        }
+    }
 }
