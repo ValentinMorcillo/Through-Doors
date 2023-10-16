@@ -41,15 +41,7 @@ public class DisplayTrigger : MonoBehaviour
 
         if (isActive && Input.GetKeyDown(KeyCode.Q))
         {
-            visualObject.SetActive(false);
-            visualizingCamera.SetActive(false);
-            
-            sceneObject.SetActive(true);
-            fpsCameraController.enabled = true;
-            uiObjectOff.gameObject.SetActive(true);
-            uiItemOff.gameObject.SetActive(true);
-            
-            Cursor.lockState = CursorLockMode.Locked;
+            DisableVisualObject();
         }
 
     }
@@ -68,16 +60,20 @@ public class DisplayTrigger : MonoBehaviour
         {
             isActive = false;
 
-            visualObject.SetActive(false);
-            visualizingCamera.SetActive(false);
-
-            sceneObject.SetActive(true);
-            fpsCameraController.enabled = true;
-            uiObjectOff.gameObject.SetActive(true);
-            uiItemOff.gameObject.SetActive(true);
-
-            Cursor.lockState = CursorLockMode.Locked;
+            DisableVisualObject();
         }
     }
 
+    void DisableVisualObject()
+    {
+        visualObject.SetActive(false);
+        visualizingCamera.SetActive(false);
+
+        sceneObject.SetActive(true);
+        fpsCameraController.enabled = true;
+        uiObjectOff.gameObject.SetActive(true);
+        uiItemOff.gameObject.SetActive(true);
+
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 }

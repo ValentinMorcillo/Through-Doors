@@ -5374,15 +5374,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1280817174, guid: 3e8c3e422e8cc8447955fbb8f5dc7e00, type: 3}
       propertyPath: tasks.Array.data[0]
-      value: "Chloe dijo que olvido su lonchera en la alacena, deber\xEDa ir ah\xED"
+      value: "Chloe said she forgot her lunchbox in the kitchen cupboard\r"
       objectReference: {fileID: 0}
     - target: {fileID: 1280817174, guid: 3e8c3e422e8cc8447955fbb8f5dc7e00, type: 3}
       propertyPath: tasks.Array.data[1]
-      value: "Tengo que ir a la habitaci\xF3n de Chloe"
+      value: I should check Chloe's room
       objectReference: {fileID: 0}
     - target: {fileID: 1280817174, guid: 3e8c3e422e8cc8447955fbb8f5dc7e00, type: 3}
       propertyPath: tasks.Array.data[2]
-      value: "Tengo que ir a la habitaci\xF3n de mis padres"
+      value: I should check my parents' room
       objectReference: {fileID: 0}
     - target: {fileID: 3379988717105975803, guid: 3e8c3e422e8cc8447955fbb8f5dc7e00, type: 3}
       propertyPath: m_Pivot.x
@@ -5653,7 +5653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4575526432826355689, guid: 7fa5edde6d2daa6459e4aa41d60502ba, type: 3}
       propertyPath: jumpForce
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4575526432826355689, guid: 7fa5edde6d2daa6459e4aa41d60502ba, type: 3}
       propertyPath: m_Enabled

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class AnsweringMachineBehavior : MonoBehaviour, IInteractable
 {
-    [SerializeField] protected DialoguePanelController dialoguePanel;
+    [SerializeField] DialoguePanelController dialoguePanel;
+    [SerializeField] GameObject sfxAnswerMachine;
+
     [SerializeField, TextArea(4, 6)] protected string dialogueText;
     protected CinematicManager cinematicManager;
     GameManager gameManager;
@@ -21,6 +23,7 @@ public class AnsweringMachineBehavior : MonoBehaviour, IInteractable
         if (!hasInteracted)
         {
             OpenDialoguePanel();
+            Destroy(sfxAnswerMachine);
             hasInteracted = true;
         }
     }
