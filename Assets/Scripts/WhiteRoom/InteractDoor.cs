@@ -18,7 +18,7 @@ public class InteractDoor : MonoBehaviour, IInteractable
     [SerializeField] float openDuration = 1.0f;
     [SerializeField] float slidingDoorOffSetZ;
 
-    DoorIsActive doorIsActive;
+    GameObjectsComponentsManager doorIsActive;
 
     private bool isOpen = false;
     private bool isShaking = false;
@@ -28,7 +28,7 @@ public class InteractDoor : MonoBehaviour, IInteractable
         amWhiteRoom = AudioManagerWhiteRoom.Get();
         am = AudioManager.Get();
 
-        doorIsActive = GetComponentInParent<DoorIsActive>();
+        doorIsActive = GetComponentInParent<GameObjectsComponentsManager>();
     }
 
     public void Interact()
@@ -56,7 +56,7 @@ public class InteractDoor : MonoBehaviour, IInteractable
 
                 if (doorIsActive)
                 {
-                    doorIsActive.OnDisableDoor(); //Temporal para desactivar las puertas que se abren
+                    doorIsActive.OnDisableComponents(); //Temporal para desactivar las puertas que se abren
                 }
             }
             else

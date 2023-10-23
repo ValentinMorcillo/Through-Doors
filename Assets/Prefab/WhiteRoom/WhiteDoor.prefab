@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3596541684882129506}
   - component: {fileID: 6821963199443460777}
   - component: {fileID: 6821963199443460781}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Puerta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,8 +114,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isWhiteRoom: 1
   isDoorEnable: 1
+  isSlidingDoor: 0
   angle: 90
   openDuration: 1
+  slidingDoorOffSetZ: 0
 --- !u!1 &1445534488414859971
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,7 +129,7 @@ GameObject:
   - component: {fileID: 5112170436497082429}
   - component: {fileID: 2321642703797242917}
   - component: {fileID: 5950223907292193993}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Picaporte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +212,7 @@ GameObject:
   - component: {fileID: 9064508165069522299}
   - component: {fileID: 4651496999327220861}
   - component: {fileID: 5436420129553223859}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pCube4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +299,7 @@ GameObject:
   - component: {fileID: 6821963199867728213}
   - component: {fileID: 6821963199867728210}
   - component: {fileID: 6821963199867728209}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Marcopuerta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,7 +442,7 @@ GameObject:
   - component: {fileID: 6821963200566375912}
   - component: {fileID: 6821963200566375919}
   - component: {fileID: 664818276}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WhiteDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -518,6 +520,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 93c4245caf487af40b2c79efc66c178e, type: 2}
+    - target: {fileID: 4977447236882348665, guid: 5ca0847d310930648baaf753a0c10a4c, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5525067176391088731, guid: 5ca0847d310930648baaf753a0c10a4c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -562,6 +568,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5592970569858051077, guid: 5ca0847d310930648baaf753a0c10a4c, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193875307212515741, guid: 5ca0847d310930648baaf753a0c10a4c, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6241643190512111056, guid: 5ca0847d310930648baaf753a0c10a4c, type: 3}
       propertyPath: m_CastShadows
       value: 0
@@ -574,6 +588,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pedestal
       objectReference: {fileID: 0}
+    - target: {fileID: 7902855389397935115, guid: 5ca0847d310930648baaf753a0c10a4c, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8539162456909049960, guid: 5ca0847d310930648baaf753a0c10a4c, type: 3}
       propertyPath: m_CastShadows
       value: 0
@@ -582,6 +600,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 93c4245caf487af40b2c79efc66c178e, type: 2}
+    - target: {fileID: 9053997358836312907, guid: 5ca0847d310930648baaf753a0c10a4c, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ca0847d310930648baaf753a0c10a4c, type: 3}
 --- !u!4 &9094480504678444485 stripped
@@ -596,9 +618,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 453024316428880841}
     m_Modifications:
+    - target: {fileID: 7742867991887351620, guid: 874cde4b2625e254b9d5e5665622de8e, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7742867992419414018, guid: 874cde4b2625e254b9d5e5665622de8e, type: 3}
       propertyPath: m_Name
       value: instructionPanelPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7742867992419414018, guid: 874cde4b2625e254b9d5e5665622de8e, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7742867992419414018, guid: 874cde4b2625e254b9d5e5665622de8e, type: 3}
       propertyPath: m_IsActive

@@ -231,6 +231,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractorSource: {fileID: 0}
   InteractRange: 5
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 2147483647
 --- !u!82 &4575526432826355666
 AudioSource:
   m_ObjectHideFlags: 0

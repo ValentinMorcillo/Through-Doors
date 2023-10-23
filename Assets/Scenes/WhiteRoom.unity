@@ -218,6 +218,10 @@ PrefabInstance:
       propertyPath: InteractorSource
       value: 
       objectReference: {fileID: 890883735}
+    - target: {fileID: 4575526432826355667, guid: 7fa5edde6d2daa6459e4aa41d60502ba, type: 3}
+      propertyPath: interactableLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 4575526432826355689, guid: 7fa5edde6d2daa6459e4aa41d60502ba, type: 3}
       propertyPath: speed
       value: 2

@@ -756,19 +756,6 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!65 &152817749
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 152817744}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 110.06774, y: 131.51427, z: 10}
-  m_Center: {x: 0.12996295, y: 65.46007, z: -100.87}
 --- !u!1 &176498000
 GameObject:
   m_ObjectHideFlags: 3
@@ -2914,6 +2901,7 @@ GameObject:
   - component: {fileID: 1016367607}
   - component: {fileID: 1016367606}
   - component: {fileID: 1016367605}
+  - component: {fileID: 1016367608}
   m_Layer: 0
   m_Name: ChloeBed
   m_TagString: Untagged
@@ -2978,6 +2966,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 1, z: 3}
   m_Center: {x: 0.5, y: 0.5, z: 0}
+--- !u!65 &1016367608
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016367603}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.6, z: 1}
+  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!1 &1019166602
 GameObject:
   m_ObjectHideFlags: 0
@@ -4282,19 +4283,6 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!65 &1815254028
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1815254023}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 121.4405, y: 49.037724, z: 212.7105}
-  m_Center: {x: 0.19687657, y: 38.309166, z: 7.4419537}
 --- !u!1001 &1826977690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5546,6 +5534,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4016544713305833639, guid: 8ece09967a980d048be176105993c44b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658585556847980285, guid: 8ece09967a980d048be176105993c44b, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
