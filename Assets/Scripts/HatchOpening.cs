@@ -8,6 +8,7 @@ public class HatchOpening : MonoBehaviour, IInteractable
     [SerializeField] bool isActive;
 
     GameObjectsComponentsManager componentManager;
+    AudioManager am;
 
     [SerializeField] GameObject hatch;
     [SerializeField] GameObject ladder;
@@ -20,6 +21,7 @@ public class HatchOpening : MonoBehaviour, IInteractable
     private void Awake()
     {
         componentManager = GetComponentInParent<GameObjectsComponentsManager>();
+        am = AudioManager.Get();
     }
 
     private void Start()
@@ -39,6 +41,7 @@ public class HatchOpening : MonoBehaviour, IInteractable
     {
         isOpen = true;
 
+        am.PlayOpenDoorSound();
         hatch.transform.DORotate(openRotation, rotationDuration)
             .OnComplete(ExtendLadder);
     }
