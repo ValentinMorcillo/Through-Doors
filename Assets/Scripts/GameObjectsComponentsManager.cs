@@ -25,7 +25,7 @@ public class GameObjectsComponentsManager : MonoBehaviour
         ToggleComponents(false);
     }
 
-    private void ToggleComponents(bool isActive)   //Usar para cuando la puerta esta abierta
+    public void ToggleComponents(bool isActive)   //Usar para cuando la puerta esta abierta
     {
         foreach (MonoBehaviour component in components)
         {

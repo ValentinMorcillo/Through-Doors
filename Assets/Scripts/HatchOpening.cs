@@ -19,12 +19,12 @@ public class HatchOpening : MonoBehaviour, IInteractable
 
     private void Awake()
     {
-        componentManager = GetComponent<GameObjectsComponentsManager>();
+        componentManager = GetComponentInParent<GameObjectsComponentsManager>();
     }
 
     private void Start()
     {
-       // componentManager.OnDisableComponents();
+       componentManager.ToggleComponents(isActive);
     }
 
     public void Interact()

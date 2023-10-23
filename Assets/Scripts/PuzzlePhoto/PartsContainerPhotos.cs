@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PartsContainerPhotos : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PartsContainerPhotos : MonoBehaviour
 
     [SerializeField] InventorySprites inventory;
     [SerializeField] GameObject completePhoto;
+
+    public UnityEvent completePuzzleEvent;
 
     GameManager gameManager;
     AudioSource audioSource;
@@ -55,6 +58,7 @@ public class PartsContainerPhotos : MonoBehaviour
                 photosParts[i].gameObject.SetActive(false);
             }
 
+            completePuzzleEvent.Invoke();
             gameManager.isCompleteTask?.Invoke();
             completePhoto.SetActive(true);
             audioSource.Play();

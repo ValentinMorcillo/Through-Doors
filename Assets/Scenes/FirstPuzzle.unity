@@ -4701,7 +4701,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: SecondScene
+          m_StringArgument: SecondPuzzle
           m_BoolArgument: 0
         m_CallState: 2
   itemName: 
@@ -5534,6 +5534,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4016544713305833639, guid: 8ece09967a980d048be176105993c44b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452237408356155724, guid: 8ece09967a980d048be176105993c44b, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8658585556847980285, guid: 8ece09967a980d048be176105993c44b, type: 3}
