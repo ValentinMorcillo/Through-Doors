@@ -6,11 +6,15 @@ public class AnsweringMachineBehavior : MonoBehaviour, IInteractable
 {
     [SerializeField] DialoguePanelController dialoguePanel;
     [SerializeField] GameObject sfxAnswerMachine;
+    [SerializeField] PickableItem[] photoParts;
+
 
     [SerializeField, TextArea(4, 6)] protected string dialogueText;
     protected CinematicManager cinematicManager;
     GameManager gameManager;
     private bool hasInteracted = false;
+
+
 
     public virtual void Start()
     {
@@ -23,8 +27,17 @@ public class AnsweringMachineBehavior : MonoBehaviour, IInteractable
         if (!hasInteracted)
         {
             OpenDialoguePanel();
+            ActivePhotoInteractions();
             Destroy(sfxAnswerMachine);
             hasInteracted = true;
+        }
+    }
+
+    void ActivePhotoInteractions()
+    {
+        foreach (PickableItem pi in photoParts)
+        {
+            pi.SetIfActive(true);
         }
     }
 

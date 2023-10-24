@@ -12,16 +12,21 @@ public class PickableItem : MonoBehaviour, IInteractable
 {
     public UnityEvent<PickableItem> InteractPickableItem;
 
+    public bool isActive = true;
+    GameObjectsComponentsManager componentsManager;
+
     [SerializeField] string itemName;
     [SerializeField] string description;
     [SerializeField] Sprite icon;
     [SerializeField] PickeableItemType itemType;
 
     AudioManager am;
-    
+
     private void Start()
     {
         am = AudioManager.Get();
+        componentsManager = GetComponentInParent<GameObjectsComponentsManager>();
+        componentsManager.ToggleComponents(isActive);
     }
 
     public string GetName()
@@ -44,10 +49,27 @@ public class PickableItem : MonoBehaviour, IInteractable
         return itemType;
     }
 
+    public void SetIfActive(bool active)
+    {
+        if (active)
+        {
+            isActive = true;
+            componentsManager.OnEnableComponents();
+        }
+        else
+        {
+            isActive = false;
+            componentsManager.OnDisableComponents();
+        }
+    }
+
     public void Interact()
     {
-        InteractPickableItem.Invoke(this);
-        am.PlayPickUpItemSound();
-        Destroy(gameObject); 
+        if (isActive)
+        {
+            InteractPickableItem.Invoke(this);
+            am.PlayPickUpItemSound();
+            Destroy(gameObject);
+        }
     }
 }
