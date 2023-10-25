@@ -19,6 +19,7 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
     [SerializeField] AudioSource getUpAS;
     [SerializeField] AudioSource lockedDoorAS;
     [SerializeField] AudioSource annotateAS;
+    [SerializeField] AudioSource coinAS;
     public void PlayBendSound()
     {
         bendAS.Play();
@@ -49,6 +50,11 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
     public void PlayLockedDoorSound()
     {
         lockedDoorAS.Play();
+    }
+
+    public void PlayCoinSound()
+    {
+        coinAS.Play();
     }
 
     public void PlayAnnotateSound()

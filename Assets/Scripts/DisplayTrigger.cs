@@ -14,12 +14,12 @@ public class DisplayTrigger : MonoBehaviour
     [SerializeField] GameObject uiObjectOff;
     [SerializeField] GameObject uiItemOff;
     
-    AudioSource audioSource;
+    AudioManager am;
     bool isActive;
 
-    private void Awake()
+    private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        am = AudioManager.Get();
     }
 
     private void Update()
@@ -35,7 +35,7 @@ public class DisplayTrigger : MonoBehaviour
             uiItemOff.gameObject.SetActive(false);
             fpsCameraController.enabled = false;
 
-            audioSource.Play();
+            am.PlayCoinSound();
             Cursor.lockState = CursorLockMode.None;
         }
 

@@ -65,7 +65,7 @@ public class PartsContainerPhotos : MonoBehaviour
         }
     }
 
-    public bool CheckPhotoInCorrectPivot(PhotoPart correctPhotoPart)
+    public bool CheckMusicPartInCorrectPivot(PhotoPart correctPhotoPart)
     {
         int indexPhoto = correctPhotoPart.IDPart;
 

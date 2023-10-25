@@ -22,9 +22,9 @@ public class InteractiveObjects : MonoBehaviour
 
             Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
 
-            if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
+            if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange, interactableLayer, QueryTriggerInteraction.Ignore))
             {
-                 Debug.Log(hitInfo.transform.gameObject.name, hitInfo.transform.gameObject);
+                 //Debug.Log(hitInfo.transform.gameObject.name, hitInfo.transform.gameObject);
 
                 if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
                 {

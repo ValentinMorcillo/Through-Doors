@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class SpriteDragHandler : MonoBehaviour
+public class ObjectDragHandler : MonoBehaviour
 {
     [SerializeField] Camera secondCamera;
     [SerializeField] Transform PictureObject;
 
-    public UnityEvent<string> SnappedPhoto;
+    public UnityEvent<string> SnappedMusicBoxPart;
 
     private Vector3 initialPosition;
     private Vector3 initialScreenPosition;
 
-    PhotoPart photoPart;
-    PartsContainerPhotos partsContainer;
+    MusicalBoxPart musicBoxPart;
+    ContainerMusicBoxParts partsContainer;
 
     AudioSource audioSource;
 
     private void Awake()
     {
-        partsContainer = transform.GetComponentInParent<PartsContainerPhotos>();
-        photoPart = transform.GetComponent<PhotoPart>();
+        partsContainer = transform.GetComponentInParent<ContainerMusicBoxParts>();
+        musicBoxPart = transform.GetComponent<MusicalBoxPart>();
         audioSource = GetComponent<AudioSource>();    
     }
 
@@ -60,9 +60,9 @@ public class SpriteDragHandler : MonoBehaviour
     {
         audioSource.Play();
 
-        if (partsContainer.CheckMusicPartInCorrectPivot(photoPart))
+        if (partsContainer.CheckMusicPartInCorrectPivot(musicBoxPart))
         {
-            SnappedPhoto.Invoke(photoPart.PhotoName);
+            SnappedMusicBoxPart.Invoke(musicBoxPart.PhotoName);
             gameObject.transform.SetParent(PictureObject);
             Destroy(this);
         }
