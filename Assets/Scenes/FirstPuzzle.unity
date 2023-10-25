@@ -404,6 +404,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Armario
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 781113a6af772bd4e8c863e2e02ce476, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 781113a6af772bd4e8c863e2e02ce476, type: 3}
 --- !u!1 &60212782
@@ -4704,6 +4708,7 @@ MonoBehaviour:
           m_StringArgument: SecondPuzzle
           m_BoolArgument: 0
         m_CallState: 2
+  isActive: 1
   itemName: 
   description: 
   icon: {fileID: 0}

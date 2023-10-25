@@ -16,17 +16,28 @@ public class HatchOpening : MonoBehaviour, IInteractable
     [SerializeField] Vector3 openRotation = new Vector3(0, 90, 0);
     [SerializeField] Vector3 ladderOffset = new Vector3(-3, 0, 0);
 
-    private bool isOpen = false;
+    BoxCollider interactionCollider;
 
     private void Awake()
     {
         componentManager = GetComponentInParent<GameObjectsComponentsManager>();
+
+        BoxCollider[] collider = GetComponents<BoxCollider>();
+
+        foreach (BoxCollider boxCollider in collider)
+        {
+            if (!boxCollider.isTrigger)
+            {
+                interactionCollider = boxCollider;
+            }
+        }
     }
 
     private void Start()
     {
         am = AudioManager.Get();
        componentManager.ToggleComponents(isActive);
+        isActive = false;
     }
 
     public void Interact()
@@ -39,9 +50,8 @@ public class HatchOpening : MonoBehaviour, IInteractable
 
     private void OpenHatch()
     {
-        isOpen = true;
-
         am.PlayOpenDoorSound();
+
         hatch.transform.DORotate(openRotation, rotationDuration)
             .OnComplete(ExtendLadder);
     }
@@ -51,8 +61,18 @@ public class HatchOpening : MonoBehaviour, IInteractable
         ladder.transform.DOLocalMove(ladderOffset, 1.0f)
         .SetEase(Ease.OutBounce);
 
+        interactionCollider.enabled = false;
         componentManager.OnDisableComponents();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        isActive = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        isActive = false;
+    }
 
 }
