@@ -14,11 +14,17 @@ public class InteractiveObjects : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
+            Vector3 rayDirection = InteractorSource.forward;
+            Vector3 rayEndPoint = InteractorSource.position + rayDirection * InteractRange;
+            
+            Debug.DrawLine(InteractorSource.position, rayEndPoint, Color.blue, 5);
+
+
             Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
 
             if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
             {
-               // Debug.Log(hitInfo.transform.gameObject.name, hitInfo.transform.gameObject);
+                 Debug.Log(hitInfo.transform.gameObject.name, hitInfo.transform.gameObject);
 
                 if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
                 {

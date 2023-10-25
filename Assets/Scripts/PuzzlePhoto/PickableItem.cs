@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public enum PickeableItemType
 {
-    photo = 0, none
+    photo = 0, musicalBox, none
 }
 
 public class PickableItem : MonoBehaviour, IInteractable

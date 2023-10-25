@@ -21,11 +21,11 @@ public class HatchOpening : MonoBehaviour, IInteractable
     private void Awake()
     {
         componentManager = GetComponentInParent<GameObjectsComponentsManager>();
-        am = AudioManager.Get();
     }
 
     private void Start()
     {
+        am = AudioManager.Get();
        componentManager.ToggleComponents(isActive);
     }
 
