@@ -230,6 +230,10 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4575526432826355689, guid: 7fa5edde6d2daa6459e4aa41d60502ba, type: 3}
+      propertyPath: isWhiteRoom
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4575526432826355690, guid: 7fa5edde6d2daa6459e4aa41d60502ba, type: 3}
       propertyPath: m_Name
       value: Player

@@ -63,7 +63,7 @@ public class ObjectDragHandler : MonoBehaviour
         if (partsContainer.CheckMusicPartInCorrectPivot(musicBoxPart))
         {
             SnappedMusicBoxPart.Invoke(musicBoxPart.PhotoName);
-            gameObject.transform.SetParent(PictureObject);
+           // gameObject.transform.SetParent(PictureObject);
             Destroy(this);
         }
         else

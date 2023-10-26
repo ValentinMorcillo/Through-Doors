@@ -2472,6 +2472,10 @@ PrefabInstance:
       propertyPath: pickableItemReference
       value: 
       objectReference: {fileID: 874785596}
+    - target: {fileID: 976584391, guid: 62e5b16676a9c434e9a8be0f1ec09ca2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1522855705, guid: 62e5b16676a9c434e9a8be0f1ec09ca2, type: 3}
       propertyPath: inventory
       value: 
@@ -2528,6 +2532,10 @@ PrefabInstance:
       propertyPath: pickableItemReference
       value: 
       objectReference: {fileID: 1500439610}
+    - target: {fileID: 6480333899362328458, guid: 62e5b16676a9c434e9a8be0f1ec09ca2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7069316644425491906, guid: 62e5b16676a9c434e9a8be0f1ec09ca2, type: 3}
       propertyPath: m_RootOrder
       value: 5
