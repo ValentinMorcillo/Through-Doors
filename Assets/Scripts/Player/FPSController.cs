@@ -16,6 +16,8 @@ public class FPSController : MonoBehaviour
     [SerializeField] float footstepInterval = 0.6f;
     private float nextFootstepTime;
 
+    [SerializeField] LayerMask layer;
+
     private bool isGrounded;
 
     void Start()
@@ -46,6 +48,7 @@ public class FPSController : MonoBehaviour
         movement.y = 0f;
 
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+       //rb.velocity += movement * speed * Time.fixedDeltaTime;
 
         if (isGrounded)
         {
@@ -64,8 +67,8 @@ public class FPSController : MonoBehaviour
 
     private void CheckIsGrounded()
     {
+        isGrounded = Physics.Raycast(characterBase.position + Vector3.up * 0.1f, Vector3.down, out RaycastHit hit, 0.2f, layer, QueryTriggerInteraction.Ignore);
 
-        isGrounded = Physics.Raycast(characterBase.position + Vector3.up * 0.1f, Vector3.down, out RaycastHit hit, 0.2f);
     }
 
     void PlayFootstepSound()
