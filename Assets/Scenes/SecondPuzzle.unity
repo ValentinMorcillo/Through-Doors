@@ -3511,7 +3511,7 @@ MonoBehaviour:
   rotationDuration: 0
   playerCam: {fileID: 1843913523}
   visualCam: {fileID: 444649429}
-  lookAtDoor: {fileID: 1591090417}
+  entryDoor: {fileID: 1591090417}
   postProcessGO: {fileID: 1481621901}
 --- !u!4 &1966270895
 Transform:
