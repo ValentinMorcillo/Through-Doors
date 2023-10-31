@@ -835,8 +835,10 @@ MonoBehaviour:
   bedCam: {fileID: 538421795}
   rotationAngle: 45
   rotationDuration: 4
-  lookAtDoor: {fileID: 0}
-  colorGradient: {fileID: 0}
+  playerCam: {fileID: 0}
+  visualCam: {fileID: 0}
+  entryDoor: {fileID: 0}
+  postProcessGO: {fileID: 0}
 --- !u!4 &389160600
 Transform:
   m_ObjectHideFlags: 0
@@ -2192,7 +2194,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132147824989111}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.4011607, y: -1.19, z: -1.30049}
+  m_LocalPosition: {x: -5.4011607, y: -0.941, z: -1.30049}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2617,6 +2619,10 @@ PrefabInstance:
     - target: {fileID: 4016544713305833639, guid: 8ece09967a980d048be176105993c44b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4548800628927577429, guid: 8ece09967a980d048be176105993c44b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6452237408356155724, guid: 8ece09967a980d048be176105993c44b, type: 3}
       propertyPath: m_IsActive
@@ -3163,10 +3169,6 @@ PrefabInstance:
     - target: {fileID: 8082608215868951219, guid: 99b615c1bf459c7468a6112f8d848d25, type: 3}
       propertyPath: m_Name
       value: CM vcam1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082608215868951219, guid: 99b615c1bf459c7468a6112f8d848d25, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99b615c1bf459c7468a6112f8d848d25, type: 3}

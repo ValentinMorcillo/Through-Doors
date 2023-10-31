@@ -6,23 +6,14 @@ using UnityEngine;
 public class RotateDancer : MonoBehaviour
 {
     public bool isActive = false;
-    [SerializeField] Vector3 rotationAmount = new Vector3(0, 0, 360); // La cantidad de rotación en cada eje (en grados).
-    [SerializeField] float duration = 2.0f; // Duración de una vuelta completa en segundos.
-    private Tweener rotationTweener; // Almacenar la referencia a la rotación para detenerla en OnDisable.
+     float rotationSpeed = 300.0f; // Velocidad de rotación en grados por segundo.
 
-    private void OnEnable()
+    private void Update()
     {
         if (isActive)
         {
-            rotationTweener = transform.DORotate(rotationAmount, duration, RotateMode.FastBeyond360).SetLoops(-1, LoopType.Incremental);
-        }   
-    }
-
-    private void OnDisable()
-    {
-        if (rotationTweener != null && rotationTweener.IsActive())
-        {
-            rotationTweener.Kill();
+            // Girar el objeto a una velocidad constante en Update.
+            transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
         }
     }
 }
