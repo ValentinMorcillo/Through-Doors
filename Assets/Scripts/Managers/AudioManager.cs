@@ -21,7 +21,12 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
     [SerializeField] AudioSource annotateAS;
     [SerializeField] AudioSource coinAS;
     [SerializeField] AudioSource finalPuzzleAS;
+    [SerializeField] AudioSource winSoundAS;
  
+    [SerializeField] AudioSource openChestAS;
+    [SerializeField] AudioSource incorrectCodeAS;
+    [SerializeField] AudioSource pressButtonPadAS;
+    
     public void PlayBendSound()
     {
         bendAS.Play();
@@ -47,6 +52,26 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
     public void PlayOpenDoorSound()
     {
         openDoorAS.Play();
+    }
+
+    public void PlayWinPuzzleSound()
+    {
+        winSoundAS.Play();
+    }
+
+    public void PlayIncorrectSound()
+    {
+        incorrectCodeAS.Play();
+    }
+
+    public void PlayPressButtonPadSound()
+    {
+        pressButtonPadAS.Play();
+    }
+
+    public void PlayOpenChestSound()
+    {
+        openChestAS.Play();
     }
 
     public void PlayLockedDoorSound()
