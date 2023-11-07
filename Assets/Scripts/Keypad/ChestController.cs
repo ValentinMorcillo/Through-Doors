@@ -22,7 +22,7 @@ public class ChestController : MonoBehaviour
     public void OpenChest()
     {
         chestTop.DOLocalRotate(new Vector3(angle, 0, 0), openDuration);
-        am.PlayOpenDoorSound();
+        am.PlayOpenChestSound();
         outlineManager.OnDisableComponents();
 
         Destroy(GetComponentInParent<DisplayTrigger>());
