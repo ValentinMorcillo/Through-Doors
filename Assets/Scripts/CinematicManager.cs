@@ -111,11 +111,11 @@ public class CinematicManager : MonoBehaviourSingleton<CinematicManager>
         yield return new WaitForSeconds(lookAtAnimationDuration + secondsBetweenTransitions);
 
         DOTween.To(() => colorGradient.colorFilter.value, x => colorGradient.colorFilter.value = x, Color.black, colorGradientDuration)
-        .OnComplete(() => Debug.Log("Mando los sonidos"));
+        .OnComplete(am.PlayFinalPuzzleSound);
 
 
 
-        yield return new WaitForSeconds(5.5f);
+        yield return new WaitForSeconds(12.5f);
 
 
         SceneManager.Get().LoadScene("ThirdPuzzle");

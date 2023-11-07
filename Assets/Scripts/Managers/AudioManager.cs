@@ -20,6 +20,8 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
     [SerializeField] AudioSource lockedDoorAS;
     [SerializeField] AudioSource annotateAS;
     [SerializeField] AudioSource coinAS;
+    [SerializeField] AudioSource finalPuzzleAS;
+ 
     public void PlayBendSound()
     {
         bendAS.Play();
@@ -81,6 +83,12 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
     {
         finishFlashbackAS.Play();
     }
+
+    public void PlayFinalPuzzleSound()
+    {
+        finalPuzzleAS.Play();
+    }
+
     public void PlayInitFlashbackSound()
     {
         initFlashbackAS.Play();

@@ -13,7 +13,7 @@ public class DisplayTrigger : MonoBehaviour
 
     [SerializeField] GameObject uiObjectOff;
     [SerializeField] GameObject uiItemOff;
-    
+
     AudioManager am;
     bool isActive;
 
@@ -32,8 +32,12 @@ public class DisplayTrigger : MonoBehaviour
 
             sceneObject.SetActive(false);
             uiObjectOff.gameObject.SetActive(false);
-            uiItemOff.gameObject.SetActive(false);
             fpsCameraController.enabled = false;
+
+            if (uiItemOff)
+            {
+                uiItemOff.gameObject.SetActive(false);
+            }
 
             am.PlayCoinSound();
             Cursor.lockState = CursorLockMode.None;
@@ -64,7 +68,7 @@ public class DisplayTrigger : MonoBehaviour
         }
     }
 
-    void DisableVisualObject()
+    public void DisableVisualObject()
     {
         visualObject.SetActive(false);
         visualizingCamera.SetActive(false);
@@ -72,7 +76,10 @@ public class DisplayTrigger : MonoBehaviour
         sceneObject.SetActive(true);
         fpsCameraController.enabled = true;
         uiObjectOff.gameObject.SetActive(true);
-        uiItemOff.gameObject.SetActive(true);
+        if (uiItemOff)
+        {
+            uiItemOff.gameObject.SetActive(true);
+        }
 
         Cursor.lockState = CursorLockMode.Locked;
     }
