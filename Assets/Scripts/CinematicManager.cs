@@ -35,7 +35,10 @@ public class CinematicManager : MonoBehaviourSingleton<CinematicManager>
         cam = Camera.main;
         am = AudioManager.Get();
 
-        colorGradient = postProcessGO.profile.GetSetting<ColorGrading>();
+        if (colorGradient)
+        {
+            colorGradient = postProcessGO.profile.GetSetting<ColorGrading>();
+        }
     }
 
     public void FreezePlayer()
@@ -89,7 +92,7 @@ public class CinematicManager : MonoBehaviourSingleton<CinematicManager>
         colorGradient.colorFilter.value = Color.white;
 
         StartCoroutine(FinalSecondStage());
-      
+
     }
 
     IEnumerator FinalSecondStage()
@@ -119,7 +122,7 @@ public class CinematicManager : MonoBehaviourSingleton<CinematicManager>
 
 
         SceneManager.Get().LoadScene("ThirdPuzzle");
-    }    
+    }
 
     private void Update()
     {
