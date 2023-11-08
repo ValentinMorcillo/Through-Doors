@@ -953,43 +953,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 72966633, guid: 3e8c3e422e8cc8447955fbb8f5dc7e00, type: 3}
-      propertyPath: typingSpeed
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 72966633, guid: 3e8c3e422e8cc8447955fbb8f5dc7e00, type: 3}
-      propertyPath: answerMachineImage
-      value: 
-      objectReference: {fileID: 21300000, guid: be5b092c07d6851459fc168051487b2c, type: 3}
-    - target: {fileID: 72966633, guid: 3e8c3e422e8cc8447955fbb8f5dc7e00, type: 3}
       propertyPath: PostProcessingVolume
       value: 
       objectReference: {fileID: 1481621900}
-    - target: {fileID: 1280817174, guid: 3e8c3e422e8cc8447955fbb8f5dc7e00, type: 3}
-      propertyPath: tasks.Array.data[0]
-      value: I should listen to the message in the answering machine
-      objectReference: {fileID: 0}
-    - target: {fileID: 1280817174, guid: 3e8c3e422e8cc8447955fbb8f5dc7e00, type: 3}
-      propertyPath: tasks.Array.data[1]
-      value: I found a piece of a picture (0/4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1280817174, guid: 3e8c3e422e8cc8447955fbb8f5dc7e00, type: 3}
-      propertyPath: tasks.Array.data[2]
-      value: I found a piece of a picture (1/4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1280817174, guid: 3e8c3e422e8cc8447955fbb8f5dc7e00, type: 3}
-      propertyPath: tasks.Array.data[3]
-      value: I found a piece of a picture (2/4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1280817174, guid: 3e8c3e422e8cc8447955fbb8f5dc7e00, type: 3}
-      propertyPath: tasks.Array.data[4]
-      value: I found a piece of a picture (3/4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1280817174, guid: 3e8c3e422e8cc8447955fbb8f5dc7e00, type: 3}
-      propertyPath: tasks.Array.data[5]
-      value: 'Now i can repair the picture
-
-'
-      objectReference: {fileID: 0}
     - target: {fileID: 3379988717105975803, guid: 3e8c3e422e8cc8447955fbb8f5dc7e00, type: 3}
       propertyPath: m_Pivot.x
       value: 0
