@@ -12,11 +12,7 @@ public class PassCode : MonoBehaviour
 
     AudioManager am;
 
-    [SerializeField] AudioClip incorrectCodeSound;
-    [SerializeField] AudioClip pressButtonSound;
-
-
-    string correctCode = "1234";
+    string correctCode = "4721";
     string currentCode = null;
     int charIndex = 0;
 

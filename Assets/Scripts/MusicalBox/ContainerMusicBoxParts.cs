@@ -14,12 +14,12 @@ public class ContainerMusicBoxParts : MonoBehaviour
     public UnityEvent completePuzzleEvent;
 
     GameManager gameManager;
-    AudioSource audioSource;
+    AudioManager am;
 
     private void Start()
     {
         gameManager = GameManager.Get();
-        audioSource = GetComponent<AudioSource>();
+        am = AudioManager.Get();
     }
 
     public void CheckActivePhotos(PickableItem pickableItem)
@@ -28,7 +28,7 @@ public class ContainerMusicBoxParts : MonoBehaviour
         {
             for (int i = 0; i < musicalBoxParts.Length; i++)
             {
-                if (musicalBoxParts[i].PhotoName == pickableItem.GetName())
+                if (musicalBoxParts[i].muscialBoxPartName == pickableItem.GetName())
                 {
                     musicalBoxParts[i].IsVisualized = true;
                     gameManager.isCompleteTask?.Invoke();
@@ -60,7 +60,7 @@ public class ContainerMusicBoxParts : MonoBehaviour
             completePuzzleEvent.Invoke();
             gameManager.isCompleteTask?.Invoke();
             completeMusicalBox.SetActive(true);
-            audioSource.Play();
+            am.PlayWinPuzzleSound();
         }
     }
 

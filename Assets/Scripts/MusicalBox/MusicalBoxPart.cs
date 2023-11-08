@@ -6,7 +6,7 @@ public class MusicalBoxPart : MonoBehaviour
 {
     [SerializeField] PickableItem pickableItemReference;
 
-    [HideInInspector] public string PhotoName;
+    [HideInInspector] public string muscialBoxPartName;
 
     public int IDPart;
     public bool IsVisualized;
@@ -15,7 +15,7 @@ public class MusicalBoxPart : MonoBehaviour
     void Awake()
     {
         meshRenderer = transform.GetComponentInChildren<MeshRenderer>();
-        PhotoName = pickableItemReference.GetName();
+        muscialBoxPartName = pickableItemReference.GetName();
     }
 
     private void Update()
