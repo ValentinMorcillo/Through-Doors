@@ -217,6 +217,9 @@ MonoBehaviour:
   jumpForce: 15
   isWhiteRoom: 0
   footstepInterval: 0.5
+  layer:
+    serializedVersion: 2
+    m_Bits: 1023
 --- !u!114 &4575526432826355667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractorSource: {fileID: 0}
-  InteractRange: 5
+  InteractRange: 2
   interactableLayer:
     serializedVersion: 2
     m_Bits: 2147483647
@@ -340,7 +343,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}

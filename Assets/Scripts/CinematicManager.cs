@@ -35,7 +35,7 @@ public class CinematicManager : MonoBehaviourSingleton<CinematicManager>
         cam = Camera.main;
         am = AudioManager.Get();
 
-        if (colorGradient)
+        if (postProcessGO)
         {
             colorGradient = postProcessGO.profile.GetSetting<ColorGrading>();
         }
@@ -130,5 +130,33 @@ public class CinematicManager : MonoBehaviourSingleton<CinematicManager>
         {
             LookAtEntryDoor();
         }
+    }
+
+    public void FinalThirdPart()
+    {
+        FreezePlayer();
+
+        postProcessGO.gameObject.SetActive(true);
+        colorGradient.colorFilter.value = Color.white;
+
+        StartCoroutine(FinalThirdStage());
+    }
+
+    IEnumerator FinalThirdStage()
+    {
+        float colorGradientDuration = 1.0f;
+
+        yield return new WaitForSeconds(0.5f);
+
+        visualCam.gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(0.2f);
+
+        DOTween.To(() => colorGradient.colorFilter.value, x => colorGradient.colorFilter.value = x, Color.black, colorGradientDuration);
+
+        yield return new WaitForSeconds(1.5f);
+     
+        SceneManager.Get().LoadScene("WhiteRoom");
+
     }
 }

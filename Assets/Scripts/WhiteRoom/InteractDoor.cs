@@ -23,6 +23,12 @@ public class InteractDoor : MonoBehaviour, IInteractable
     private bool isOpen = false;
     private bool isShaking = false;
 
+    public bool IsDoorEnable
+    {
+        get { return isDoorEnable; }
+        set { isDoorEnable = value; }
+    }
+
     private void Start()
     {
         amWhiteRoom = AudioManagerWhiteRoom.Get();

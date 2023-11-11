@@ -792,18 +792,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4575526432826355664, guid: 7fa5edde6d2daa6459e4aa41d60502ba, type: 3}
-      propertyPath: m_Radius
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 4575526432826355667, guid: 7fa5edde6d2daa6459e4aa41d60502ba, type: 3}
       propertyPath: InteractorSource
       value: 
       objectReference: {fileID: 1427738368}
-    - target: {fileID: 4575526432826355689, guid: 7fa5edde6d2daa6459e4aa41d60502ba, type: 3}
-      propertyPath: layer.m_Bits
-      value: 1023
-      objectReference: {fileID: 0}
     - target: {fileID: 4575526432826355690, guid: 7fa5edde6d2daa6459e4aa41d60502ba, type: 3}
       propertyPath: m_Name
       value: Player

@@ -10,4 +10,9 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
     public Action isCompleteTask;
 
 
+
+    public void FinishPart()
+    {
+       //WhiteRoomManager.Get().CompleteFirstPart();
+    }
 }
