@@ -24,8 +24,8 @@ public class FPSCameraController : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y");
 
         // Aplica la sensibilidad del ratón
-        h_mouse += mouseX * mouseSensitivity;
-        v_mouse -= mouseY * mouseSensitivity; // El signo negativo invierte la dirección del movimiento vertical
+        h_mouse += mouseX * mouseSensitivity * Time.deltaTime;
+        v_mouse -= mouseY * mouseSensitivity * Time.deltaTime; // El signo negativo invierte la dirección del movimiento vertical
 
         // Limita la rotación vertical dentro de los valores mínimos y máximos
         v_mouse = Mathf.Clamp(v_mouse, minRotation, maxRotation);

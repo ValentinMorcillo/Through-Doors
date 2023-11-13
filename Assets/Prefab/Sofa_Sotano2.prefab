@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 172411014645356838}
   - component: {fileID: 3876294651799541379}
   - component: {fileID: 1310453187761857097}
+  - component: {fileID: 2861519066335771127}
+  - component: {fileID: 8178262340695932317}
   m_Layer: 0
   m_Name: Sofa_Sotano2
   m_TagString: Untagged
@@ -83,3 +85,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2861519066335771127
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661842550805316508}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.4249225, y: 1.7463397, z: 2.8467677}
+  m_Center: {x: 0, y: -0.79648024, z: 0.80438364}
+--- !u!65 &8178262340695932317
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661842550805316508}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.4249225, y: 3.247754, z: 1.6008747}
+  m_Center: {x: 0, y: 0, z: -1.4273301}
