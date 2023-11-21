@@ -137,6 +137,7 @@ public class CinematicManager : MonoBehaviourSingleton<CinematicManager>
     {
         FreezePlayer();
 
+        Destroy(visualCam.gameObject);
         postProcessGO.gameObject.SetActive(true);
         colorGradient.colorFilter.value = Color.white;
 

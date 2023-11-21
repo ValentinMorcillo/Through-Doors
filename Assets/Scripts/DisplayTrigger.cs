@@ -13,6 +13,8 @@ public class DisplayTrigger : MonoBehaviour
 
     [SerializeField] GameObject uiObjectOff;
     [SerializeField] GameObject uiItemOff;
+    
+    [SerializeField] bool switchTaskWhileInteracting = false;
 
     AudioManager am;
     bool isActive;
@@ -38,6 +40,13 @@ public class DisplayTrigger : MonoBehaviour
             {
                 uiItemOff.gameObject.SetActive(false);
             }
+
+            if (switchTaskWhileInteracting)
+            {
+                GameManager.Get().isCompleteTask?.Invoke();
+                switchTaskWhileInteracting = false;
+            }
+
 
             am.PlayCoinSound();
             Cursor.lockState = CursorLockMode.None;
