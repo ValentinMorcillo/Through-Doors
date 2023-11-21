@@ -214,7 +214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
       propertyPath: description
-      value: Fragmento de foto
+      value: Photo Fragment
       objectReference: {fileID: 0}
     - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
       propertyPath: InteractPickableItem.m_PersistentCalls.m_Calls.Array.size
@@ -383,6 +383,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1813973868, guid: 6f0e79c8457609b4f80c8bd59bfdfe0e, type: 3}
+      propertyPath: m_Volume
+      value: 0.08
+      objectReference: {fileID: 0}
     - target: {fileID: 5913314144564069753, guid: 6f0e79c8457609b4f80c8bd59bfdfe0e, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -511,7 +515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
       propertyPath: description
-      value: Fragmento de foto
+      value: Photo Fragment
       objectReference: {fileID: 0}
     - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
       propertyPath: InteractPickableItem.m_PersistentCalls.m_Calls.Array.size
@@ -1146,7 +1150,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 1900249631}
-  sfxAnswerMachine: {fileID: 0}
+  sfxAnswerMachine: {fileID: 1911433564}
+  messageCount: {fileID: 484474737}
   photoParts:
   - {fileID: 738267542}
   - {fileID: 1500439610}
@@ -1167,6 +1172,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.05, z: 0.3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &389140344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389140341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bcdaf8e7e6b6c54da647a6893e77c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &390052219
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,6 +1304,17 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 7069316645460129353, guid: 62e5b16676a9c434e9a8be0f1ec09ca2, type: 3}
   m_PrefabInstance: {fileID: 1223210262}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &484474737 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7849960003725280245, guid: 544ae4b96d0746947871c668fe428da4, type: 3}
+  m_PrefabInstance: {fileID: 389140339}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &524536114 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3125499273796009897, guid: b179b42f6c8663a4395de69f5d8fb2a0, type: 3}
@@ -1309,6 +1337,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1370621213, guid: 8ece09967a980d048be176105993c44b, type: 3}
+      propertyPath: isActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4016544713305833638, guid: 8ece09967a980d048be176105993c44b, type: 3}
       propertyPath: m_Name
       value: House
@@ -2881,7 +2913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
       propertyPath: description
-      value: Fragmento de foto
+      value: Photo Fragment
       objectReference: {fileID: 0}
     - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
       propertyPath: InteractPickableItem.m_PersistentCalls.m_Calls.Array.size
@@ -3147,7 +3179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
       propertyPath: description
-      value: Fragmento de foto
+      value: Photo Fragment
       objectReference: {fileID: 0}
     - target: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
       propertyPath: InteractPickableItem.m_PersistentCalls.m_Calls.Array.size
@@ -3440,6 +3472,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87f9401a8d1cd5344862298b588e27c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1911433564 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1813973867, guid: 6f0e79c8457609b4f80c8bd59bfdfe0e, type: 3}
+  m_PrefabInstance: {fileID: 93262301}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1966270893
 GameObject:
   m_ObjectHideFlags: 0

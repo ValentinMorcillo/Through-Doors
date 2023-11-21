@@ -35,7 +35,7 @@ public class TaskManager : MonoBehaviour
         }
         else
         {
-            taskText.text = "¡Todas las tareas han sido completadas!";
+            taskText.text = "";
         }
     }
 

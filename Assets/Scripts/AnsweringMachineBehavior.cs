@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class AnsweringMachineBehavior : MonoBehaviour, IInteractable
 {
     [SerializeField] DialoguePanelController dialoguePanel;
     [SerializeField] GameObject sfxAnswerMachine;
+    [SerializeField] TextMeshProUGUI messageCount;
     [SerializeField] PickableItem[] photoParts;
 
 
     [SerializeField, TextArea(4, 6)] protected string dialogueText;
     protected CinematicManager cinematicManager;
-    GameManager gameManager;
+    GameObjectsComponentsManager componentsManager;
     private bool hasInteracted = false;
 
 
@@ -19,7 +21,7 @@ public class AnsweringMachineBehavior : MonoBehaviour, IInteractable
     public virtual void Start()
     {
         cinematicManager = CinematicManager.Get();
-        gameManager = GameManager.Get();
+        componentsManager = GetComponent<GameObjectsComponentsManager>();
     }
 
     public void Interact()
@@ -28,7 +30,9 @@ public class AnsweringMachineBehavior : MonoBehaviour, IInteractable
         {
             OpenDialoguePanel();
             ActivePhotoInteractions();
-            Destroy(sfxAnswerMachine);
+            messageCount.text = "0";
+            Destroy(sfxAnswerMachine); //Destruyo el pitido
+            componentsManager.OnDisableComponents();
             hasInteracted = true;
         }
     }

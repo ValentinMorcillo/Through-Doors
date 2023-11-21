@@ -1441,12 +1441,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameplayCanvas: {fileID: 5749603313312361432}
-  controlsCanvas: {fileID: 0}
+  controlsCanvas: {fileID: 1778109958580273124}
   pauseCanvas: {fileID: 1093622968652204946}
-  pauseButton: {fileID: 0}
   resumeButton: {fileID: 6372839597246508660}
   controlsButton: {fileID: 5930123073771556439}
-  returnButton: {fileID: 0}
+  returnButton: {fileID: 6596109606952488299}
   exitButton: {fileID: 8301138701112297608}
 --- !u!1 &3379988717270241699
 GameObject:

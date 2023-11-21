@@ -106,7 +106,8 @@ public class CinematicManager : MonoBehaviourSingleton<CinematicManager>
 
         yield return new WaitForSeconds(secondsBetweenTransitions);
 
-        visualCam.gameObject.SetActive(false);
+        Destroy(visualCam.gameObject);          //Esto se hace para evitar que se pueda abrir y cerrar el display trigger en la animacion
+        //visualCam.gameObject.SetActive(false);
 
 
         playerCam.transform.DOLookAt(entryDoor.position, lookAtAnimationDuration + secondsBetweenTransitions);

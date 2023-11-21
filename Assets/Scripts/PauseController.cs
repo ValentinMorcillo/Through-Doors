@@ -9,8 +9,6 @@ public class PauseController : MonoBehaviour
     [SerializeField] GameObject controlsCanvas;
     [SerializeField] GameObject pauseCanvas;
 
-    [SerializeField] Button pauseButton;
-
     [SerializeField] Button resumeButton;
     [SerializeField] Button controlsButton;
     [SerializeField] Button returnButton;
@@ -18,8 +16,6 @@ public class PauseController : MonoBehaviour
 
     private void Start()
     {
-        pauseButton.onClick.AddListener(EnablePause);
-
         resumeButton.onClick.AddListener(OnClickResumeButton);
         controlsButton.onClick.AddListener(OnClickControlsButton);
         returnButton.onClick.AddListener(OnClickReturnButton);
