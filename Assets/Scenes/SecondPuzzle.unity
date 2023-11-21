@@ -1157,8 +1157,9 @@ MonoBehaviour:
   - {fileID: 1500439610}
   - {fileID: 874785596}
   - {fileID: 176946099}
-  dialogueText: "Katherine nos fuimos a llevar a tu hermana al hospital, no nos esperes
-    porque vamos a tardar mucho. No salgas de la casa y no hagas tonter\xEDas. Cuidate."
+  dialogueText: Katherine, we went to take your sister to the hospital. Don't wait
+    for us because it's going to take a long time. Don't leave the house and don't
+    do anything foolish. Take care.
 --- !u!65 &389140343
 BoxCollider:
   m_ObjectHideFlags: 0
