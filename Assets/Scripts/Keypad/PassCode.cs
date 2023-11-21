@@ -12,7 +12,7 @@ public class PassCode : MonoBehaviour
 
     AudioManager am;
 
-    string correctCode = "4721";
+    string correctCode = "1742";
     string currentCode = null;
     int charIndex = 0;
 
