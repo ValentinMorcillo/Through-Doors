@@ -26,7 +26,7 @@ public class MenuController : MonoBehaviour
         returnButton.onClick.AddListener(OnClickReturnButton);
         exitButton.onClick.AddListener(OnClickExitButton);
 
-       // Invoke(nameof(EnableMenu), 0.1f);
+        // Invoke(nameof(EnableMenu), 0.1f);
     }
 
     public void OnClickPlayButton()
@@ -53,13 +53,13 @@ public class MenuController : MonoBehaviour
 
     public void DisableMenu()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        LockedMouse();
 
         menuCamera.SetActive(false);
         menuCanvas.SetActive(false);
         gameplayCanvas.SetActive(true);
 
-        Invoke(nameof(ActiveCameraMovement), 2.0f);    
+        Invoke(nameof(ActiveCameraMovement), 2.0f);
     }
 
     void ActiveCameraMovement()
@@ -71,12 +71,22 @@ public class MenuController : MonoBehaviour
 
     public void EnableMenu()
     {
-        Cursor.lockState = CursorLockMode.None;
+        UnlockedMouse();
 
         cameraController.enabled = false;
         player.SetActive(false);
         menuCamera.SetActive(true);
         menuCanvas.SetActive(true);
         gameplayCanvas.SetActive(false);
+    }
+
+    public void LockedMouse()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void UnlockedMouse()
+    {
+        Cursor.lockState = CursorLockMode.None;
     }
 }
