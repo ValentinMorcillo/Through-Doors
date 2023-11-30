@@ -216,7 +216,7 @@ MonoBehaviour:
   speed: 3
   jumpForce: 15
   isWhiteRoom: 0
-  footstepInterval: 0.5
+  footstepInterval: 0.1
   layer:
     serializedVersion: 2
     m_Bits: 1023

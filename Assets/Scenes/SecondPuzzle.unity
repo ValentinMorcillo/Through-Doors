@@ -1118,6 +1118,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MaquinaContestadora
       objectReference: {fileID: 0}
+    - target: {fileID: 6453040584975410326, guid: 544ae4b96d0746947871c668fe428da4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7849960003725280245, guid: 544ae4b96d0746947871c668fe428da4, type: 3}
       propertyPath: m_text
       value: 1
@@ -1393,6 +1397,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4016544713305833639, guid: 8ece09967a980d048be176105993c44b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4548800628927577429, guid: 8ece09967a980d048be176105993c44b, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6098164228862403352, guid: 8ece09967a980d048be176105993c44b, type: 3}
