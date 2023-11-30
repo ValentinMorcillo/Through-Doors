@@ -670,6 +670,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
   mmfPlayer: {fileID: 1471226916}
+--- !u!1 &191556423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1106409908, guid: 3e8c3e422e8cc8447955fbb8f5dc7e00, type: 3}
+  m_PrefabInstance: {fileID: 371103095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &223001852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1850,6 +1855,7 @@ MonoBehaviour:
   fpsCameraController: {fileID: 1843913520}
   uiObjectOff: {fileID: 937947249}
   uiItemOff: {fileID: 2110555654}
+  switchTaskWhileInteracting: 0
 --- !u!114 &874785596 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 227568131, guid: 535d2f26d4e58ac4592ad136f8e1376c, type: 3}
@@ -3516,6 +3522,7 @@ MonoBehaviour:
   rotationDuration: 0
   playerCam: {fileID: 1843913523}
   visualCam: {fileID: 444649429}
+  misionPanel: {fileID: 191556423}
   entryDoor: {fileID: 1591090417}
   postProcessGO: {fileID: 1481621901}
 --- !u!4 &1966270895

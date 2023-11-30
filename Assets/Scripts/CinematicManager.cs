@@ -26,6 +26,7 @@ public class CinematicManager : MonoBehaviourSingleton<CinematicManager>
     [Header("Hidden Puzzle transitions")]
     [SerializeField] CinemachineVirtualCamera playerCam;
     [SerializeField] Camera visualCam;
+    [SerializeField] GameObject misionPanel;
     [SerializeField] Transform entryDoor;
     [SerializeField] PostProcessVolume postProcessGO;
     ColorGrading colorGradient;
@@ -107,7 +108,7 @@ public class CinematicManager : MonoBehaviourSingleton<CinematicManager>
         yield return new WaitForSeconds(secondsBetweenTransitions);
 
         Destroy(visualCam.gameObject);          //Esto se hace para evitar que se pueda abrir y cerrar el display trigger en la animacion
-        //visualCam.gameObject.SetActive(false);
+        misionPanel.SetActive(false);
 
 
         playerCam.transform.DOLookAt(entryDoor.position, lookAtAnimationDuration + secondsBetweenTransitions);
@@ -125,6 +126,7 @@ public class CinematicManager : MonoBehaviourSingleton<CinematicManager>
         SceneManager.Get().LoadScene("ThirdPuzzle");
     }
 
+#if UNITY_EDITOR
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
@@ -132,6 +134,7 @@ public class CinematicManager : MonoBehaviourSingleton<CinematicManager>
             LookAtEntryDoor();
         }
     }
+#endif
 
     public void FinalThirdPart()
     {
