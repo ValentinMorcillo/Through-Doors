@@ -1028,6 +1028,7 @@ MonoBehaviour:
   rotationDuration: 4
   playerCam: {fileID: 0}
   visualCam: {fileID: 0}
+  misionPanel: {fileID: 0}
   entryDoor: {fileID: 0}
   postProcessGO: {fileID: 0}
 --- !u!4 &389160600
