@@ -439,6 +439,10 @@ PrefabInstance:
       propertyPath: footstepsAS
       value: 
       objectReference: {fileID: 1708465318}
+    - target: {fileID: 5913314144589542129, guid: 6f0e79c8457609b4f80c8bd59bfdfe0e, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f0e79c8457609b4f80c8bd59bfdfe0e, type: 3}
 --- !u!1001 &146090060
