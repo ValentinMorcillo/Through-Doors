@@ -180,8 +180,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca5d312bb964f164aa78bbd5196e45a9, type: 2}
-  - {fileID: 7774389713504750806, guid: 2b0c4bbc795c1cd458a0e991993226f3, type: 3}
+  - {fileID: 2100000, guid: 1a57ed43ed8dddb48bd650a17af3a987, type: 2}
+  - {fileID: 2100000, guid: 1a57ed43ed8dddb48bd650a17af3a987, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1326,8 +1326,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca5d312bb964f164aa78bbd5196e45a9, type: 2}
-  - {fileID: 7774389713504750806, guid: 2b0c4bbc795c1cd458a0e991993226f3, type: 3}
+  - {fileID: 2100000, guid: 1a57ed43ed8dddb48bd650a17af3a987, type: 2}
+  - {fileID: 2100000, guid: 1a57ed43ed8dddb48bd650a17af3a987, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3174,7 +3174,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca5d312bb964f164aa78bbd5196e45a9, type: 2}
+  - {fileID: 2100000, guid: 1a57ed43ed8dddb48bd650a17af3a987, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4230,7 +4230,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ca5d312bb964f164aa78bbd5196e45a9, type: 2}
+  - {fileID: 2100000, guid: 1a57ed43ed8dddb48bd650a17af3a987, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12661,6 +12661,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2472981479359657150, guid: 429eac4b790476f42bc81724daefd465, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1a57ed43ed8dddb48bd650a17af3a987, type: 2}
     - target: {fileID: 3069737687220742062, guid: 429eac4b790476f42bc81724daefd465, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.015505
@@ -12677,6 +12681,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -0.077
       objectReference: {fileID: 0}
+    - target: {fileID: 5496842906221363865, guid: 429eac4b790476f42bc81724daefd465, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1a57ed43ed8dddb48bd650a17af3a987, type: 2}
+    - target: {fileID: 5705531664754533660, guid: 429eac4b790476f42bc81724daefd465, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1a57ed43ed8dddb48bd650a17af3a987, type: 2}
     - target: {fileID: 6483451733121732531, guid: 429eac4b790476f42bc81724daefd465, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.008974
@@ -12737,6 +12749,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cama KyC_UVS
       objectReference: {fileID: 0}
+    - target: {fileID: 8806850309954944677, guid: 429eac4b790476f42bc81724daefd465, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1a57ed43ed8dddb48bd650a17af3a987, type: 2}
+    - target: {fileID: 9098116987108601653, guid: 429eac4b790476f42bc81724daefd465, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1a57ed43ed8dddb48bd650a17af3a987, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 429eac4b790476f42bc81724daefd465, type: 3}
 --- !u!4 &4962697675425594792 stripped
@@ -17619,6 +17639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 0}
   sfxAnswerMachine: {fileID: 0}
+  messageCount: {fileID: 0}
   photoParts: []
   dialogueText: "Katherine nos fuimos a llevar a tu hermana al hospital, no nos esperes
     porque vamos a tardar mucho. No salgas de la casa y no hagas tonter\xEDas. Cuidate."
