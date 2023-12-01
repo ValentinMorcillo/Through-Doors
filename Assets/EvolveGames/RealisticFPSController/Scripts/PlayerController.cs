@@ -62,7 +62,15 @@ namespace EvolveGames
         float installGravity;
         bool WallDistance;
         [HideInInspector] public float WalkingValue;
+
+        [Space(20)]
+        [Header("Extra Settings")]
+        [SerializeField] float footstepInterval = 0.1f;
+        [SerializeField] bool isWhiteRoom = true;
         public bool canRotateCamera;
+        float nextFootstepTime = 0;
+        AudioManager am;
+        AudioManagerWhiteRoom amwr;
 
         void Start()
         {
@@ -70,13 +78,15 @@ namespace EvolveGames
             if (Items == null && GetComponent<ItemChange>()) Items = GetComponent<ItemChange>();
             cam = GetComponentInChildren<Camera>();
             Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
             InstallCroughHeight = characterController.height;
             InstallCameraMovement = Camera.localPosition;
             InstallFOV = cam.fieldOfView;
             RunningValue = RuningSpeed;
             installGravity = gravity;
             WalkingValue = walkingSpeed;
+
+            am = AudioManager.Get();
+            amwr = AudioManagerWhiteRoom.Get();
         }
 
         void Update()
@@ -123,6 +133,15 @@ namespace EvolveGames
 
                     if (isRunning && Moving) cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, RunningFOV, SpeedToFOV * Time.deltaTime);
                     else cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, InstallFOV, SpeedToFOV * Time.deltaTime);
+                }
+            }
+
+            if (Moving && characterController.isGrounded)
+            {
+                if (Time.time >= nextFootstepTime)
+                {
+                    PlayFootstepSound();
+                    nextFootstepTime = Time.time + footstepInterval;
                 }
             }
 
@@ -182,5 +201,22 @@ namespace EvolveGames
             }
         }
 
+        void PlayFootstepSound()
+        {
+            if (isWhiteRoom)
+            {
+                if (amwr != null)
+                {
+                    amwr.PlayFootstepsWhiteRoomSound();
+                }
+            }
+            else
+            {
+                if (am != null)
+                {
+                    am.PlayFootstepsSound();
+                }
+            }
+        }
     }
 }

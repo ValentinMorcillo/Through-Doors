@@ -5,6 +5,7 @@ using UnityEngine;
 using Utils;
 using Cinemachine;
 using UnityEngine.Rendering.PostProcessing;
+using EvolveGames;
 
 public class CinematicManager : MonoBehaviourSingleton<CinematicManager>
 {
@@ -13,8 +14,7 @@ public class CinematicManager : MonoBehaviourSingleton<CinematicManager>
 
     [SerializeField] GameObject player;
 
-    [SerializeField] FPSCameraController fpsCamera;
-    [SerializeField] FPSController fpsController;
+    [SerializeField] PlayerController playerController;
 
 
     [Header("Hidden Puzzle transitions")]
@@ -44,14 +44,12 @@ public class CinematicManager : MonoBehaviourSingleton<CinematicManager>
 
     public void FreezePlayer()
     {
-        fpsCamera.enabled = false;
-        fpsController.enabled = false;
+        playerController.enabled = false;
     }
 
     public void ReanudePlayer()
     {
-        fpsCamera.enabled = true;
-        fpsController.enabled = true;
+        playerController.enabled = true;
     }
 
     public void LookUnderBed()

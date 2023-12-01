@@ -67,6 +67,7 @@ public class HatchOpening : MonoBehaviour, IInteractable
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Entra");
         isActive = true;
     }
 

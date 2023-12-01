@@ -9,7 +9,6 @@ public class DisplayTrigger : MonoBehaviour
     [SerializeField] GameObject descriptionObject;
     [SerializeField] GameObject visualizingCamera;
     [SerializeField] GameObject sceneObject;
-    [SerializeField] FPSCameraController fpsCameraController;
 
     [SerializeField] GameObject uiObjectOff;
     [SerializeField] GameObject uiItemOff;
@@ -17,11 +16,13 @@ public class DisplayTrigger : MonoBehaviour
     [SerializeField] bool switchTaskWhileInteracting = false;
 
     AudioManager am;
+    CinematicManager cm;
     bool isActive;
 
     private void Start()
     {
         am = AudioManager.Get();
+        cm = CinematicManager.Get();
     }
 
     private void Update()
@@ -34,7 +35,7 @@ public class DisplayTrigger : MonoBehaviour
 
             sceneObject.SetActive(false);
             uiObjectOff.gameObject.SetActive(false);
-            fpsCameraController.enabled = false;
+            cm.FreezePlayer();
 
             if (uiItemOff)
             {
@@ -83,7 +84,7 @@ public class DisplayTrigger : MonoBehaviour
         visualizingCamera.SetActive(false);
 
         sceneObject.SetActive(true);
-        fpsCameraController.enabled = true;
+        cm.ReanudePlayer();
         uiObjectOff.gameObject.SetActive(true);
         if (uiItemOff)
         {

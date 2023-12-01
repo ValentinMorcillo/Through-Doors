@@ -14,9 +14,8 @@ public class MenuController : MonoBehaviour
     [SerializeField] GameObject menuCanvas;
     [SerializeField] GameObject controlsCanvas;
 
-    [SerializeField] GameObject player;
     [SerializeField] GameObject menuCamera;
-    [SerializeField] FPSCameraController cameraController;
+    [SerializeField] EvolveGames.PlayerController playerController;
 
 
     private void Start()
@@ -64,17 +63,14 @@ public class MenuController : MonoBehaviour
 
     void ActiveCameraMovement()
     {
-        cameraController.enabled = true;
-        player.SetActive(true);
-
+        playerController.canRotateCamera = true;
     }
 
     public void EnableMenu()
     {
         UnlockedMouse();
 
-        cameraController.enabled = false;
-        player.SetActive(false);
+        playerController.canRotateCamera = false;
         menuCamera.SetActive(true);
         menuCanvas.SetActive(true);
         gameplayCanvas.SetActive(false);

@@ -47,6 +47,8 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
         {
             footstepsAS.Play();
         }
+
+       // footstepsAS.PlayOneShot(footstepsAS.clip);
     }
 
     public void PlayOpenDoorSound()
