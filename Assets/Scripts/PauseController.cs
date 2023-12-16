@@ -8,11 +8,14 @@ public class PauseController : MonoBehaviour
     [SerializeField] GameObject gameplayCanvas;
     [SerializeField] GameObject controlsCanvas;
     [SerializeField] GameObject pauseCanvas;
+    [SerializeField] GameObject menuCanvas;
 
     [SerializeField] Button resumeButton;
     [SerializeField] Button controlsButton;
     [SerializeField] Button returnButton;
     [SerializeField] Button exitButton;
+
+    [SerializeField] bool isMenu = false;
 
     private void Start()
     {
@@ -29,8 +32,16 @@ public class PauseController : MonoBehaviour
 
     public void OnClickReturnButton()
     {
-        pauseCanvas.SetActive(true);
         controlsCanvas.SetActive(false);
+
+        if (isMenu)
+        {
+            menuCanvas.SetActive(true);
+        }
+        else
+        {
+            pauseCanvas.SetActive(true);
+        }
     }
 
     public void OnClickControlsButton()
@@ -65,7 +76,7 @@ public class PauseController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && gameplayCanvas.activeSelf)
         {
             EnablePause();
         }

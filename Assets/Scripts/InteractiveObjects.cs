@@ -24,7 +24,7 @@ public class InteractiveObjects : MonoBehaviour
 
             if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange, interactableLayer, QueryTriggerInteraction.Ignore))
             {
-                 Debug.Log(hitInfo.transform.gameObject.name, hitInfo.transform.gameObject);
+                // Debug.Log(hitInfo.transform.gameObject.name, hitInfo.transform.gameObject);
 
                 if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
                 {

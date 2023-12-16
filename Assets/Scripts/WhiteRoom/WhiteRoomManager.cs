@@ -23,12 +23,12 @@ public class WhiteRoomManager : MonoBehaviour
         {
             case 0:
 
-                menuController.EnableMenu();
+                Invoke(nameof(OnEnbleMenu), 0.1f);
                 break;
 
             case 1:
 
-                menuController.DisableMenu();
+                Invoke(nameof(OnDisableMenu), 0.1f);
                 CompleteFirstPart();
 
                 break;
@@ -57,4 +57,13 @@ public class WhiteRoomManager : MonoBehaviour
         doorpart2.gameObject.transform.DOLocalRotate(new Vector3(0, 20, 0), 0.5f);
     }
 
+    void OnEnbleMenu()
+    {
+        menuController.EnableMenu();
+    }
+
+    void OnDisableMenu()
+    {
+        menuController.DisableMenu();
+    }
 }

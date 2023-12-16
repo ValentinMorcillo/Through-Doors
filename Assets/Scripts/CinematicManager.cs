@@ -159,6 +159,5 @@ public class CinematicManager : MonoBehaviourSingleton<CinematicManager>
         yield return new WaitForSeconds(1.5f);
      
         SceneManager.Get().LoadScene("WhiteRoom");
-
     }
 }

@@ -20,7 +20,7 @@ namespace EvolveGames
                 {
                     MenuPanel.SetActive(false);
                     Player.canMove = true;
-                    Cursor.visible = false;
+                  //  Cursor.visible = false;
                     Cursor.lockState = CursorLockMode.Locked;
                     Time.timeScale = 1.0f;
                     ani.SetBool("START", false);
@@ -29,7 +29,7 @@ namespace EvolveGames
                 {
                     MenuPanel.SetActive(true);
                     Player.canMove = false;
-                    Cursor.visible = true;
+                   // Cursor.visible = true;
                     Cursor.lockState = CursorLockMode.None;
                     Time.timeScale = 0.0f;
                     ani.SetBool("START", true);
