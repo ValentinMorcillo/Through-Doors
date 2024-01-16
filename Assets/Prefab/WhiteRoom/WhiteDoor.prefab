@@ -642,6 +642,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 453024316428880841}
     m_Modifications:
+    - target: {fileID: 2018714530, guid: 874cde4b2625e254b9d5e5665622de8e, type: 3}
+      propertyPath: intructionPanelText
+      value: Press E To Interact
+      objectReference: {fileID: 0}
     - target: {fileID: 7742867991887351620, guid: 874cde4b2625e254b9d5e5665622de8e,
         type: 3}
       propertyPath: m_Layer

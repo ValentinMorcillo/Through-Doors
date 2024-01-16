@@ -39,6 +39,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4575526432826355692}
     m_Modifications:
+    - target: {fileID: 3537295305340505728, guid: ba28f9f692bb8994b8f0404154b02adb,
+        type: 3}
+      propertyPath: m_Height
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3537295305340505729, guid: ba28f9f692bb8994b8f0404154b02adb,
         type: 3}
       propertyPath: m_RootOrder
@@ -103,6 +108,11 @@ PrefabInstance:
         type: 3}
       propertyPath: footstepInterval
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537295305553013308, guid: ba28f9f692bb8994b8f0404154b02adb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.071
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba28f9f692bb8994b8f0404154b02adb, type: 3}
