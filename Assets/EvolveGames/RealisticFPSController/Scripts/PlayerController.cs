@@ -41,7 +41,8 @@ namespace EvolveGames
 
         [Space(20)]
         [Header("Input")]
-        [SerializeField] KeyCode CroughKey = KeyCode.LeftControl;
+        [SerializeField] KeyCode CroughKey = KeyCode.F15;
+        [SerializeField] KeyCode RunKey = KeyCode.F14;
 
 
         [HideInInspector] public CharacterController characterController;
@@ -102,7 +103,7 @@ namespace EvolveGames
             }
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             Vector3 right = transform.TransformDirection(Vector3.right);
-            isRunning = !isCrough ? CanRunning ? Input.GetKey(KeyCode.LeftShift) : false : false;
+            isRunning = !isCrough ? CanRunning ? Input.GetKey(RunKey) : false : false;
             vertical = canMove ? (isRunning ? RunningValue : WalkingValue) * Input.GetAxis("Vertical") : 0;
             horizontal = canMove ? (isRunning ? RunningValue : WalkingValue) * Input.GetAxis("Horizontal") : 0;
             if (isRunning) RunningValue = Mathf.Lerp(RunningValue, RuningSpeed, timeToRunning * Time.deltaTime);

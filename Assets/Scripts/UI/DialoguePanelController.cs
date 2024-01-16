@@ -48,11 +48,18 @@ public class DialoguePanelController : MonoBehaviour
         }
     }
 
-    public void StartTyping(string newText, DialogueOf dialogueOf, bool isFlshback)
+    public void StartTyping(string newText, DialogueOf dialogueOf, bool isFlshback, AudioClip thoughtVoice = null)
     {
         SetupDialoguePanel(dialogueOf, isFlshback);
 
-        audioManager.PlayVoiceSound();
+        if (!thoughtVoice)
+        {
+            audioManager.PlayVoiceSound();
+        }
+        else
+        {
+            audioManager.PlayThoughtVoice(thoughtVoice);
+        }
 
         fullText = newText;
         currentText = "";

@@ -964,6 +964,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5018999751977637959, guid: 7fa5edde6d2daa6459e4aa41d60502ba,
+        type: 3}
+      propertyPath: CroughKey
+      value: 296
+      objectReference: {fileID: 0}
     - target: {fileID: 5018999753010233097, guid: 7fa5edde6d2daa6459e4aa41d60502ba,
         type: 3}
       propertyPath: m_Layer

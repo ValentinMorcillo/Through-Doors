@@ -101,6 +101,12 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
         }
     }
 
+    public void PlayThoughtVoice(AudioClip voice)
+    {
+        voiceAS.clip = voice;
+        voiceAS.Play();
+    }
+
     public void StopVoiceSound()
     {
         voiceAS.Stop();
