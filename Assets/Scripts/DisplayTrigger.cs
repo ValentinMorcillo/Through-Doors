@@ -9,17 +9,20 @@ public class DisplayTrigger : MonoBehaviour
     [SerializeField] GameObject descriptionObject;
     [SerializeField] GameObject visualizingCamera;
     [SerializeField] GameObject sceneObject;
-    [SerializeField] FPSCameraController fpsCameraController;
 
     [SerializeField] GameObject uiObjectOff;
     [SerializeField] GameObject uiItemOff;
     
-    AudioSource audioSource;
+    [SerializeField] bool switchTaskWhileInteracting = false;
+
+    AudioManager am;
+    CinematicManager cm;
     bool isActive;
 
-    private void Awake()
+    private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        am = AudioManager.Get();
+        cm = CinematicManager.Get();
     }
 
     private void Update()
@@ -32,24 +35,27 @@ public class DisplayTrigger : MonoBehaviour
 
             sceneObject.SetActive(false);
             uiObjectOff.gameObject.SetActive(false);
-            uiItemOff.gameObject.SetActive(false);
-            fpsCameraController.enabled = false;
+            cm.FreezePlayer();
 
-            audioSource.Play();
+            if (uiItemOff)
+            {
+                uiItemOff.gameObject.SetActive(false);
+            }
+
+            if (switchTaskWhileInteracting)
+            {
+                GameManager.Get().isCompleteTask?.Invoke();
+                switchTaskWhileInteracting = false;
+            }
+
+
+            am.PlayCoinSound();
             Cursor.lockState = CursorLockMode.None;
         }
 
         if (isActive && Input.GetKeyDown(KeyCode.Q))
         {
-            visualObject.SetActive(false);
-            visualizingCamera.SetActive(false);
-            
-            sceneObject.SetActive(true);
-            fpsCameraController.enabled = true;
-            uiObjectOff.gameObject.SetActive(true);
-            uiItemOff.gameObject.SetActive(true);
-            
-            Cursor.lockState = CursorLockMode.Locked;
+            DisableVisualObject();
         }
 
     }
@@ -68,16 +74,23 @@ public class DisplayTrigger : MonoBehaviour
         {
             isActive = false;
 
-            visualObject.SetActive(false);
-            visualizingCamera.SetActive(false);
-
-            sceneObject.SetActive(true);
-            fpsCameraController.enabled = true;
-            uiObjectOff.gameObject.SetActive(true);
-            uiItemOff.gameObject.SetActive(true);
-
-            Cursor.lockState = CursorLockMode.Locked;
+            DisableVisualObject();
         }
     }
 
+    public void DisableVisualObject()
+    {
+        visualObject.SetActive(false);
+        visualizingCamera.SetActive(false);
+
+        sceneObject.SetActive(true);
+        cm.ReanudePlayer();
+        uiObjectOff.gameObject.SetActive(true);
+        if (uiItemOff)
+        {
+            uiItemOff.gameObject.SetActive(true);
+        }
+
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 }

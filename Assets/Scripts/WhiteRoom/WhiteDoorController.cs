@@ -9,7 +9,7 @@ public class WhiteDoorController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(nameTonextScene);
+        SceneManager.Get().LoadScene(nameTonextScene);
     }
 
 }
