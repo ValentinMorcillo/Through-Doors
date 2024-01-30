@@ -6,20 +6,25 @@ public class FPSController : MonoBehaviour
 {
     [SerializeField] Transform characterBase;
     private Rigidbody rb;
+    AudioManagerWhiteRoom amWhiteRoom;
     AudioManager am;
 
     [SerializeField] float speed = 5f;
     [SerializeField] float jumpForce = 28f;
+    [SerializeField] bool isWhiteRoom = true;
 
-
-    private float nextFootstepTime;
     [SerializeField] float footstepInterval = 0.6f;
+    private float nextFootstepTime;
+
+    [SerializeField] LayerMask layer;
 
     private bool isGrounded;
 
     void Start()
     {
         am = AudioManager.Get();
+        amWhiteRoom = AudioManagerWhiteRoom.Get();
+
         rb = GetComponent<Rigidbody>();
         nextFootstepTime = 0f;
     }
@@ -43,6 +48,7 @@ public class FPSController : MonoBehaviour
         movement.y = 0f;
 
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+       //rb.velocity += movement * speed * Time.fixedDeltaTime;
 
         if (isGrounded)
         {
@@ -54,7 +60,6 @@ public class FPSController : MonoBehaviour
         }
     }
 
-
     void Jump()
     {
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -62,18 +67,25 @@ public class FPSController : MonoBehaviour
 
     private void CheckIsGrounded()
     {
+        isGrounded = Physics.Raycast(characterBase.position + Vector3.up * 0.1f, Vector3.down, out RaycastHit hit, 0.2f, layer, QueryTriggerInteraction.Ignore);
 
-        isGrounded = Physics.Raycast(characterBase.position + Vector3.up * 0.1f, Vector3.down, out RaycastHit hit, 0.2f);
     }
 
     void PlayFootstepSound()
     {
-        if (am == null)
+        if (isWhiteRoom)
         {
-            return;
+            if (amWhiteRoom != null)
+            {
+                amWhiteRoom.PlayFootstepsWhiteRoomSound();
+            }
         }
-
-        // Reproducir el sonido
-        am.PlayFootstepsWhiteRoomSound();
+        else
+        {
+            if (am != null)
+            {
+                am.PlayFootstepsSound();
+            }
+        }
     }
 }

@@ -10,11 +10,8 @@ public class LocationsController : MonoBehaviour
         for (int i = 0; i < possibleLocations.Length; i++)
         {
             TurnOffLocation(i);
-
-            if (possibleLocations[i].TryGetComponent(out HiddenPuzzlePart hiddenPuzzlePart))
-            {
-                hiddenPuzzlePart.interactCorrectPart += NewLocationEnabled;
-            }
+    
+            possibleLocations[i].GetComponentInChildren<HiddenPuzzlePart>().interactCorrectPart = NewLocationEnabled;
         }
 
         SetupLocations();
@@ -22,14 +19,14 @@ public class LocationsController : MonoBehaviour
 
     void SetupLocations()
     {
-        possibleLocations[unlockedLocations].GetComponent<OutlineObjects>().enabled = true;
-        possibleLocations[unlockedLocations].GetComponent<HiddenPuzzlePart>().enabled = true;
+        possibleLocations[unlockedLocations].GetComponentInChildren<OutlineObjects>().enabled = true;
+        possibleLocations[unlockedLocations].GetComponentInChildren<HiddenPuzzlePart>().enabled = true;
     }
 
     void TurnOffLocation(int locationOff)
     {
-        possibleLocations[locationOff].GetComponent<OutlineObjects>().enabled = false;
-        possibleLocations[locationOff].GetComponent<HiddenPuzzlePart>().enabled = false;
+        possibleLocations[locationOff].GetComponentInChildren<OutlineObjects>().enabled = false;
+        possibleLocations[locationOff].GetComponentInChildren<HiddenPuzzlePart>().enabled = false;
     }
 
 

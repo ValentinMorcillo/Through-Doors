@@ -8,7 +8,7 @@ public abstract class HiddenPuzzlePart : MonoBehaviour, IInteractable
     [SerializeField] protected DialoguePanelController dialoguePanel;
     [SerializeField, TextArea(4, 6)] protected string dialogueText;
     protected CinematicManager cinematicManager;
-
+    GameManager gameManager;
 
     public Action interactCorrectPart;
     public abstract void Interact();
@@ -16,5 +16,16 @@ public abstract class HiddenPuzzlePart : MonoBehaviour, IInteractable
     public virtual void Start()
     {
         cinematicManager = CinematicManager.Get();
+        gameManager = GameManager.Get();
+
+    }
+
+    protected void OpenDialoguePanel()
+    {
+        if (dialoguePanel != null)
+        {
+            dialoguePanel.StartTyping(dialogueText, DialogueOf.chloe, true);
+           // gameManager.isCompleteTask?.Invoke();
+        }
     }
 }

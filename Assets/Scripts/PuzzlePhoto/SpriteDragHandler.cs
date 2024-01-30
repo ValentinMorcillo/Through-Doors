@@ -60,7 +60,7 @@ public class SpriteDragHandler : MonoBehaviour
     {
         audioSource.Play();
 
-        if (partsContainer.CheckPhotoInCorrectPivot(photoPart))
+        if (partsContainer.CheckMusicPartInCorrectPivot(photoPart))
         {
             SnappedPhoto.Invoke(photoPart.PhotoName);
             gameObject.transform.SetParent(PictureObject);

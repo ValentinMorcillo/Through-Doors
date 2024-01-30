@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PartsContainerPhotos : MonoBehaviour
 {
@@ -9,10 +10,15 @@ public class PartsContainerPhotos : MonoBehaviour
 
     [SerializeField] InventorySprites inventory;
     [SerializeField] GameObject completePhoto;
+
+    public UnityEvent completePuzzleEvent;
+
+    GameManager gameManager;
     AudioSource audioSource;
 
     private void Start()
     {
+        gameManager = GameManager.Get();
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -26,6 +32,7 @@ public class PartsContainerPhotos : MonoBehaviour
                 if (photosParts[i].PhotoName == pickableItem.GetName())
                 {
                     photosParts[i].IsVisualized = true;
+                    gameManager.isCompleteTask?.Invoke();
                 }
             }
         }
@@ -51,12 +58,14 @@ public class PartsContainerPhotos : MonoBehaviour
                 photosParts[i].gameObject.SetActive(false);
             }
 
+            completePuzzleEvent.Invoke();
+            gameManager.isCompleteTask?.Invoke();
             completePhoto.SetActive(true);
             audioSource.Play();
         }
     }
 
-    public bool CheckPhotoInCorrectPivot(PhotoPart correctPhotoPart)
+    public bool CheckMusicPartInCorrectPivot(PhotoPart correctPhotoPart)
     {
         int indexPhoto = correctPhotoPart.IDPart;
 

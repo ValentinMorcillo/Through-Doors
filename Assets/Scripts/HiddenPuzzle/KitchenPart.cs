@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class KitchenPart : HiddenPuzzlePart
 {
-
+    [SerializeField] InteractDoor[] doorsToOpen;
 
     public override void Interact()
     {
         interactCorrectPart?.Invoke();
 
-        if (dialoguePanel != null)
-        {
-            dialoguePanel.StartTyping(dialogueText);
-        }
+        cinematicManager.FreezePlayer();
+        
+        OpenAllDoors();
 
+        Invoke(nameof(OpenDialoguePanel), .8f);
+    }
+
+    void OpenAllDoors()
+    {
+        foreach (InteractDoor dc in doorsToOpen)
+        {
+            dc.OpenDoor();
+        }
     }
 
 }

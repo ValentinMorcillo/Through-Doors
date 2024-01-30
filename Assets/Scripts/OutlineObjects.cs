@@ -4,15 +4,14 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(Collider))]
-[RequireComponent(typeof(Outline))]
 public class OutlineObjects : MonoBehaviour
 {
-    Outline outline;
+    Outline[] outlines;
     [SerializeField] Canvas instructionPanel;
 
     void Awake()
     {
-        outline = GetComponent<Outline>();
+        outlines = GetComponentsInChildren<Outline>();
     }
 
     private void Start()
@@ -24,7 +23,8 @@ public class OutlineObjects : MonoBehaviour
     {
         if (other.CompareTag("Player") && this.enabled)
         {
-            outline.enabled = true;
+
+            turnOnOutlines();
 
             if (instructionPanel != null)
             {
@@ -37,7 +37,7 @@ public class OutlineObjects : MonoBehaviour
     {
         if (other.CompareTag("Player") && this.enabled)
         {
-            outline.enabled = false;
+            turnOffOutlines();
 
             if (instructionPanel != null)
             {
@@ -48,11 +48,27 @@ public class OutlineObjects : MonoBehaviour
 
     private void OnDisable()
     {
-        outline.enabled = false;
+        turnOffOutlines();
 
         if (instructionPanel != null)
         {
             instructionPanel.gameObject.SetActive(false);
         }
     }
+
+    void turnOffOutlines()
+    {
+        foreach (Outline o in outlines)
+        {
+            o.enabled = false;
+        }
+    }
+    void turnOnOutlines()
+    {
+        foreach (Outline o in outlines)
+        {
+            o.enabled = true;
+        }
+    }
+
 }

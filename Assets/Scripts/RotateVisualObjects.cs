@@ -43,4 +43,15 @@ public class RotateVisualObjects : MonoBehaviour
         moveV = 0;
         transform.rotation = initialRotation;
     }
+
+    private void OnDisable()
+    {
+        ResetRotation();
+    }
+
+    public void ResetRotation()
+    {
+        transform.rotation = initialRotation;
+
+    }
 }
