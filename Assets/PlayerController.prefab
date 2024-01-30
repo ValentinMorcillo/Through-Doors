@@ -611,7 +611,8 @@ MonoBehaviour:
   CanHideDistanceWall: 1
   HideDistance: 1.5
   LayerMaskInt: 1
-  CroughKey: 306
+  CroughKey: 296
+  RunKey: 295
   characterController: {fileID: 0}
   moveDirection: {x: 0, y: 0, z: 0}
   isRunning: 0
