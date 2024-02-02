@@ -12,12 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37b800984b056be4cae8a3b71944f358, type: 3}
   m_Name: Thought6
   m_EditorClassIdentifier: 
-  newText: 'Uff... I shouldn''t have rushed so much... I didn''t even get to see
-    who or what it was. They could be my parents or... who knows what.
-
-    It''s
-    the music box I gave to Chloe... It''s broken... It''s been years since I''ve
-    last heard the song. Maybe I can fix it?'
+  newText: I'm back to this place... Where is the music box? Another door is open?!
+    Maybe I should go through each one and face whatever is behind them so I can
+    get out of here.
   dialogueOf: 0
   isFlshback: 0
   thoughtVoice: {fileID: 8300000, guid: e7ce28a094a3c9b4f87a5e54c754fda9, type: 3}
