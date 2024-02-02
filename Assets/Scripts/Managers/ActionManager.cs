@@ -24,8 +24,6 @@ public class ActionManager : MonoBehaviourSingleton<ActionManager>
 
     void StartThought(int thougthIndex)
     {
-        Debug.Log(hasStartThought);
-
         if (hasStartThought)
         {
             dialoguePanel.StartTyping(thoughtData[thougthIndex].newText, thoughtData[thougthIndex].dialogueOf, thoughtData[thougthIndex].isFlshback, thoughtData[thougthIndex].thoughtVoice);

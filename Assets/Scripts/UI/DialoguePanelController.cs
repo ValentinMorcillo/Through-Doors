@@ -173,7 +173,7 @@ public class DialoguePanelController : MonoBehaviour
 
     void CompleteTask()
     {
-        gameManager.isCompleteTask?.Invoke();
+    //    gameManager.isCompleteTask?.Invoke();
     }
 
     void StartNextThought()

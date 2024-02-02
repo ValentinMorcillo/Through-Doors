@@ -15,8 +15,4 @@ public class ChloeRoomPart : HiddenPuzzlePart
         Invoke(nameof(OpenDialoguePanel), 7f);
     }
 
-    void TriggerNextThought()
-    {
-        ActionManager.Get().onStartThought?.Invoke();
-    }
 }

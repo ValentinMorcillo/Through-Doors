@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37b800984b056be4cae8a3b71944f358, type: 3}
-  m_Name: Thought4
+  m_Name: Thought5
   m_EditorClassIdentifier: 
-  newText: "No... I've experienced this back when I was a teenager. Why am I going
-    through this again? Looks like I'm back to the times where Chloe was ill. \nThis
-    wasn't here before... Our favorite picture... You broke it after an argument.
-    I would love to get it back."
+  newText: 'Uff... I shouldn''t have rushed so much... I didn''t even get to see
+    who or what it was. They could be my parents or... who knows what.
+
+    It''s
+    the music box I gave to Chloe... It''s broken... It''s been years since I''ve
+    last heard the song. Maybe I can fix it?'
   dialogueOf: 0
   isFlshback: 0
   thoughtVoice: {fileID: 8300000, guid: e7ce28a094a3c9b4f87a5e54c754fda9, type: 3}
