@@ -13,6 +13,8 @@ public class KitchenPart : HiddenPuzzlePart
         cinematicManager.FreezePlayer();
         
         OpenAllDoors();
+        
+        actionManager.onSetHasThought?.Invoke();
 
         Invoke(nameof(OpenDialoguePanel), .8f);
     }

@@ -24,6 +24,7 @@ public class DialoguePanelController : MonoBehaviour
 
     CinematicManager cinematicManager;
     GameManager gameManager;
+    ActionManager actionManager;
     AudioManager audioManager;
 
     private string fullText = "";
@@ -41,6 +42,7 @@ public class DialoguePanelController : MonoBehaviour
         cinematicManager = CinematicManager.Get();
         gameManager = GameManager.Get();
         audioManager = AudioManager.Get();
+        actionManager = ActionManager.Get();
 
         if (dialoguePanel != null)
         {
@@ -136,6 +138,8 @@ public class DialoguePanelController : MonoBehaviour
                 cinematicManager.ReanudePlayer();
 
                 CompleteTask();
+
+                Invoke(nameof(StartNextThought), 0.2f);
             }
         }
     }
@@ -171,5 +175,11 @@ public class DialoguePanelController : MonoBehaviour
     {
         gameManager.isCompleteTask?.Invoke();
     }
+
+    void StartNextThought()
+    {
+        actionManager.onStartThought?.Invoke();
+    }
+
 }
 

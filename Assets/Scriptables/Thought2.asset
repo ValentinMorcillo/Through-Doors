@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37b800984b056be4cae8a3b71944f358, type: 3}
+  m_Name: Thought2
+  m_EditorClassIdentifier: 
+  newText: Is this my old house?! Am I young again?! This is so strange. It feels
+    like I'm living my 15s again. What is going on?
+  dialogueOf: 0
+  isFlshback: 0
+  thoughtVoice: {fileID: 8300000, guid: e7ce28a094a3c9b4f87a5e54c754fda9, type: 3}

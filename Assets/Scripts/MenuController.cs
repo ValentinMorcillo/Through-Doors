@@ -64,6 +64,7 @@ public class MenuController : MonoBehaviour
     void ActiveCameraMovement()
     {
         playerController.canRotateCamera = true;
+        WhiteRoomActionManager.Get().onCompleteCameraTransition?.Invoke();
     }
 
     public void EnableMenu()
