@@ -31,6 +31,7 @@ public class AnsweringMachineBehavior : MonoBehaviour, IInteractable
             OpenDialoguePanel();
             ActivePhotoInteractions();
             messageCount.text = "0";
+            ActionManager.Get().onSetHasThought?.Invoke();
             Destroy(sfxAnswerMachine); //Destruyo el pitido
             componentsManager.OnDisableComponents();
             hasInteracted = true;

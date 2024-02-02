@@ -1,4 +1,5 @@
 using System;
+using UnityEngine.SceneManagement;
 
 using Utils;
 
@@ -9,7 +10,12 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
     private void Start()
     {
-        Invoke(nameof(StartWithDealy), 0.1f);
+        string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+
+        if (sceneName == "FirstPuzzle" || sceneName == "ThirdPuzzle")
+        {
+            Invoke(nameof(StartWithDealy), 0.1f);
+        }
     }
 
     void StartWithDealy()
