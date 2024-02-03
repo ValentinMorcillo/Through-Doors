@@ -9,15 +9,18 @@ public class WhiteRoomManager : MonoBehaviour
 {
     [SerializeField] MenuController menuController;
 
-
     [SerializeField] GameObject[] turnOn;
     [SerializeField] InteractDoor doorpart1;
     [SerializeField] InteractDoor doorpart2;
+
+    WhiteRoomActionManager actionManager;
 
     static int stageNumber = -1;
 
     private void Start()
     {
+        actionManager = new WhiteRoomActionManager();
+
         stageNumber++;
 
         switch (stageNumber)
@@ -29,7 +32,7 @@ public class WhiteRoomManager : MonoBehaviour
 
             case 1:
 
-                Invoke(nameof(OnDisableMenu), 0.1f);
+                Invoke(nameof(OnDisableMenu), 0.05f);
                 CompleteFirstPart();
 
                 break;
@@ -56,6 +59,8 @@ public class WhiteRoomManager : MonoBehaviour
         doorpart1.IsDoorEnable = false;
         doorpart2.IsDoorEnable = true;
         doorpart2.gameObject.transform.DOLocalRotate(new Vector3(0, 20, 0), 0.5f);
+
+        actionManager.onReturnToWhiteRoom?.Invoke();
     }
 
     void OnEnbleMenu()

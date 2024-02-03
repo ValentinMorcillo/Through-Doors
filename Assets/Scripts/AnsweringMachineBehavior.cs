@@ -34,6 +34,9 @@ public class AnsweringMachineBehavior : MonoBehaviour, IInteractable
             ActionManager.Get().onSetHasThought?.Invoke();
             Destroy(sfxAnswerMachine); //Destruyo el pitido
             componentsManager.OnDisableComponents();
+            
+            GameManager.Get().isCompleteTask?.Invoke();
+
             hasInteracted = true;
         }
     }
