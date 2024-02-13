@@ -16,4 +16,4 @@ MonoBehaviour:
     like I'm living my 15s again. What is going on?
   dialogueOf: 0
   isFlshback: 0
-  thoughtVoice: {fileID: 8300000, guid: e7ce28a094a3c9b4f87a5e54c754fda9, type: 3}
+  thoughtVoice: {fileID: 8300000, guid: cc0cec7a1cd64a646a6485191e5ad68e, type: 3}

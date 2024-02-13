@@ -21,12 +21,20 @@ public class PickableItem : MonoBehaviour, IInteractable
     [SerializeField] PickeableItemType itemType;
 
     AudioManager am;
+    ActionManager actionManager;
 
     private void Start()
     {
         am = AudioManager.Get();
+        actionManager = ActionManager.Get();
+
         componentsManager = GetComponentInParent<GameObjectsComponentsManager>();
         componentsManager.ToggleComponents(isActive);
+    }
+
+    void InitWithDelay()
+    {
+
     }
 
     public string GetName()
@@ -68,6 +76,10 @@ public class PickableItem : MonoBehaviour, IInteractable
         if (isActive)
         {
             InteractPickableItem.Invoke(this);
+           
+            actionManager.onSetHasThought?.Invoke();
+            actionManager.onStartThought?.Invoke();
+
             am.PlayPickUpItemSound();
             Destroy(gameObject);
         }

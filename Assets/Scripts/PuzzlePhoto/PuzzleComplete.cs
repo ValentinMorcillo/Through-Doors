@@ -35,25 +35,4 @@ public class PuzzleComplete : MonoBehaviour
             spriteRenderer.enabled = true;
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

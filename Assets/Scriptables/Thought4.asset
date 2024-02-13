@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37b800984b056be4cae8a3b71944f358, type: 3}
   m_Name: Thought4
   m_EditorClassIdentifier: 
-  newText: "No... I've experienced this back when I was a teenager. Why am I going
-    through this again? Looks like I'm back to the times where Chloe was ill. \nThis
-    wasn't here before... Our favorite picture... You broke it after an argument.
-    I would love to get it back."
+  newText: No... I've experienced this back when I was a teenager. Why am I going
+    through this again? Looks like I'm back to the times where Chloe was ill.
   dialogueOf: 0
   isFlshback: 0
-  thoughtVoice: {fileID: 8300000, guid: e7ce28a094a3c9b4f87a5e54c754fda9, type: 3}
+  thoughtVoice: {fileID: 8300000, guid: 108a15b892e00044c8d4b1b96a42b74a, type: 3}

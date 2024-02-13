@@ -15,6 +15,7 @@ public class ActionManager : MonoBehaviourSingleton<ActionManager>
     bool hasStartThought = true;
 
     int thougthIndex = 0;
+
     private void Start()
     {
         onStartThought += () => StartThought(thougthIndex);
@@ -24,11 +25,11 @@ public class ActionManager : MonoBehaviourSingleton<ActionManager>
 
     void StartThought(int thougthIndex)
     {
-        if (hasStartThought)
+        if (hasStartThought && thougthIndex >= 0 && thougthIndex < thoughtData.Length   )
         {
             dialoguePanel.StartTyping(thoughtData[thougthIndex].newText, thoughtData[thougthIndex].dialogueOf, thoughtData[thougthIndex].isFlshback, thoughtData[thougthIndex].thoughtVoice);
-            thougthIndex++;
-            hasStartThought=false;
+            this.thougthIndex++;
+            hasStartThought = false;
         }
     }
 

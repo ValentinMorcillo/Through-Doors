@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37b800984b056be4cae8a3b71944f358, type: 3}
+  m_Name: Thought8
+  m_EditorClassIdentifier: 
+  newText: I'm back to this place... Where is the music box? Another door is open?!
+    Maybe I should go through each one and face whatever is behind them so I can
+    get out of here.
+  dialogueOf: 0
+  isFlshback: 0
+  thoughtVoice: {fileID: 8300000, guid: 127732820b9148649b9efd498b4eb64b, type: 3}

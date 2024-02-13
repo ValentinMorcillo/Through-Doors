@@ -170,7 +170,7 @@ namespace EvolveGames
             if (WallDistance != Physics.Raycast(GetComponentInChildren<Camera>().transform.position, transform.TransformDirection(Vector3.forward), out ObjectCheck, HideDistance, LayerMaskInt) && CanHideDistanceWall)
             {
                 WallDistance = Physics.Raycast(GetComponentInChildren<Camera>().transform.position, transform.TransformDirection(Vector3.forward), out ObjectCheck, HideDistance, LayerMaskInt);
-                Items.ani.SetBool("Hide", WallDistance);
+             //   Items.ani.SetBool("Hide", WallDistance);
                 Items.DefiniteHide = WallDistance;
             }
         }
@@ -199,7 +199,7 @@ namespace EvolveGames
                 CanRunning = true;
                 isClimbing = false;
                 WalkingValue *= 2;
-                Items.ani.SetBool("Hide", false);
+               // Items.ani.SetBool("Hide", false);
                 Items.Hide(false);
             }
         }

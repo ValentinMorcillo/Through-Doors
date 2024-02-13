@@ -16,4 +16,4 @@ MonoBehaviour:
     here.
   dialogueOf: 0
   isFlshback: 0
-  thoughtVoice: {fileID: 8300000, guid: e7ce28a094a3c9b4f87a5e54c754fda9, type: 3}
+  thoughtVoice: {fileID: 8300000, guid: 8154c0acf3cdac3419c62be9bf0cd181, type: 3}
