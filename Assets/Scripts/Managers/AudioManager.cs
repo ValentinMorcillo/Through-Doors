@@ -43,12 +43,12 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
 
     public void PlayFootstepsSound()
     {
-        if (!footstepsAS.isPlaying)
-        {
-            footstepsAS.Play();
-        }
+        //if (!footstepsAS.isPlaying)
+        //{
+        //    footstepsAS.Play();
+        //}
 
-       // footstepsAS.PlayOneShot(footstepsAS.clip);
+         footstepsAS.PlayOneShot(footstepsAS.clip);
     }
 
     public void PlayOpenDoorSound()
