@@ -16,7 +16,7 @@ public class WhiteRoomManager : MonoBehaviour
     WhiteRoomActionManager actionManager;
 
     static int stageNumber = -1;
-
+    
     private void Start()
     {
         actionManager = new WhiteRoomActionManager();

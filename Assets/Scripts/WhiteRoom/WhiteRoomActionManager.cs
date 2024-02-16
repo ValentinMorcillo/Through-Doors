@@ -35,17 +35,20 @@ public class WhiteRoomActionManager : MonoBehaviourSingleton<WhiteRoomActionMana
     private bool shouldComplete = false;
     private bool hasInteract = false;
 
+   static int thoughtIndex = 0;
+
     private void Start()
     {
         audioManager = AudioManagerWhiteRoom.Get();
 
-        onCompleteCameraTransition += () => StartThought(0);
-        onReturnToWhiteRoom += () => StartThought(1);
+        onCompleteCameraTransition += () => StartThought(thoughtIndex);
+       // onReturnToWhiteRoom += () => StartThought(thoughtIndex);
     }
 
     void StartThought(int thougthIndex)
     {
         StartTyping(thoughtData[thougthIndex].newText, thoughtData[thougthIndex].dialogueOf, thoughtData[thougthIndex].isFlshback, thoughtData[thougthIndex].thoughtVoice);
+        thoughtIndex++;
     }
 
     public void StartTyping(string newText, DialogueOf dialogueOf, bool isFlshback, AudioClip thoughtVoice = null)
