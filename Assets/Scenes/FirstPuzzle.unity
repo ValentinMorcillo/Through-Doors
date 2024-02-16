@@ -4394,6 +4394,21 @@ PrefabInstance:
       propertyPath: isActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 359134580191512024, guid: 8ece09967a980d048be176105993c44b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.0039173104
+      objectReference: {fileID: 0}
+    - target: {fileID: 359134580191512024, guid: 8ece09967a980d048be176105993c44b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.0039173104
+      objectReference: {fileID: 0}
+    - target: {fileID: 359134580191512024, guid: 8ece09967a980d048be176105993c44b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.0039173104
+      objectReference: {fileID: 0}
     - target: {fileID: 1127294721826082117, guid: 8ece09967a980d048be176105993c44b,
         type: 3}
       propertyPath: m_Enabled
@@ -4509,6 +4524,12 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.079
       objectReference: {fileID: 0}
+    - target: {fileID: 6209715129363905990, guid: 8ece09967a980d048be176105993c44b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 18338bd82680b974a98ab836a6c35d8e,
+        type: 3}
     - target: {fileID: 6452237408356155724, guid: 8ece09967a980d048be176105993c44b,
         type: 3}
       propertyPath: m_IsActive
