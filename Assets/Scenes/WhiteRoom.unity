@@ -1915,7 +1915,7 @@ MonoBehaviour:
   dontDestroyOnLoad: 0
   thoughtData:
   - {fileID: 11400000, guid: 1aac03080bf651040919a9b8ae442e6c, type: 2}
-  - {fileID: 11400000, guid: 81ccf1831a618ea4fa4d1f924b4107f3, type: 2}
+  - {fileID: 11400000, guid: ead72d6208f68174895b6c1cd2324884, type: 2}
   playerController: {fileID: 1213895707}
   dialoguePanel: {fileID: 59203901}
   dialogueSprite: {fileID: 494455220}
@@ -4573,6 +4573,11 @@ PrefabInstance:
         type: 3}
       propertyPath: instructionPanel
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821963200566375919, guid: 00110fec0a663464eb96f32312a02b7b,
+        type: 3}
+      propertyPath: nameTonextScene
+      value: WhiteRoom
       objectReference: {fileID: 0}
     - target: {fileID: 8145752721361832386, guid: 00110fec0a663464eb96f32312a02b7b,
         type: 3}

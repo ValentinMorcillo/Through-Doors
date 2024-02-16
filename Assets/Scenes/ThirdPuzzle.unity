@@ -4706,6 +4706,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1400838342}
     m_Modifications:
+    - target: {fileID: 2018714530, guid: 874cde4b2625e254b9d5e5665622de8e, type: 3}
+      propertyPath: intructionPanelText
+      value: Press E To Interact
+      objectReference: {fileID: 0}
     - target: {fileID: 7742867992419414018, guid: 874cde4b2625e254b9d5e5665622de8e,
         type: 3}
       propertyPath: m_Name
