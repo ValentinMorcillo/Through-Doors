@@ -5,25 +5,125 @@ using Utils;
 
 public class AudioManager : MonoBehaviourSingleton<AudioManager>
 {
-    [SerializeField] AudioSource openDoorAS;
+    [SerializeField] AudioSource voiceAS;
+    [SerializeField] AudioClip[] dialogueVoice;
+    int dialogueIndex = 0;
+
+    [SerializeField] AudioSource initFlashbackAS;
+    [SerializeField] AudioSource finishFlashbackAS;
+
     [SerializeField] AudioSource footstepsAS;
-    [SerializeField] AudioSource footstepsWhiteRoomAS;
-
-    public void PlayFootstepsWhiteRoomSound()
+    [SerializeField] AudioSource pickUpItemAS;
+    [SerializeField] AudioSource openDoorAS;
+    [SerializeField] AudioSource bendAS;
+    [SerializeField] AudioSource getUpAS;
+    [SerializeField] AudioSource lockedDoorAS;
+    [SerializeField] AudioSource annotateAS;
+    [SerializeField] AudioSource coinAS;
+    [SerializeField] AudioSource finalPuzzleAS;
+    [SerializeField] AudioSource winSoundAS;
+ 
+    [SerializeField] AudioSource openChestAS;
+    [SerializeField] AudioSource incorrectCodeAS;
+    [SerializeField] AudioSource pressButtonPadAS;
+    
+    public void PlayBendSound()
     {
-        footstepsWhiteRoomAS.PlayOneShot(footstepsWhiteRoomAS.clip);
-
-        //if (!footstepsWhiteRoomAS.isPlaying)
-        //{
-        //    footstepsWhiteRoomAS.Play();
-        //}
+        bendAS.Play();
     }
+
+    public void PlayPickUpItemSound()
+    {
+        pickUpItemAS.Play();
+    }
+    public void PlayGetUpSound()
+    {
+        getUpAS.Play();
+    }
+
     public void PlayFootstepsSound()
     {
-        footstepsAS.Play();
+        //if (!footstepsAS.isPlaying)
+        //{
+        //    footstepsAS.Play();
+        //}
+
+         footstepsAS.PlayOneShot(footstepsAS.clip);
     }
+
     public void PlayOpenDoorSound()
     {
         openDoorAS.Play();
+    }
+
+    public void PlayWinPuzzleSound()
+    {
+        winSoundAS.Play();
+    }
+
+    public void PlayIncorrectSound()
+    {
+        incorrectCodeAS.Play();
+    }
+
+    public void PlayPressButtonPadSound()
+    {
+        pressButtonPadAS.Play();
+    }
+
+    public void PlayOpenChestSound()
+    {
+        openChestAS.Play();
+    }
+
+    public void PlayLockedDoorSound()
+    {
+        lockedDoorAS.Play();
+    }
+
+    public void PlayCoinSound()
+    {
+        coinAS.Play();
+    }
+
+    public void PlayAnnotateSound()
+    {
+        annotateAS.Play();
+    }
+
+    public void PlayVoiceSound()
+    {
+        if (dialogueVoice[dialogueIndex] != null)
+        {
+            voiceAS.clip = dialogueVoice[dialogueIndex];
+            voiceAS.Play();
+            dialogueIndex++;
+        }
+    }
+
+    public void PlayThoughtVoice(AudioClip voice)
+    {
+        voiceAS.clip = voice;
+        voiceAS.Play();
+    }
+
+    public void StopVoiceSound()
+    {
+        voiceAS.Stop();
+    }
+
+    public void PlayFinishFlashbackSound()
+    {
+        finishFlashbackAS.Play();
+    }
+
+    public void PlayFinalPuzzleSound()
+    {
+        finalPuzzleAS.Play();
+    }
+
+    public void PlayInitFlashbackSound()
+    {
+        initFlashbackAS.Play();
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PuzzleComplete : MonoBehaviour
 {
-
     [SerializeField] GameObject[] partsPhotos;
 
     SpriteRenderer spriteRenderer;
@@ -36,25 +35,4 @@ public class PuzzleComplete : MonoBehaviour
             spriteRenderer.enabled = true;
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
