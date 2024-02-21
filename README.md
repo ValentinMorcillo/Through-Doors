@@ -4,7 +4,28 @@
 
 # Life Through a Door
 
-PONER LA DESCRIPCION LARGA DEL JUEGO ACA.
+Help Katherine remember her past to get to the afterlife.
+
+Through Doors is a first-person, episodic single-player narrative experience where, by passing through different doors, we will experience each of the stages of Katherine's life. With the help of the objects that she will find around her house, she will be able to collect different amulets and travel to the afterlife.
+
+### Immerse yourself in the captivating atmosphere
+
+- **Play as Katherine to help her get out of limbo and travel to the afterlife in peace.
+- **Discover Kath's life as you cross different doors that take you to each of her stages of growth.
+
+### Enjoy puzzles that immerse you in the narrative
+
+- **Explore the house in search of puzzles that connect, little by little, fragments of Kath's story.
+
+### Explore the house and interact with what is inside of it
+
+- **Enjoy the freedom to explore Kath's house in its different stages of life, watching the significant changes in each of them.
+
+## Through Doors Features: 
+- **Inmersive story
+- **Simple puzzles with objects from the house
+- **Environment interaction
+- **Beautiful low-poly 3D graphics
 
 This is a game being developed by students from <a href="https://www.imagecampus.edu.ar/">Image Campus</a>
 
