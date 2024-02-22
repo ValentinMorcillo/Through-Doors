@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public enum DialogueOf
 {
-    kath, chloe, answerMachine
+    kath, chloe, answerMachine, grannykath
 }
 
 public class DialoguePanelController : MonoBehaviour

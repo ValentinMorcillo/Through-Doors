@@ -20,6 +20,7 @@ public class WhiteRoomActionManager : MonoBehaviourSingleton<WhiteRoomActionMana
     [SerializeField] TextMeshProUGUI dialogueText;
 
     [SerializeField] Sprite kathImage;
+    [SerializeField] Sprite grannyKathImage;
     [SerializeField] Sprite chloeImage;
     [SerializeField] Sprite answerMachineImage;
 
@@ -108,6 +109,13 @@ public class WhiteRoomActionManager : MonoBehaviourSingleton<WhiteRoomActionMana
                 nameText.text = "Answer Machine";
 
                 break;
+            case DialogueOf.grannykath:
+
+                dialogueSprite.sprite = grannyKathImage;
+                nameText.text = "Granny Kath";
+
+                break;
+
             default:
                 break;
         }
