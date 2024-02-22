@@ -1253,6 +1253,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00110fec0a663464eb96f32312a02b7b, type: 3}
+--- !u!1 &485175317 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2279347201196062208, guid: d6c3f2da1ad3a824d8efb7283dfbb5d5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1421803388}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &485175321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485175317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1593bd0315c1be943a447b28eba54a0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 1
 --- !u!1 &494455217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1922,6 +1941,7 @@ MonoBehaviour:
   nameText: {fileID: 808589396}
   dialogueText: {fileID: 1246371862}
   kathImage: {fileID: 21300000, guid: 3f48192d0087ef2419a099d28ca62405, type: 3}
+  grannyKathImage: {fileID: 21300000, guid: e6d24129121d6d94e88290c3fecff536, type: 3}
   chloeImage: {fileID: 21300000, guid: 89685bd22ab02ea49b1bd06efa9e97ff, type: 3}
   answerMachineImage: {fileID: 21300000, guid: be5b092c07d6851459fc168051487b2c, type: 3}
   typingSpeed: 0.05

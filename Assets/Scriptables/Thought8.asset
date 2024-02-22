@@ -15,6 +15,6 @@ MonoBehaviour:
   newText: I'm back to this place... Where is the music box? Another door is open?!
     Maybe I should go through each one and face whatever is behind them so I can
     get out of here.
-  dialogueOf: 0
+  dialogueOf: 3
   isFlshback: 0
   thoughtVoice: {fileID: 8300000, guid: 127732820b9148649b9efd498b4eb64b, type: 3}
