@@ -27,7 +27,6 @@ public class DisplayTrigger : MonoBehaviour
 
     private void Update()
     {
-
         if (isActive && Input.GetKeyDown(KeyCode.E))
         {
             visualObject.SetActive(true);
@@ -35,7 +34,7 @@ public class DisplayTrigger : MonoBehaviour
 
             sceneObject.SetActive(false);
             uiObjectOff.gameObject.SetActive(false);
-            cm.FreezePlayer();
+           // cm.FreezePlayer();
 
             if (uiItemOff)
             {
@@ -84,7 +83,7 @@ public class DisplayTrigger : MonoBehaviour
         visualizingCamera.SetActive(false);
 
         sceneObject.SetActive(true);
-        cm.ReanudePlayer();
+       // cm.ReanudePlayer();
         uiObjectOff.gameObject.SetActive(true);
         if (uiItemOff)
         {
