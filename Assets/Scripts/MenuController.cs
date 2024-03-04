@@ -16,6 +16,7 @@ public class MenuController : MonoBehaviour
 
     [SerializeField] GameObject menuCamera;
     [SerializeField] EvolveGames.PlayerController playerController;
+    [SerializeField] PauseController pauseController;
 
 
     private void Start()
@@ -31,12 +32,13 @@ public class MenuController : MonoBehaviour
     public void OnClickPlayButton()
     {
         DisableMenu();
+        pauseController.isMenu = false;
     }
 
     public void OnClickReturnButton()
     {
-        menuCanvas.SetActive(true);
-        controlsCanvas.SetActive(false);
+     //   menuCanvas.SetActive(true);
+     //   controlsCanvas.SetActive(false);
     }
 
     public void OnClickControlsButton()

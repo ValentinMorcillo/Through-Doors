@@ -15,7 +15,7 @@ public class PauseController : MonoBehaviour
     [SerializeField] Button returnButton;
     [SerializeField] Button exitButton;
 
-    [SerializeField] bool isMenu = false;
+    public bool isMenu = false;
 
     private void Start()
     {
