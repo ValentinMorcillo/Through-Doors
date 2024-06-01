@@ -199,7 +199,6 @@ GameObject:
   - component: {fileID: 774860322331295058}
   - component: {fileID: 3293283213910597738}
   - component: {fileID: 1251765416417874984}
-  - component: {fileID: 7149719123344465519}
   m_Layer: 0
   m_Name: Lampara
   m_TagString: Untagged
@@ -214,8 +213,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2177496019759692336}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.00000003348111, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -272,19 +271,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7149719123344465519
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2177496019759692336}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.4346623, y: 0.81162536, z: 0.4391319}
-  m_Center: {x: 0, y: 0.000000044703484, z: 0}
 --- !u!1 &4284621028141724817
 GameObject:
   m_ObjectHideFlags: 0
