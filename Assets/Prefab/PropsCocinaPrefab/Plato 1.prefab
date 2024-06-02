@@ -124,9 +124,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8753454707687715628}
+  - component: {fileID: 6371646048801597639}
+  - component: {fileID: 6737083466464216710}
   m_Layer: 0
   m_Name: plato1
-  m_TagString: Untagged
+  m_TagString: Inspectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,6 +149,35 @@ Transform:
   m_Father: {fileID: 6022699101508617394}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6371646048801597639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605323123774521309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ecc47800fc0f6242946db4e369e7c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noType: 1
+  textType: 0
+  objectName: 
+  itemDescriptionText: 
+--- !u!65 &6737083466464216710
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605323123774521309}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.45957, y: 0.62419784, z: 2.2717404}
+  m_Center: {x: 0.05417779, y: 0.16359715, z: 0.079633}
 --- !u!1 &5636872012574301834
 GameObject:
   m_ObjectHideFlags: 0

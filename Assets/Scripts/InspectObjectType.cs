@@ -12,11 +12,23 @@ public class InspectObjectType : MonoBehaviour
 
     [SerializeField] private bool noType;
     [SerializeField] private bool textType;
-
-
+    [SerializeField] private bool scaleOverride;
+    [Header("-- Default Object Name ----------")]
+    [Space(10)]
     [SerializeField] internal string objectName;
     [ConditionalField("textType")]
+    [Header("-- Text Type Behaviours ----------")]
+    [Space(10)]
     [SerializeField, TextArea(3, 6)] internal string itemDescriptionText;
+    [ConditionalField("scaleOverride")]
+    [Header("-- Scale Override Behaviours ----------")]
+    [Space(10)]
+    [SerializeField, Range(0.5f,1.0f)] internal float initialScale;
+    [ConditionalField("scaleOverride")]
+    [SerializeField,Range(0.5f,1.0f)] internal float minScale;
+    [ConditionalField("scaleOverride")]
+    [SerializeField,Range(0.8f,2.0f)] internal float maxScale;
+
 
     /// <summary>
     /// Method that gives back the bool type when required.
@@ -26,7 +38,15 @@ public class InspectObjectType : MonoBehaviour
     internal bool GetObjectType()
     {
         if (textType) return true; else {  return false; }
-
+    }
+    /// <summary>
+    /// Method that gives back the override scale bool when required.
+    /// Made for the NewInspectSystem script to give back the initial, min and max scale values for it's inspection.
+    /// </summary>
+    /// <returns>Personalized object initial, minimal and maximum scale float values.</returns>
+    internal bool OverrideScale()
+    {
+        if (scaleOverride) return true; else { return false; }
     }
 
 

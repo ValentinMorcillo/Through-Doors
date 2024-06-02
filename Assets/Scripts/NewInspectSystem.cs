@@ -24,15 +24,15 @@ public class NewInspectSystem : MonoBehaviour
     [Space(10)]
     [SerializeField] private float rotationSpeed = 100f;
     [SerializeField] private float zoomSpeed = 2f;
-    [SerializeField] private Vector3 minScale; //setear en realidad que el tamaño este basado por cada gameObject;
-    [SerializeField] private Vector3 maxScale; // setear como máximo 2 veces el tamaño real.
+    [SerializeField, Range(0.5f,1.0f)] private float minScale; //setear en realidad que el tamaño este basado por cada gameObject;
+    [SerializeField, Range(0.8f, 2.0f)] private float maxScale; // setear como máximo 2 veces el tamaño real.
+    [SerializeField, Range(0.5f, 1.0f)] private float initialShowScale; // la escala por defecto a mostrar al principio.
 
     [Header("=== Camera Settings ===========")]
     [Space(10)]
     [SerializeField] private Camera mainCamera;
     [SerializeField] private Transform currentObject;
     private Vector3 initialPosition;
-    private float initialFieldOfView;
 
     [Header("=== Object to View Elements ===========")]
     [Space(10)]
@@ -44,9 +44,8 @@ public class NewInspectSystem : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main;
-        raycastDistance = 1.1f;
+        raycastDistance = 1.2f;
         initialPosition = mainCamera.transform.position;
-        initialFieldOfView = mainCamera.fieldOfView;
     }
 
     void Update()
@@ -82,13 +81,20 @@ public class NewInspectSystem : MonoBehaviour
                 objectInitialRotation = hit.transform.rotation;
                 objectInitialScale = currentObject.localScale;
                 //tener en cuenta que la idea que todos los objetos partan de una escala de 1,1,1. Si no es así, meterlos dentro de un parent que si lo tenga.
-                minScale = currentObject.localScale/2; //0.5
-                maxScale = currentObject.localScale;  //1 MAX
-                currentObject.localScale = new Vector3(0.7f,0.7f,0.7f); 
+                if (type.OverrideScale()==true)
+                {
+                    currentObject.localScale = new Vector3(type.initialScale, type.initialScale, type.initialScale);
+                }
+                else
+                {
+                    currentObject.localScale = new Vector3 (initialShowScale, initialShowScale,initialShowScale); 
+                }
+
                 Vector3 screenCenter = new Vector3(Screen.width / 2, Screen.height / 2, mainCamera.WorldToScreenPoint(inspectableObjectPosition.position).z);
                 Vector3 worldCenter = mainCamera.ScreenToWorldPoint(screenCenter);
-                inspectableObjectPosition.position = worldCenter;
-                currentObject.position = inspectableObjectPosition.position;
+                //inspectableObjectPosition.position = worldCenter;
+                currentObject.position = worldCenter;
+
                 Collider collider = currentObject.GetComponent<Collider>();
                 collider.enabled = false;
                 playerController.canRotateCamera = false;
@@ -125,9 +131,18 @@ public class NewInspectSystem : MonoBehaviour
         if (scroll != 0.0f)
         {
             Vector3 newScale = currentObject.localScale + Vector3.one * scroll * zoomSpeed;
-            newScale.x = Mathf.Clamp(newScale.x, minScale.x, maxScale.x);
-            newScale.y = Mathf.Clamp(newScale.y, minScale.y, maxScale.y);
-            newScale.z = Mathf.Clamp(newScale.z, minScale.z, maxScale.z);
+            if (type.OverrideScale() == true)
+            {
+                newScale.x = Mathf.Clamp(newScale.x, type.minScale, type.maxScale);
+                newScale.y = Mathf.Clamp(newScale.y, type.minScale, type.maxScale);
+                newScale.z = Mathf.Clamp(newScale.z, type.minScale, type.maxScale);
+            }
+            else
+            {
+                newScale.x = Mathf.Clamp(newScale.x, minScale, maxScale);
+                newScale.y = Mathf.Clamp(newScale.y, minScale, maxScale);
+                newScale.z = Mathf.Clamp(newScale.z, minScale, maxScale);
+            }
             currentObject.localScale = newScale;
         }
     }
@@ -142,8 +157,6 @@ public class NewInspectSystem : MonoBehaviour
             descriptionItemPanel.SetActive(false);
             txtdescriptionPanel.text = string.Empty;
         }
-        mainCamera.transform.position = initialPosition;
-        mainCamera.fieldOfView = initialFieldOfView;
         currentObject.position = objectInitialPosition;
         currentObject.rotation = objectInitialRotation;
         currentObject.localScale = objectInitialScale;
