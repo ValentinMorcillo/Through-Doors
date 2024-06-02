@@ -30,7 +30,7 @@ Transform:
   m_Children:
   - {fileID: 2557309260281079099}
   - {fileID: 4400625669958385563}
-  - {fileID: 2004476631582842836}
+  - {fileID: 5218482566524900139}
   - {fileID: 7715541480366019721}
   - {fileID: 5772871523709324582}
   m_Father: {fileID: 0}
@@ -299,6 +299,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5721795754746465545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5218482566524900139}
+  m_Layer: 0
+  m_Name: AlmohadonK
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5218482566524900139
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5721795754746465545}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.021964073, y: 0.73223996, z: -0.68780804}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2004476631582842836}
+  m_Father: {fileID: 713278644870147421}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6610646876567738332
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,9 +342,11 @@ GameObject:
   - component: {fileID: 2004476631582842836}
   - component: {fileID: 7799165092826909497}
   - component: {fileID: 344449553196139965}
+  - component: {fileID: 5948864916407585216}
+  - component: {fileID: 2599658457357349372}
   m_Layer: 0
   m_Name: Almohadon_Corazon
-  m_TagString: Untagged
+  m_TagString: Inspectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -324,13 +358,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6610646876567738332}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.021964192, y: 0.7322399, z: -0.68780804}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.021964073, y: 0.73223996, z: -0.68780804}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 713278644870147421}
-  m_RootOrder: 2
+  m_Father: {fileID: 5218482566524900139}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7799165092826909497
 MeshFilter:
@@ -382,6 +416,39 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5948864916407585216
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6610646876567738332}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 26.874607, y: 18.838371, z: 18.093891}
+  m_Center: {x: -0.3067193, y: -1.5353737, z: -0.5791044}
+--- !u!114 &2599658457357349372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6610646876567738332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ecc47800fc0f6242946db4e369e7c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inspectOnly: 0
+  inspectAndText: 1
+  scaleOverride: 0
+  objectName: 
+  itemDescriptionText: My pillow. I wouldn't buy one for myself but it's a good gift.
+  initialScale: 0
+  minScale: 0
+  maxScale: 0
 --- !u!1 &7466676979154455316
 GameObject:
   m_ObjectHideFlags: 0

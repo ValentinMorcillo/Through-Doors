@@ -724,7 +724,8 @@ MonoBehaviour:
   m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8801180bfb0973941b2b096167529639, type: 2}
-  m_sharedMaterial: {fileID: -1405236535041806055, guid: 8801180bfb0973941b2b096167529639, type: 2}
+  m_sharedMaterial: {fileID: -1405236535041806055, guid: 8801180bfb0973941b2b096167529639,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -965,6 +966,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5964488379483766316}
+  - component: {fileID: 1936528443986055922}
   - component: {fileID: 8094080601167517038}
   - component: {fileID: 5846656848687765009}
   - component: {fileID: 9029236389831958936}
@@ -994,6 +996,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1936528443986055922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453040584975410326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ecc47800fc0f6242946db4e369e7c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inspectOnly: 0
+  inspectAndText: 1
+  scaleOverride: 0
+  objectName: 
+  itemDescriptionText: I remember when we bought it. Chloe never again answered the
+    phone.
+  initialScale: 0
+  minScale: 0
+  maxScale: 0
 --- !u!114 &8094080601167517038
 MonoBehaviour:
   m_ObjectHideFlags: 0

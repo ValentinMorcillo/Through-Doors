@@ -10,20 +10,21 @@ public class InspectObjectType : MonoBehaviour
     [Header("== Inspect Object Type ===========")]
     [Space(10)]
 
-    [SerializeField] private bool noType;
-    [SerializeField] private bool textType;
+    [SerializeField] private bool inspectOnly;
+    [SerializeField] private bool inspectAndText;
     [SerializeField] private bool scaleOverride;
     [Header("-- Default Object Name ----------")]
     [Space(10)]
     [SerializeField] internal string objectName;
-    [ConditionalField("textType")]
+    [ConditionalField("inspectAndText")]
     [Header("-- Text Type Behaviours ----------")]
     [Space(10)]
     [SerializeField, TextArea(3, 6)] internal string itemDescriptionText;
     [ConditionalField("scaleOverride")]
     [Header("-- Scale Override Behaviours ----------")]
+    [Header("-- Reminder, default Values are: Initial: 0.7, Min: 0.5 ,Max: 1 ----------")]
     [Space(10)]
-    [SerializeField, Range(0.5f,1.0f)] internal float initialScale;
+    [SerializeField, Range(0.5f,1.5f)] internal float initialScale;
     [ConditionalField("scaleOverride")]
     [SerializeField,Range(0.5f,1.0f)] internal float minScale;
     [ConditionalField("scaleOverride")]
@@ -37,7 +38,7 @@ public class InspectObjectType : MonoBehaviour
     /// <returns>Type of bool of the object being inspected, true = textType, false = noType</returns>
     internal bool GetObjectType()
     {
-        if (textType) return true; else {  return false; }
+        if (inspectAndText) return true; else {  return false; }
     }
     /// <summary>
     /// Method that gives back the override scale bool when required.

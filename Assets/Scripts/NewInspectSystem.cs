@@ -81,7 +81,7 @@ public class NewInspectSystem : MonoBehaviour
                 objectInitialRotation = hit.transform.rotation;
                 objectInitialScale = currentObject.localScale;
                 //tener en cuenta que la idea que todos los objetos partan de una escala de 1,1,1. Si no es así, meterlos dentro de un parent que si lo tenga.
-                if (type.OverrideScale()==true)
+                if (type.OverrideScale()==true) //significa que tiene una escala de arranque, minima y maxima personalizada para ese objeto y no usa la defecto.
                 {
                     currentObject.localScale = new Vector3(type.initialScale, type.initialScale, type.initialScale);
                 }
