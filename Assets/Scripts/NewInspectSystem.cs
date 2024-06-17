@@ -24,7 +24,7 @@ public class NewInspectSystem : MonoBehaviour
     [Space(10)]
     [SerializeField] private float rotationSpeed = 100f;
     [SerializeField] private float zoomSpeed = 2f;
-    [SerializeField, Range(0.5f,1.0f)] private float minScale; //setear en realidad que el tamaño este basado por cada gameObject;
+    [SerializeField, Range(0.5f, 1.0f)] private float minScale; //setear en realidad que el tamaño este basado por cada gameObject;
     [SerializeField, Range(0.8f, 2.0f)] private float maxScale; // setear como máximo 2 veces el tamaño real.
     [SerializeField, Range(0.5f, 1.0f)] private float initialShowScale; // la escala por defecto a mostrar al principio.
 
@@ -41,18 +41,31 @@ public class NewInspectSystem : MonoBehaviour
     [SerializeField] private Vector3 objectInitialScale;
     InspectObjectType type;
 
+    [Header("=== HUD Settings ===========")]
+    [Space(10)]
+    [SerializeField] private float interactIconDistance;
+    [SerializeField] private GameObject middleDot;
+    [SerializeField] private GameObject arrowInspectIcon;
+    [SerializeField] private GameObject inspectIcon;
+    [SerializeField] private GameObject interactIcon;
+
     void Start()
     {
         mainCamera = Camera.main;
         raycastDistance = 1.5f;
+        interactIconDistance = raycastDistance;
         initialPosition = mainCamera.transform.position;
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E)) { InspectItem(); }
-        if (isViewing) {RotateObject();ZoomObject();}
+        if (isViewing) { RotateObject(); ZoomObject(); }
         if (Input.GetKeyDown(KeyCode.Q)) { ResetView(); }
+        CheckForInteractiveObject();
+        CheckForInspectableObject();
+        IsViewingIconChange();
+        RemoveMiddleDotPoint();
 
     }
 
@@ -66,16 +79,31 @@ public class NewInspectSystem : MonoBehaviour
 
         foreach (RaycastHit h in hits)
         {
+            if(h.transform.CompareTag("Interactable"))
+            {
+                type = h.transform.gameObject.GetComponent<InspectObjectType>();
+                if (type.GetObjectType() == 3 && type.clicked==false) //Si la devolución es 0 = Inspect Only, 1= text Only, 2= Inspect and Text, 3= oneTimeOnly;
+                {
+                    type.clicked = true;
+                }
+                return;
+            }
             if (h.transform.CompareTag("Inspectable") && isViewing == false)
             {
                 Debug.Log("Inspeccionando el objecto: " + transform.name);
                 type = h.transform.gameObject.GetComponent<InspectObjectType>();
-                if (type.GetObjectType() == true) //significa que tiene texto.
+                if (type.GetObjectType() == 1) //Si la devolución es 0 = Inspect Only, 1= text Only, 2= Inspect and Text;
+                {
+                    StartCoroutine(COR_TextOnlyDescription(type.messageDuration));
+                    return;
+                }
+                if (type.GetObjectType() == 2) //Si la devolución es 0 = Inspect Only, 1= text Only, 2= Inspect and Text;
                 {
                     descriptionItemPanel.SetActive(true);
                     txtdescriptionPanel.text = string.Empty;
                     txtdescriptionPanel.text = type.itemDescriptionText;
                 }
+                
                 //preguntar si el mismo tiene texto y en base a eso hacerlo aparecer o sino seguir con el resto del codigo.
                 currentObject = h.transform;
                 objectInitialPosition = h.transform.position;
@@ -155,7 +183,7 @@ public class NewInspectSystem : MonoBehaviour
     /// </summary>
     public void ResetView()
     {
-        if (type.GetObjectType() == true)
+        if (type.GetObjectType() == 2)
         {
             descriptionItemPanel.SetActive(false);
             txtdescriptionPanel.text = string.Empty;
@@ -172,5 +200,91 @@ public class NewInspectSystem : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Method in charge of changing the icon of the object to the inspect hand, as long as the player is within the range.
+    /// </summary>
+    private void CheckForInspectableObject()
+    {
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit[] hits = Physics.RaycastAll(ray, raycastDistance);
 
+        bool interactableFound = false;
+
+        foreach (RaycastHit hit in hits)
+        {
+            if (hit.transform.CompareTag("Inspectable") && !isViewing)
+            {
+                interactableFound = true;
+                break;
+            }
+        }
+
+        inspectIcon.SetActive(interactableFound);
+    }
+    /// <summary>
+    /// Method in charge of changing the icon of the object to the inspect hand in case the object is Interactable.
+    /// </summary>
+    private void CheckForInteractiveObject()
+    {
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit[] hits = Physics.RaycastAll(ray, interactIconDistance);
+        bool interactableFound = false;
+        foreach (RaycastHit hit in hits)
+        {
+            if (hit.transform.CompareTag("Interactable"))
+            {
+                type = hit.transform.gameObject.GetComponent<InspectObjectType>();
+                if (type.clicked == false)
+                {
+                    interactableFound = true;
+                }
+                else
+                {
+                    interactableFound = false;
+                }
+            }
+        }
+
+        interactIcon.SetActive(interactableFound);
+    }
+
+    /// <summary>
+    /// Method in charge of changing the viewing icon if the player is viewing or not an object.
+    /// </summary>
+    private void IsViewingIconChange()
+    {
+        arrowInspectIcon.SetActive(isViewing);
+    }
+
+    /// <summary>
+    /// Method in charge of removing the middle dot on the screen while any other object is active.
+    /// </summary>
+    private void RemoveMiddleDotPoint()
+    {
+        if(isViewing || inspectIcon.activeInHierarchy == true)
+        {
+            middleDot.SetActive(false);
+        }
+        else
+        {
+            middleDot.SetActive(true);
+        }
+    }
+
+    /// <summary>
+    /// Corrutine made for the TextOnly objects that shows a text box for a certain amount of seconds.
+    /// </summary>
+    /// <param name="duration">The duration of the message that appears. Custom setted per object in his InspectObjectType script attached.</param>
+    /// <returns></returns>
+    IEnumerator COR_TextOnlyDescription(float duration)
+    {
+        descriptionItemPanel.SetActive(true);
+        txtdescriptionPanel.text = string.Empty;
+        txtdescriptionPanel.text = type.itemDescriptionOnlyText;
+        yield return new WaitForSecondsRealtime(duration);
+        txtdescriptionPanel.text = string.Empty;
+        descriptionItemPanel.SetActive(false);
+        yield break;
+
+    }
 }
