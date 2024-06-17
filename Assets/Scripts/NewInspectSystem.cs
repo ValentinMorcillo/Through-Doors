@@ -44,7 +44,7 @@ public class NewInspectSystem : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main;
-        raycastDistance = 1.2f;
+        raycastDistance = 1.5f;
         initialPosition = mainCamera.transform.position;
     }
 
@@ -61,14 +61,15 @@ public class NewInspectSystem : MonoBehaviour
     /// </summary>
     private void InspectItem()
     {
-        RaycastHit hit;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit[] hits = Physics.RaycastAll(ray, raycastDistance);
 
-        if (Physics.Raycast(ray, out hit,raycastDistance))
+        foreach (RaycastHit h in hits)
         {
-            if (hit.transform.CompareTag("Inspectable") && isViewing == false)
+            if (h.transform.CompareTag("Inspectable") && isViewing == false)
             {
-                type = hit.transform.gameObject.GetComponent<InspectObjectType>();
+                Debug.Log("Inspeccionando el objecto: " + transform.name);
+                type = h.transform.gameObject.GetComponent<InspectObjectType>();
                 if (type.GetObjectType() == true) //significa que tiene texto.
                 {
                     descriptionItemPanel.SetActive(true);
@@ -76,18 +77,18 @@ public class NewInspectSystem : MonoBehaviour
                     txtdescriptionPanel.text = type.itemDescriptionText;
                 }
                 //preguntar si el mismo tiene texto y en base a eso hacerlo aparecer o sino seguir con el resto del codigo.
-                currentObject = hit.transform;
-                objectInitialPosition = hit.transform.position;
-                objectInitialRotation = hit.transform.rotation;
+                currentObject = h.transform;
+                objectInitialPosition = h.transform.position;
+                objectInitialRotation = h.transform.rotation;
                 objectInitialScale = currentObject.localScale;
                 //tener en cuenta que la idea que todos los objetos partan de una escala de 1,1,1. Si no es así, meterlos dentro de un parent que si lo tenga.
-                if (type.OverrideScale()==true) //significa que tiene una escala de arranque, minima y maxima personalizada para ese objeto y no usa la defecto.
+                if (type.OverrideScale() == true) //significa que tiene una escala de arranque, minima y maxima personalizada para ese objeto y no usa la defecto.
                 {
                     currentObject.localScale = new Vector3(type.initialScale, type.initialScale, type.initialScale);
                 }
                 else
                 {
-                    currentObject.localScale = new Vector3 (initialShowScale, initialShowScale,initialShowScale); 
+                    currentObject.localScale = new Vector3(initialShowScale, initialShowScale, initialShowScale);
                 }
 
                 Vector3 screenCenter = new Vector3(Screen.width / 2, Screen.height / 2, mainCamera.WorldToScreenPoint(inspectableObjectPosition.position).z);
@@ -104,6 +105,8 @@ public class NewInspectSystem : MonoBehaviour
                 //generar un collider especial que delimite la ubicacion del jugador.
             }
         }
+
+
     }
 
     /// <summary>
@@ -152,7 +155,7 @@ public class NewInspectSystem : MonoBehaviour
     /// </summary>
     public void ResetView()
     {
-        if (type.GetObjectType() == true) 
+        if (type.GetObjectType() == true)
         {
             descriptionItemPanel.SetActive(false);
             txtdescriptionPanel.text = string.Empty;
@@ -168,4 +171,6 @@ public class NewInspectSystem : MonoBehaviour
         isViewing = false;
 
     }
+
+
 }

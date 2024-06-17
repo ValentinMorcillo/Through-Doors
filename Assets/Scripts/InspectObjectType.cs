@@ -24,11 +24,11 @@ public class InspectObjectType : MonoBehaviour
     [Header("-- Scale Override Behaviours ----------")]
     [Header("-- Reminder, default Values are: Initial: 0.7, Min: 0.5 ,Max: 1 ----------")]
     [Space(10)]
-    [SerializeField, Range(0.5f,1.5f)] internal float initialScale;
+    [SerializeField, Range(0.1f,1.5f)] internal float initialScale;
     [ConditionalField("scaleOverride")]
-    [SerializeField,Range(0.5f,1.0f)] internal float minScale;
+    [SerializeField,Range(0.1f,1.0f)] internal float minScale;
     [ConditionalField("scaleOverride")]
-    [SerializeField,Range(0.8f,2.0f)] internal float maxScale;
+    [SerializeField,Range(0.8f,4.0f)] internal float maxScale;
 
 
     /// <summary>
