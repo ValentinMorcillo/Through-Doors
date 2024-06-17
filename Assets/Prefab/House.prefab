@@ -3699,7 +3699,7 @@ Transform:
   - {fileID: 1565818048245350709}
   - {fileID: 2583890696674119747}
   - {fileID: 771619038228631202}
-  - {fileID: 9117225258112666873}
+  - {fileID: 2304924533193717583}
   - {fileID: 2534824207854781179}
   - {fileID: 4613089881638822636}
   - {fileID: 5789511510279427971}
@@ -4189,6 +4189,74 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &4392464566498557864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2304924533193717583}
+  - component: {fileID: 4300643276202620014}
+  - component: {fileID: 8704463027098867812}
+  m_Layer: 0
+  m_Name: SkateBoard
+  m_TagString: Inspectable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2304924533193717583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4392464566498557864}
+  m_LocalRotation: {x: -0.7511494, y: 0.63034236, z: 0.19397858, w: 0.028556215}
+  m_LocalPosition: {x: -8.9030285, y: 0.52627635, z: 0.9816356}
+  m_LocalScale: {x: 0.6641202, y: 0.66412, z: 0.6641201}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9117225258112666873}
+  m_Father: {fileID: 4016544713254500863}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4300643276202620014
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4392464566498557864}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5801306, y: 0.28370795, z: 0.4757098}
+  m_Center: {x: -0.02192363, y: -0.056463573, z: -0.011016407}
+--- !u!114 &8704463027098867812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4392464566498557864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ecc47800fc0f6242946db4e369e7c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inspectOnly: 0
+  inspectAndText: 1
+  scaleOverride: 0
+  objectName: 
+  itemDescriptionText: My old skateboard. I used to spend hours practicing but when
+    Chloe got ill i lost interest.
+  initialScale: 0
+  minScale: 0
+  maxScale: 0
 --- !u!1 &4732432854956119257
 GameObject:
   m_ObjectHideFlags: 0
@@ -7768,67 +7836,77 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 4016544713254500863}
+    m_TransformParent: {fileID: 2304924533193717583}
     m_Modifications:
+    - target: {fileID: 6963266008362896847, guid: d4407d5c055212a4ea6951b8006418a6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8217307343284573302, guid: d4407d5c055212a4ea6951b8006418a6,
         type: 3}
       propertyPath: m_Name
       value: Skate
       objectReference: {fileID: 0}
+    - target: {fileID: 8217307343284573302, guid: d4407d5c055212a4ea6951b8006418a6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8737666972744928972, guid: d4407d5c055212a4ea6951b8006418a6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8737666972744928972, guid: d4407d5c055212a4ea6951b8006418a6,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.66412
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8737666972744928972, guid: d4407d5c055212a4ea6951b8006418a6,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6641201
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8737666972744928972, guid: d4407d5c055212a4ea6951b8006418a6,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.6641201
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8737666972744928972, guid: d4407d5c055212a4ea6951b8006418a6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.862
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8737666972744928972, guid: d4407d5c055212a4ea6951b8006418a6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.535
+      value: -0.06448372
       objectReference: {fileID: 0}
     - target: {fileID: 8737666972744928972, guid: d4407d5c055212a4ea6951b8006418a6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.973
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8737666972744928972, guid: d4407d5c055212a4ea6951b8006418a6,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.028556215
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8737666972744928972, guid: d4407d5c055212a4ea6951b8006418a6,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7511494
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8737666972744928972, guid: d4407d5c055212a4ea6951b8006418a6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.63034236
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8737666972744928972, guid: d4407d5c055212a4ea6951b8006418a6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.19397858
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8737666972744928972, guid: d4407d5c055212a4ea6951b8006418a6,
         type: 3}
@@ -7845,7 +7923,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -102.28
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4590220529458796175, guid: d4407d5c055212a4ea6951b8006418a6, type: 3}
+    - {fileID: 6451534507229376167, guid: d4407d5c055212a4ea6951b8006418a6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d4407d5c055212a4ea6951b8006418a6, type: 3}
 --- !u!4 &9117225258112666873 stripped
 Transform:

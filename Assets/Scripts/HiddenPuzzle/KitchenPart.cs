@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class KitchenPart : HiddenPuzzlePart
 {
@@ -17,6 +18,9 @@ public class KitchenPart : HiddenPuzzlePart
         actionManager.onSetHasThought?.Invoke();
 
         Invoke(nameof(OpenDialoguePanel), .8f);
+
+        PathManager.instance.RemoveBlockingObject("BlockingBoxesStairs");
+
     }
 
     void OpenAllDoors()
@@ -26,5 +30,6 @@ public class KitchenPart : HiddenPuzzlePart
             dc.OpenDoor();
         }
     }
+
 
 }

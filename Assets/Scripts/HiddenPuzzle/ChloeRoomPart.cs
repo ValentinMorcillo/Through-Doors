@@ -13,6 +13,8 @@ public class ChloeRoomPart : HiddenPuzzlePart
         cinematicManager.LookUnderBed();
 
         Invoke(nameof(OpenDialoguePanel), 7f);
+
+        PathManager.instance.RemoveBlockingObject("BlockingBoxesParentsRoom");
     }
 
 }
