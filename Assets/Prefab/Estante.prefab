@@ -144,13 +144,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inspectOnly: 1
+  textOnly: 0
   inspectAndText: 0
-  scaleOverride: 0
+  oneTimeOnly: 0
+  scaleOverride: 1
   objectName: 
+  clicked: 0
   itemDescriptionText: 
-  initialScale: 0
-  minScale: 0
-  maxScale: 0
+  messageDuration: 0
+  itemDescriptionOnlyText: 
+  initialScale: 0.1
+  minScale: 0.1
+  maxScale: 0.15
 --- !u!1 &1452090794873145042
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,13 +268,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inspectOnly: 1
+  textOnly: 0
   inspectAndText: 0
-  scaleOverride: 0
+  oneTimeOnly: 0
+  scaleOverride: 1
   objectName: 
+  clicked: 0
   itemDescriptionText: 
-  initialScale: 0
-  minScale: 0
-  maxScale: 0
+  messageDuration: 0
+  itemDescriptionOnlyText: 
+  initialScale: 0.1
+  minScale: 0.1
+  maxScale: 0.15
 --- !u!1 &2143220835680615338
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,13 +586,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inspectOnly: 1
+  textOnly: 0
   inspectAndText: 0
-  scaleOverride: 0
+  oneTimeOnly: 0
+  scaleOverride: 1
   objectName: 
+  clicked: 0
   itemDescriptionText: 
-  initialScale: 0
-  minScale: 0
-  maxScale: 0
+  messageDuration: 0
+  itemDescriptionOnlyText: 
+  initialScale: 0.1
+  minScale: 0.1
+  maxScale: 0.15
 --- !u!1 &5627102976547088085
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,13 +710,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inspectOnly: 1
+  textOnly: 0
   inspectAndText: 0
-  scaleOverride: 0
+  oneTimeOnly: 0
+  scaleOverride: 1
   objectName: 
+  clicked: 0
   itemDescriptionText: 
-  initialScale: 0
-  minScale: 0
-  maxScale: 0
+  messageDuration: 0
+  itemDescriptionOnlyText: 
+  initialScale: 0.1
+  minScale: 0.1
+  maxScale: 0.15
 --- !u!1 &6193851560100528939
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,13 +872,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inspectOnly: 1
+  textOnly: 0
   inspectAndText: 0
-  scaleOverride: 0
+  oneTimeOnly: 0
+  scaleOverride: 1
   objectName: 
+  clicked: 0
   itemDescriptionText: 
-  initialScale: 0
-  minScale: 0
-  maxScale: 0
+  messageDuration: 0
+  itemDescriptionOnlyText: 
+  initialScale: 0.1
+  minScale: 0.1
+  maxScale: 0.15
 --- !u!1 &6983968335468946718
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,13 +996,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inspectOnly: 1
+  textOnly: 0
   inspectAndText: 0
-  scaleOverride: 0
+  oneTimeOnly: 0
+  scaleOverride: 1
   objectName: 
+  clicked: 0
   itemDescriptionText: 
-  initialScale: 0
-  minScale: 0
-  maxScale: 0
+  messageDuration: 0
+  itemDescriptionOnlyText: 
+  initialScale: 0.1
+  minScale: 0.1
+  maxScale: 0.15
 --- !u!1 &8055414349073317535
 GameObject:
   m_ObjectHideFlags: 0

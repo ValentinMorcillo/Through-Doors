@@ -84,10 +84,10 @@ public class DisplayTrigger : MonoBehaviour
 
         sceneObject.SetActive(true);
        // cm.ReanudePlayer();
-        uiObjectOff.gameObject.SetActive(true);
+        //uiObjectOff.gameObject.SetActive(true);
         if (uiItemOff)
         {
-            uiItemOff.gameObject.SetActive(true);
+            //uiItemOff.gameObject.SetActive(true);
         }
 
         Cursor.lockState = CursorLockMode.Locked;

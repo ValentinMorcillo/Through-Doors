@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,7 +10,8 @@ public class AnsweringMachineBehavior : MonoBehaviour, IInteractable
     [SerializeField] GameObject sfxAnswerMachine;
     [SerializeField] TextMeshProUGUI messageCount;
     [SerializeField] PickableItem[] photoParts;
-
+    [SerializeField] private GameObject[] photoGO;
+ 
 
     [SerializeField, TextArea(4, 6)] protected string dialogueText;
     protected CinematicManager cinematicManager;
@@ -22,6 +24,16 @@ public class AnsweringMachineBehavior : MonoBehaviour, IInteractable
     {
         cinematicManager = CinematicManager.Get();
         componentsManager = GetComponent<GameObjectsComponentsManager>();
+    }
+    public void Update()
+    {
+        if (!hasInteracted)
+        {
+            for (int i = 0; i < photoGO.Length; i++)
+            {
+                photoGO[i].SetActive(false);
+            }
+        }
     }
 
     public void Interact()
@@ -36,8 +48,11 @@ public class AnsweringMachineBehavior : MonoBehaviour, IInteractable
             componentsManager.OnDisableComponents();
             
             GameManager.Get().isCompleteTask?.Invoke();
-
             hasInteracted = true;
+            for (int i = 0; i < photoGO.Length; i++)
+            {
+                photoGO[i].SetActive(true);
+            }
         }
     }
 
