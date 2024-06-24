@@ -183,7 +183,12 @@ public class NewInspectSystem : MonoBehaviour
     /// </summary>
     public void ResetView()
     {
-        if (type.GetObjectType() == 2)
+        if(currentObject == null)
+        {
+            return;
+        }
+
+        if (type != null && type.GetObjectType() == 2)
         {
             descriptionItemPanel.SetActive(false);
             txtdescriptionPanel.text = string.Empty;
