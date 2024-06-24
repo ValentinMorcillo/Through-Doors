@@ -3490,7 +3490,7 @@ GameObject:
   - component: {fileID: 8855366078229340931}
   m_Layer: 0
   m_Name: ModelBoat
-  m_TagString: Inspectable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3537,12 +3537,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inspectOnly: 0
+  textOnly: 0
   inspectAndText: 1
+  oneTimeOnly: 0
   scaleOverride: 0
   objectName: 
+  clicked: 0
   itemDescriptionText: 'Dad loved this kind of stuff. I never got the appeal.
 
 '
+  messageDuration: 0
+  itemDescriptionOnlyText: 
   initialScale: 0
   minScale: 0
   maxScale: 0
